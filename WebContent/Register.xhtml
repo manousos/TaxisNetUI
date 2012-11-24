@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Page A</title>
+</h:head>
+<h:body>
+
+	<h:form>
+
+		<table>
+			<tr>
+				<th>Επιλέξτε username και κωδικό</th>
+			</tr>
+			<tr>
+				<td>Username</td>
+				<td><h:inputText value="#{registerBean.userName}"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Κωδικός</td>
+				<td><h:inputText value="#{registerBean.password}"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Επιβεβαίωση κωδικού</td>
+				<td><h:inputText value="#{registerBean.repeatPassword}"></h:inputText></td>
+			</tr>
+			<tr>
+				<th>Συμπληρώστε τον ΑΦΜ και το ονοματεπώνυμό σας</th>
+			</tr>
+			<tr>
+				<td>ΑΦΜ</td>
+				<td><h:inputText value="#{registerBean.afm}"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Επώνυμο</td>
+				<td><h:inputText value="#{registerBean.lastName}"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Όνομα</td>
+				<td><h:inputText value="#{registerBean.firstName}"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Όνομα Πατρός</td>
+				<td><h:inputText value="#{registerBean.fatherName}"></h:inputText>
+				</td>
+			</tr>
+			<tr>
+				<th>Συμπληρώστε τα στοιχεία επικοινωνίας σας</th>
+			</tr>
+			<tr>
+				<td>E-mail</td>
+				<td><h:inputText value="#{registerBean.email}"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Αρ. τηλεφώνου</td>
+				<td><h:inputText value="#{registerBean.phone}"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Αρ. κινητού τηλεφώνου</td>
+				<td><h:inputText value="#{registerBean.cell}"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Fax</td>
+				<td><h:inputText value="#{registerBean.fax}"></h:inputText></td>
+			</tr>
+			<tr>
+				<td><h:commandButton type="submit" value="Submit"
+						action="#{registerBean.submit}" /></td>
+			</tr>
+		</table>
+	</h:form>
+
+</h:body>
+</html>
