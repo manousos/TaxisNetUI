@@ -8,7 +8,7 @@
 </head>
 <body>
 	alloha
-	 Go to
+	<br> Go to
 	<ul>
 		<li><a href="Register.jsf">Register</a></li>
 	</ul>
