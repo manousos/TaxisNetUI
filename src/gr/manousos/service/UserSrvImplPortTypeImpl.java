@@ -26,7 +26,7 @@ import javax.xml.ws.ResponseWrapper;
                       serviceName = "UserSrvImpl",
                       portName = "UserSrvImplPort",
                       targetNamespace = "http://service.manousos.gr/",
-                      wsdlLocation = "http://localhost:8088/TaxisNetTestUI/services/UserSrvImplPort?wsdl",
+                      wsdlLocation = "http://localhost:8088/TaxisNet/services/UserSrvImplPort?wsdl",
                       endpointInterface = "gr.manousos.service.UserSrvImplPortType")
                       
 public class UserSrvImplPortTypeImpl implements UserSrvImplPortType {

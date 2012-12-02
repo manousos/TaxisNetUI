@@ -1,15 +1,17 @@
 package gr.manousos.bean;
 
-import java.io.Console;
-
 import gr.manousos.service.Contact;
 import gr.manousos.service.Taxpayer;
 import gr.manousos.service.User;
 import gr.manousos.service.UserSrvImpl;
 import gr.manousos.service.UserSrvImplPortType;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.validator.ValidatorException;
 
 @ManagedBean
 @SessionScoped
@@ -18,7 +20,7 @@ public class RegisterBean extends LoginBean {
 	// private static final Log log = LogFactory.getLog(RegisterBean.class);
 
 	private String repeatPassword;
-	private String afm;
+	private int afm;
 	private String lastName;
 	private String firstName;
 	private String fatherName;
@@ -26,8 +28,17 @@ public class RegisterBean extends LoginBean {
 	private String phone;
 	private String cell;
 	private String fax;
+	private String error;
 
 	// private String
+
+	public String getError() {
+		return error;
+	}
+
+	public void setError(String error) {
+		this.error = error;
+	}
 
 	public String getRepeatPassword() {
 		return repeatPassword;
@@ -37,11 +48,11 @@ public class RegisterBean extends LoginBean {
 		this.repeatPassword = repeatPassword;
 	}
 
-	public String getAfm() {
+	public int getAfm() {
 		return afm;
 	}
 
-	public void setAfm(String afm) {
+	public void setAfm(int afm) {
 		this.afm = afm;
 	}
 
@@ -101,11 +112,18 @@ public class RegisterBean extends LoginBean {
 		this.fax = fax;
 	}
 
+	public void validatePassword(FacesContext context, UIComponent component,
+			Object value) throws ValidatorException {
+		if (!value.equals(super.getPassword())) {
+			FacesMessage message = new FacesMessage("O Κωδικός δεν είναι ίδιος");
+			throw new ValidatorException(message);
+		}
+	}
+
 	public String submit() {
 
 		UserSrvImpl service = new UserSrvImpl();
 		UserSrvImplPortType client = service.getUserSrvImplPort();
-		// this.setAfm(client.test("ti panagia sou"));
 
 		User u = new User();
 		u.setUserName(super.getUserName());
@@ -119,23 +137,23 @@ public class RegisterBean extends LoginBean {
 		con.setCell(this.cell);
 		con.setEmail(this.email);
 
-		Taxpayer taxPayer = new Taxpayer();
-		taxPayer.setAfm(this.afm);
+		Taxpayer taxPayer = new Taxpayer();		
+		taxPayer.setAfm(String.valueOf(this.afm));
 		taxPayer.setContact(con);
 		taxPayer.setFatherName(this.fatherName);
 		taxPayer.setFname(this.firstName);
 		taxPayer.setLname(this.lastName);
 		taxPayer.setUser(u);
-
-		try {
-			client.register(taxPayer);
-			return ("SuccessPage");
-		} catch (Exception ex) {
-			System.err.println("submit Register Error= " + ex.toString()); //
-			// //TODO: add logging } }
-		}
-
-		// return "";
-		return ("ErrorPage");
+		/*
+		 * try { Taxpayer newUser = client.register(taxPayer); // taxPayer = new
+		 * Taxpayer(); //to clear form if (newUser.getId() > 0) return
+		 * ("SuccessPage"); } catch (Exception ex) {
+		 * this.setError(ex.toString()); //
+		 * System.err.println("submit Register Error= " + ex.toString()); }
+		 * 
+		 * 
+		 * return ("ErrorPage");
+		 */
+		return "";
 	}
 }
