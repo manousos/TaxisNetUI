@@ -11,6 +11,7 @@
 	<br> Go to
 	<ul>
 		<li><a href="Register.jsf">Register</a></li>
+		<li><a href="E2.jsf">E2</a>
 	</ul>
 </body>
 </html>

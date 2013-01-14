@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for RegisterTaxPayer complex type.
+ * <p>Java class for getTaxPayerById complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="RegisterTaxPayer">
+ * &lt;complexType name="getTaxPayerById">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="arg0" type="{http://service.manousos.gr/}taxpayer" minOccurs="0"/>
+ *         &lt;element name="arg0" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -26,34 +26,26 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "RegisterTaxPayer", propOrder = {
+@XmlType(name = "getTaxPayerById", propOrder = {
     "arg0"
 })
-public class RegisterTaxPayer {
+public class GetTaxPayerById {
 
-    protected Taxpayer arg0;
+    protected int arg0;
 
     /**
      * Gets the value of the arg0 property.
      * 
-     * @return
-     *     possible object is
-     *     {@link Taxpayer }
-     *     
      */
-    public Taxpayer getArg0() {
+    public int getArg0() {
         return arg0;
     }
 
     /**
      * Sets the value of the arg0 property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Taxpayer }
-     *     
      */
-    public void setArg0(Taxpayer value) {
+    public void setArg0(int value) {
         this.arg0 = value;
     }
 

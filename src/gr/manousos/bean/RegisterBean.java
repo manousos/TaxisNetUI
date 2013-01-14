@@ -3,13 +3,14 @@ package gr.manousos.bean;
 import gr.manousos.service.Contact;
 import gr.manousos.service.Taxpayer;
 import gr.manousos.service.User;
-import gr.manousos.service.UserSrvImpl;
-import gr.manousos.service.UserSrvImplPortType;
+import gr.manousos.service.UserSrv;
+import gr.manousos.service.UserSrvImplService;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.component.UIComponent;
+import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
 import javax.faces.validator.ValidatorException;
 
@@ -20,7 +21,7 @@ public class RegisterBean extends LoginBean {
 	// private static final Log log = LogFactory.getLog(RegisterBean.class);
 
 	private String repeatPassword;
-	private int afm;
+	private String afm;
 	private String lastName;
 	private String firstName;
 	private String fatherName;
@@ -48,11 +49,11 @@ public class RegisterBean extends LoginBean {
 		this.repeatPassword = repeatPassword;
 	}
 
-	public int getAfm() {
+	public String getAfm() {
 		return afm;
 	}
 
-	public void setAfm(int afm) {
+	public void setAfm(String afm) {
 		this.afm = afm;
 	}
 
@@ -114,17 +115,31 @@ public class RegisterBean extends LoginBean {
 
 	public void validatePassword(FacesContext context, UIComponent component,
 			Object value) throws ValidatorException {
-		if (!value.equals(super.getPassword())) {
-			FacesMessage message = new FacesMessage("O Κωδικός δεν είναι ίδιος");
-			throw new ValidatorException(message);
+
+		// Get the first password from the attribute.
+		UIInput passwordComponent = (UIInput) component.getAttributes().get(
+				"password");
+
+		// Get the value from the UIInput component.
+		String password = (String) passwordComponent.getValue();
+
+		// Get the value entered in the second string from the component
+		// parameter passed to the method.
+		String confirm = (String) value;
+
+		// Compare both fields.
+		if (!password.equals(confirm)) {
+			throw new ValidatorException(new FacesMessage(
+					FacesMessage.SEVERITY_ERROR,
+					"O Κωδικός δεν είναι ίδιος!!!", null));
 		}
 	}
 
 	public String submit() {
 
-		UserSrvImpl service = new UserSrvImpl();
-		UserSrvImplPortType client = service.getUserSrvImplPort();
-
+		UserSrvImplService service = new UserSrvImplService();
+		UserSrv client = service.getUserSrvImplPort();
+		
 		User u = new User();
 		u.setUserName(super.getUserName());
 		u.setPassword(super.getPassword());
@@ -137,23 +152,23 @@ public class RegisterBean extends LoginBean {
 		con.setCell(this.cell);
 		con.setEmail(this.email);
 
-		Taxpayer taxPayer = new Taxpayer();		
-		taxPayer.setAfm(String.valueOf(this.afm));
+		Taxpayer taxPayer = new Taxpayer();
+		taxPayer.setAfm(this.afm);
 		taxPayer.setContact(con);
 		taxPayer.setFatherName(this.fatherName);
 		taxPayer.setFname(this.firstName);
 		taxPayer.setLname(this.lastName);
 		taxPayer.setUser(u);
-		/*
-		 * try { Taxpayer newUser = client.register(taxPayer); // taxPayer = new
-		 * Taxpayer(); //to clear form if (newUser.getId() > 0) return
-		 * ("SuccessPage"); } catch (Exception ex) {
-		 * this.setError(ex.toString()); //
-		 * System.err.println("submit Register Error= " + ex.toString()); }
-		 * 
-		 * 
-		 * return ("ErrorPage");
-		 */
-		return "";
+
+		try {
+			Taxpayer newUser = client.register(taxPayer);
+			if (newUser.getId() > 0)
+				return ("SuccessPage");
+		} catch (Exception ex) {
+			this.setError(ex.toString()); //
+			System.err.println("submit Register Error= " + ex.toString());
+		}
+
+		return ("ErrorPage");
 	}
 }
