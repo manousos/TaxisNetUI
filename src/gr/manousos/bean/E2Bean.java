@@ -15,7 +15,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -30,33 +29,12 @@ public class E2Bean implements Serializable {
 	private static ArrayList<OtherEstates> otherEstateLst = new ArrayList<E2Bean.OtherEstates>();
 	private static ArrayList<LeasesProperties> rnEstateList = new ArrayList<E2Bean.LeasesProperties>();
 
-	private boolean dtPropList = false;
-	private boolean dtEstateList = false;
-	private boolean dtRentEstates = false;
-
-	public boolean isDtPropList() {
-		return dtPropList;
-	}
-
-	public void setDtPropList(boolean dtPropList) {
-		this.dtPropList = dtPropList;
-	}
-
-	public boolean isDtEstateList() {
-		return dtEstateList;
-	}
-
-	public void setDtEstateList(boolean dtEstateList) {
-		this.dtEstateList = dtEstateList;
-	}
-
-	public boolean isDtRentEstates() {
-		return dtRentEstates;
-	}
-
-	public void setDtRentEstates(boolean dtRentEstates) {
-		this.dtRentEstates = dtRentEstates;
-	}
+	private boolean dtPartialEstLstVisible = partialEstateLst.size() > 0 ? true
+			: false;
+	private boolean dtOtherEstLstVisible = false;
+	private boolean dtEstLstVisible = false;
+	private boolean pnPartialEstates = partialEstateLst.size() > 0 ? true
+			: false;
 
 	private String location;
 	private String point;
@@ -82,17 +60,257 @@ public class E2Bean implements Serializable {
 	private String rnUsage;
 	private float rnArea;
 	private String rnFullName;
-	private String rnAFM;	
+	private String rnAFM;
 	private int fromMonth;
 	private int toMonth;
 	private int totalMonth;
-	private float rnRent;	
+	private float rnRent;
 	private float rnPesr;
 	private float revFreeBuilding;
 	private float revFreeOffice;
 	private float revFreeLand;
 	private float revPropHotel;
 	private float revPropOffice;
+
+	public ArrayList<PartialEstates> getPartialEstateLst() {
+		return partialEstateLst;
+	}
+
+	public void setPartialEstateLst(ArrayList<PartialEstates> partialEstateLst) {
+		E2Bean.partialEstateLst = partialEstateLst;
+	}
+
+	public ArrayList<OtherEstates> getOtherEstateLst() {
+		return otherEstateLst;
+	}
+
+	public void setOtherEstateLst(ArrayList<OtherEstates> otherEstateLst) {
+		E2Bean.otherEstateLst = otherEstateLst;
+	}
+
+	public ArrayList<LeasesProperties> getRnEstateList() {
+		return rnEstateList;
+	}
+
+	public void setRnEstateList(ArrayList<LeasesProperties> rnEstateList) {
+		E2Bean.rnEstateList = rnEstateList;
+	}
+
+	public boolean isDtPartialEstLstVisible() {
+		return dtPartialEstLstVisible;
+	}
+
+	public void setDtPartialEstLstVisible(boolean dtPartialEstLstVisible) {
+		this.dtPartialEstLstVisible = dtPartialEstLstVisible;
+	}
+
+	public boolean isDtOtherEstLstVisible() {
+		return dtOtherEstLstVisible;
+	}
+
+	public void setDtOtherEstLstVisible(boolean dtOtherEstLstVisible) {
+		this.dtOtherEstLstVisible = dtOtherEstLstVisible;
+	}
+
+	public boolean isDtEstLstVisible() {
+		return dtEstLstVisible;
+	}
+
+	public void setDtEstLstVisible(boolean dtEstLstVisible) {
+		this.dtEstLstVisible = dtEstLstVisible;
+	}
+
+	public boolean isPnPartialEstates() {
+		return pnPartialEstates;
+	}
+
+	public void setPnPartialEstates(boolean pnPartialEstates) {
+		this.pnPartialEstates = pnPartialEstates;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getPoint() {
+		return point;
+	}
+
+	public void setPoint(String point) {
+		this.point = point;
+	}
+
+	public String getUsage() {
+		return usage;
+	}
+
+	public void setUsage(String usage) {
+		this.usage = usage;
+	}
+
+	public float getArea() {
+		return area;
+	}
+
+	public void setArea(float area) {
+		this.area = area;
+	}
+
+	public float getRent() {
+		return rent;
+	}
+
+	public void setRent(float rent) {
+		this.rent = rent;
+	}
+
+	public String getCoFullName() {
+		return coFullName;
+	}
+
+	public void setCoFullName(String coFullName) {
+		this.coFullName = coFullName;
+	}
+
+	public String getCoAFM() {
+		return coAFM;
+	}
+
+	public void setCoAFM(String coAFM) {
+		this.coAFM = coAFM;
+	}
+
+	public String getCoAddress() {
+		return coAddress;
+	}
+
+	public void setCoAddress(String coAddress) {
+		this.coAddress = coAddress;
+	}
+
+	public float getcOwnPesr() {
+		return cOwnPesr;
+	}
+
+	public void setcOwnPesr(float cOwnPesr) {
+		this.cOwnPesr = cOwnPesr;
+	}
+
+	public String getLocation2() {
+		return location2;
+	}
+
+	public void setLocation2(String location2) {
+		this.location2 = location2;
+	}
+
+	public String getPoint2() {
+		return point2;
+	}
+
+	public void setPoint2(String point2) {
+		this.point2 = point2;
+	}
+
+	public String getUsage2() {
+		return usage2;
+	}
+
+	public void setUsage2(String usage2) {
+		this.usage2 = usage2;
+	}
+
+	public float getArea2() {
+		return area2;
+	}
+
+	public void setArea2(float area2) {
+		this.area2 = area2;
+	}
+
+	public String getTitleProp() {
+		return titleProp;
+	}
+
+	public void setTitleProp(String titleProp) {
+		this.titleProp = titleProp;
+	}
+
+	public String getRentierFullName() {
+		return rentierFullName;
+	}
+
+	public void setRentierFullName(String rentierFullName) {
+		this.rentierFullName = rentierFullName;
+	}
+
+	public String getRentierAFM() {
+		return rentierAFM;
+	}
+
+	public void setRentierAFM(String rentierAFM) {
+		this.rentierAFM = rentierAFM;
+	}
+
+	public String getRentierFatherName() {
+		return rentierFatherName;
+	}
+
+	public void setRentierFatherName(String rentierFatherName) {
+		this.rentierFatherName = rentierFatherName;
+	}
+
+	public String getRnLocation() {
+		return rnLocation;
+	}
+
+	public void setRnLocation(String rnLocation) {
+		this.rnLocation = rnLocation;
+	}
+
+	public String getRnPoint() {
+		return rnPoint;
+	}
+
+	public void setRnPoint(String rnPoint) {
+		this.rnPoint = rnPoint;
+	}
+
+	public String getRnUsage() {
+		return rnUsage;
+	}
+
+	public void setRnUsage(String rnUsage) {
+		this.rnUsage = rnUsage;
+	}
+
+	public float getRnArea() {
+		return rnArea;
+	}
+
+	public void setRnArea(float rnArea) {
+		this.rnArea = rnArea;
+	}
+
+	public String getRnFullName() {
+		return rnFullName;
+	}
+
+	public void setRnFullName(String rnFullName) {
+		this.rnFullName = rnFullName;
+	}
+
+	public String getRnAFM() {
+		return rnAFM;
+	}
+
+	public void setRnAFM(String rnAFM) {
+		this.rnAFM = rnAFM;
+	}
 
 	public int getFromMonth() {
 		return fromMonth;
@@ -116,6 +334,14 @@ public class E2Bean implements Serializable {
 
 	public void setTotalMonth(int totalMonth) {
 		this.totalMonth = totalMonth;
+	}
+
+	public float getRnRent() {
+		return rnRent;
+	}
+
+	public void setRnRent(float rnRent) {
+		this.rnRent = rnRent;
 	}
 
 	public float getRnPesr() {
@@ -166,242 +392,12 @@ public class E2Bean implements Serializable {
 		this.revPropOffice = revPropOffice;
 	}
 
-	public String getRnLocation() {
-		return rnLocation;
-	}
-
-	public void setRnLocation(String rnLocation) {
-		this.rnLocation = rnLocation;
-	}
-
-	public String getRnPoint() {
-		return rnPoint;
-	}
-
-	public void setRnPoint(String rnPoint) {
-		this.rnPoint = rnPoint;
-	}
-
-	public String getRnUsage() {
-		return rnUsage;
-	}
-
-	public void setRnUsage(String rnUsage) {
-		this.rnUsage = rnUsage;
-	}
-
-	public float getRnArea() {
-		return rnArea;
-	}
-
-	public void setRnArea(float rnArea) {
-		this.rnArea = rnArea;
-	}
-
-	public float getRnRent() {
-		return rnRent;
-	}
-
-	public void setRnRent(float rnRent) {
-		this.rnRent = rnRent;
-	}
-
-	public String getRnFullName() {
-		return rnFullName;
-	}
-
-	public void setRnFullName(String rnFullName) {
-		this.rnFullName = rnFullName;
-	}
-
-	public String getRnAFM() {
-		return rnAFM;
-	}
-
-	public void setRnAFM(String rnAFM) {
-		this.rnAFM = rnAFM;
-	}
-
-	public String getTitleProp() {
-		return titleProp;
-	}
-
-	public void setTitleProp(String titleProp) {
-		this.titleProp = titleProp;
-	}
-
-	public String getRentierFullName() {
-		return rentierFullName;
-	}
-
-	public void setRentierFullName(String rentierFullName) {
-		this.rentierFullName = rentierFullName;
-	}
-
-	public String getRentierAFM() {
-		return rentierAFM;
-	}
-
-	public void setRentierAFM(String rentierAFM) {
-		this.rentierAFM = rentierAFM;
-	}
-
-	public String getRentierFatherName() {
-		return rentierFatherName;
-	}
-
-	public void setRentierFatherName(String rentierFatherName) {
-		this.rentierFatherName = rentierFatherName;
-	}
-
-	public String getLocation2() {
-		return location2;
-	}
-
-	public void setLocation2(String location2) {
-		this.location2 = location2;
-	}
-
-	public String getPoint2() {
-		return point2;
-	}
-
-	public void setPoint2(String point2) {
-		this.point2 = point2;
-	}
-
-	public String getUsage2() {
-		return usage2;
-	}
-
-	public void setUsage2(String usage2) {
-		this.usage2 = usage2;
-	}
-
-	public float getArea2() {
-		return area2;
-	}
-
-	public void setArea2(float area2) {
-		this.area2 = area2;
-	}
-
-	public String getTitleProp2() {
-		return titleProp;
-	}
-
-	public void setTitleProp2(String titleProp2) {
-		this.titleProp = titleProp2;
-	}
-
-	public ArrayList<PartialEstates> getPropList() {
-		return partialEstateLst;
-	}
-
-	public void setPropList(ArrayList<PartialEstates> propList) {
-		E2Bean.partialEstateLst = propList;
-	}
-
-	public ArrayList<LeasesProperties> getRnEstateList() {
-		return rnEstateList;
-	}
-
-	public void setRnEstateList(ArrayList<LeasesProperties> rnEstateList) {
-		E2Bean.rnEstateList = rnEstateList;
-	}
-
-	public static ArrayList<OtherEstates> getOtherEstateLst() {
-		return otherEstateLst;
-	}
-
-	public static void setOtherEstateLst(ArrayList<OtherEstates> otherEstateLst) {
-		E2Bean.otherEstateLst = otherEstateLst;
-	}
-
-	public String getCoAFM() {
-		return coAFM;
-	}
-
-	public void setCoAFM(String coAFM) {
-		this.coAFM = coAFM;
-	}
-
-	public String getCoFullName() {
-		return coFullName;
-	}
-
-	public void setCoFullName(String coFullName) {
-		this.coFullName = coFullName;
-	}
-
-	public String getCoAddress() {
-		return coAddress;
-	}
-
-	public void setCoAddress(String coAddress) {
-		this.coAddress = coAddress;
-	}
-
-	public float getcOwnPesr() {
-		return cOwnPesr;
-	}
-
-	public void setcOwnPesr(float cOwnPesr) {
-		this.cOwnPesr = cOwnPesr;
-	}
-
-	public float getRent() {
-		return rent;
-	}
-
-	public void setRent(float rent) {
-		this.rent = rent;
-	}
-
-	public String getLocation() {
-		return location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
-
-	public String getPoint() {
-		return point;
-	}
-
-	public void setPoint(String point) {
-		this.point = point;
-	}
-
-	public String getUsage() {
-		return usage;
-	}
-
-	public void setUsage(String usage) {
-		this.usage = usage;
-	}
-
-	public float getArea() {
-		return area;
-	}
-
-	public void setArea(float area) {
-		this.area = area;
-	}
-
-	public E2Bean() {
-		// propList.add(new Property("TRIOVASALOS", "my point", "Home", 45));
-	}
-
-	public E2Bean(String _location, String _point, String _usage, float _area) {
-
-	}
-
 	/*
 	 * propList estateList rnEstateList LeasesProperties
 	 */
 	public String saveE2() {
+		// TODO: Is Valid Form ?
+		// 1 estate with coOwn ->1,,* PartialEstates
 
 		UserSrvImplService userService = new UserSrvImplService();
 		UserSrv userClient = userService.getUserSrvImplPort();
@@ -491,8 +487,6 @@ public class E2Bean implements Serializable {
 	}
 
 	public String addPartialEstateAction() {
-
-		this.dtPropList = true;
 		partialEstateLst.add(new PartialEstates(this.location, this.point,
 				this.usage, this.area, this.coFullName, this.coAddress,
 				this.coAFM, this.cOwnPesr, this.rent));
@@ -502,7 +496,7 @@ public class E2Bean implements Serializable {
 
 	public String addOtherEstatesAction() {
 
-		this.dtEstateList = true;
+		this.dtOtherEstLstVisible = true;
 
 		otherEstateLst.add(new OtherEstates(this.location2, this.point2,
 				this.usage2, this.area2, this.titleProp));
@@ -512,13 +506,26 @@ public class E2Bean implements Serializable {
 
 	public String addEstatesRevenue() {
 
-		this.dtRentEstates = true;
+		this.dtEstLstVisible = true;
 		rnEstateList.add(new LeasesProperties(this.rnLocation, this.rnPoint,
 				this.rnUsage, this.rnArea, this.rnFullName, this.rnAFM,
 				this.fromMonth, this.toMonth, this.totalMonth, this.rnRent,
 				this.rnPesr, this.revFreeBuilding, this.revFreeOffice,
 				this.revFreeLand, this.revPropHotel, this.revPropOffice));
+		//TODO: Δες γιατί γεμίζει το other και όχι το partial
+		if (this.rnPesr > 0) {
+			this.dtPartialEstLstVisible = true;
+			this.location = this.rnLocation;
+			this.point = this.rnPoint;
+			this.usage = this.rnUsage;
+			this.area = this.rnArea;
 
+			/*
+			 * partialEstateLst.add(new PartialEstates(this.location,
+			 * this.point, this.usage, this.area, this.coFullName,
+			 * this.coAddress, this.coAFM, this.cOwnPesr, this.rent));
+			 */
+		}
 		return "";
 	}
 
