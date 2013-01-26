@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+org.jboss.tools.openshift.ApplicationId=a7331f13179a4c878d921b15f2bd6c4c
+org.jboss.tools.openshift.ApplicationName=taxisnetui
+org.jboss.tools.openshift.Connection=https\://manoumathioudakis%40yahoo.gr@
+org.jboss.tools.openshift.DeployFolder=deployments
+org.jboss.tools.openshift.Domain=manousos
+org.jboss.tools.openshift.RemoteName=openshift
