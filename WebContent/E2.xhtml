@@ -12,6 +12,9 @@
 <h:body>
 
 	<h:form>
+		<div id="error">
+			<h:outputText value="#{e2Bean.error}"></h:outputText>
+		</div>
 		<h3>
 			Ε2 ΑΝΑΛΥΤΙΚΗ ΚΑΤΑΣΤΑΣΗ ΓΙΑ ΤΑ ΜΙΣΘΩΜΑΤΑ ΑΚΙΝΗΤΩΝ <br></br> ΟΙΚΟΝ.
 			ΕΤΟΥΣ 2012
@@ -24,15 +27,18 @@
 			</tr>
 			<tr>
 				<td>ΟΝΟΜΑΤΕΠΩΝΥΜΟ Ή ΕΠΩΝΥΜΙΑ</td>
-				<td><h:inputText value="#{e2Bean.rentierFullName}"></h:inputText></td>
+				<td><h:outputText value="#{e2Bean.rentierFullName}">
+						</h:outputText></td>
 			</tr>
 			<tr>
 				<td>ΟΝΟΜΑ ΠΑΤΕΡΑ</td>
-				<td><h:inputText value="#{e2Bean.rentierFatherName}"></h:inputText></td>
+				<td><h:outputText value="#{e2Bean.rentierFatherName}">
+						</h:outputText></td>
 			</tr>
 			<tr>
 				<td>ΑΦΜ</td>
-				<td><h:inputText value="#{e2Bean.rentierAFM}"></h:inputText></td>
+				<td><h:outputText value="#{e2Bean.rentierAFM}">
+						</h:outputText></td>
 			</tr>
 		</table>
 
@@ -297,7 +303,7 @@
 				</h:column>
 				<h:column>
 					<f:facet name="header">Μίσθωμα που καταβλήθηκε</f:facet>
-					<h:outputText value="#{pl.rent}"></h:outputText>
+					<h:outputText value="#{pl.coRent}"></h:outputText>
 				</h:column>
 				<h:column>
 					<h:commandLink value="Διαγραφή"

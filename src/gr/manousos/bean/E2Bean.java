@@ -1,23 +1,27 @@
 package gr.manousos.bean;
 
-import gr.manousos.service.DocumentSrv;
-import gr.manousos.service.DocumentSrvImplService;
-import gr.manousos.service.E2;
-import gr.manousos.service.E2CoOwner;
-import gr.manousos.service.E2Estate;
-import gr.manousos.service.E2Id;
-import gr.manousos.service.E2OtherEstate;
-import gr.manousos.service.Taxpayer;
-import gr.manousos.service.UserSrv;
-import gr.manousos.service.UserSrvImplService;
+import gr.manousos.model.Taxpayer;
+import gr.manousos.model.E2otherEstate;
+import gr.manousos.model.E2coOwner;
+import gr.manousos.model.E2estate;
+import gr.manousos.model.E2;
+import gr.manousos.model.E2Id;
 
 import java.io.Serializable;
+import java.net.URI;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.Calendar;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.ws.rs.core.MediaType;
+
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.WebResource;
+import com.sun.jersey.api.client.config.ClientConfig;
+import com.sun.jersey.api.client.config.DefaultClientConfig;
 
 @ManagedBean
 @SessionScoped
@@ -29,13 +33,14 @@ public class E2Bean implements Serializable {
 	private static ArrayList<OtherEstates> otherEstateLst = new ArrayList<E2Bean.OtherEstates>();
 	private static ArrayList<LeasesProperties> rnEstateList = new ArrayList<E2Bean.LeasesProperties>();
 
-	private boolean dtPartialEstLstVisible = partialEstateLst.size() > 0 ? true
-			: false;
+	private boolean dtPartialEstLstVisible = false;// partialEstateLst.size() >
+													// 0 ? true : false;
 	private boolean dtOtherEstLstVisible = false;
 	private boolean dtEstLstVisible = false;
-	private boolean pnPartialEstates = partialEstateLst.size() > 0 ? true
-			: false;
-
+	private boolean pnPartialEstates = true;// partialEstateLst.size() > 0 ?
+											// true : false;
+	private int taxPayerID;
+	private String error;
 	private String location;
 	private String point;
 	private String usage;
@@ -71,6 +76,32 @@ public class E2Bean implements Serializable {
 	private float revFreeLand;
 	private float revPropHotel;
 	private float revPropOffice;
+
+	/**
+	 * 
+	 */
+	public E2Bean() {
+		Taxpayer taxpayer = null;
+		try {
+
+			ClientConfig conf = new DefaultClientConfig();
+			Client client = Client.create(conf);
+			WebResource restSrv = client.resource(new URI(
+					"http://localhost:8098/TaxisNet/rest/"));
+			taxpayer = (Taxpayer) restSrv.path("UserService/TaxPayer/9")
+					.accept(MediaType.APPLICATION_JSON).get(Taxpayer.class);
+
+			this.rentierAFM = taxpayer.getAfm();
+			this.setRentierFatherName(taxpayer.getFatherName());
+			this.setRentierFullName(taxpayer.getFname() + " "
+					+ taxpayer.getLname());
+			this.setTaxPayerID(taxpayer.getId());
+		} catch (Exception ex) {
+			this.error = "Exeption: " + ex.toString() + "<br /> Stack Trace "
+					+ ex.getStackTrace() + "<br /> Caouse " + ex.getCause();
+		}
+
+	}
 
 	public ArrayList<PartialEstates> getPartialEstateLst() {
 		return partialEstateLst;
@@ -126,6 +157,22 @@ public class E2Bean implements Serializable {
 
 	public void setPnPartialEstates(boolean pnPartialEstates) {
 		this.pnPartialEstates = pnPartialEstates;
+	}
+
+	public int getTaxPayerID() {
+		return taxPayerID;
+	}
+
+	public void setTaxPayerID(int taxPayerID) {
+		this.taxPayerID = taxPayerID;
+	}
+
+	public String getError() {
+		return error;
+	}
+
+	public void setError(String error) {
+		this.error = error;
 	}
 
 	public String getLocation() {
@@ -399,26 +446,26 @@ public class E2Bean implements Serializable {
 		// TODO: Is Valid Form ?
 		// 1 estate with coOwn ->1,,* PartialEstates
 
-		UserSrvImplService userService = new UserSrvImplService();
-		UserSrv userClient = userService.getUserSrvImplPort();
-		Taxpayer taxpayer = userClient.getTaxPayerById(0);
+		// TODO: Get Taxpayer for session...
+
+		Set<E2estate> listOfE2estates = new HashSet<E2estate>();
+		Set<E2coOwner> listOfE2coOwner = new HashSet<E2coOwner>();
+		Set<E2otherEstate> listOfOtherEstates = new HashSet<E2otherEstate>();
 
 		// E2 primary KEY
 		E2Id key = new E2Id();
-		key.setTaxierId(taxpayer.getId());
-		key.setYear(new Date().getYear());
+		key.setTaxierId(this.getTaxPayerID());
+		key.setYear(Calendar.getInstance().get(Calendar.YEAR));
 
 		// master table !
 		E2 e2 = new E2();
 		e2.setId(key);
-		e2.setIsComplete(1);
-		e2.setTaxpayer(taxpayer);
-
-		// property table
-		E2Estate estate = new E2Estate();
-		List<E2Estate> estatesList = new ArrayList<E2Estate>();
+		e2.setIsComplete(0);
+		int virtualEstateID = 0;
+		// E2Estate db table
+		E2estate estate = null;
 		for (LeasesProperties item : E2Bean.rnEstateList) {
-			estate.setE2(e2);
+			estate = new E2estate();
 			estate.setArea(item.getArea());
 			estate.setLocation(item.getLocation());
 			estate.setMonthlyRental(item.getRent());
@@ -433,63 +480,87 @@ public class E2Bean implements Serializable {
 			estate.setUsage(item.getUsage());
 			estate.setFrom(item.getFromMonth());
 			estate.setTo(item.getToMonth());
-
-			E2CoOwner coOwner = new E2CoOwner();
-			// TODO: how to get the correct estates co owners ?
-			if (estate.getRersentCoOwner() > 0) {
+			// TODO: care it...maybe it is a bug !!
+			E2coOwner coOwner = null;
+			virtualEstateID++;
+			if (estate.getRersentCoOwner() != 100) {
 				for (PartialEstates pEstate : E2Bean.partialEstateLst) {
-					coOwner.setAddress(pEstate.getCoAddress());
-					coOwner.setAfm(pEstate.getCoAFM());
-					coOwner.setE2Estate(estate); // 1 estate has 0 - * owners
-					coOwner.setFullName(pEstate.getCoFullName());
-					coOwner.setPercent(pEstate.getcOwnPers());
-					coOwner.setRent(pEstate.getCoRent());
-				}
-			}
-		}
+					coOwner = new E2coOwner();
+					if (pEstate.location.trim().equals(
+							estate.getLocation().trim())
+							&& pEstate.point.trim().equals(
+									estate.getPosition().trim())
+							&& pEstate.usage.trim().equals(
+									estate.getUsage().trim())
+							&& pEstate.area == estate.getArea()) {
 
-		E2OtherEstate oEstate = new E2OtherEstate();
+						// Transient fields
+						coOwner.setLocation(pEstate.location.trim());
+						coOwner.setPosition(pEstate.point.trim());
+						coOwner.setUsage(pEstate.usage.trim());
+						coOwner.setArea(pEstate.area);
+						// END Transient fields
+						coOwner.setAddress(pEstate.getCoAddress());
+						coOwner.setAfm(pEstate.getCoAFM());
+						coOwner.setFullName(pEstate.getCoFullName());
+						coOwner.setPercent(pEstate.getcOwnPers());
+						coOwner.setRent(pEstate.getCoRent());
+						// coOwner.setE2estate(estate);
+						listOfE2coOwner.add(coOwner);
+
+						// System.err.println(partialEstateLst.remove(pEstate));
+					}
+				}
+			}// estate.setE2coOwners(listOfE2coOwner);
+			listOfE2estates.add(estate);
+		}
+		// E2 ee = new E2(key, null, 0, e2otherEstates, e2estates)
+		E2otherEstate oEstate = null;
 		for (OtherEstates otherEstItem : E2Bean.otherEstateLst) {
+			oEstate = new E2otherEstate();
 			oEstate.setArea(otherEstItem.getArea());
-			oEstate.setE2(e2);
 			oEstate.setLocation(otherEstItem.getLocation());
 			oEstate.setPosition(otherEstItem.getPoint());
 			oEstate.setTitle(otherEstItem.getTitleProp());
 			oEstate.setUsage(otherEstItem.getUsage());
+
+			listOfOtherEstates.add(oEstate);
 		}
-		estatesList.add(estate);
-		/*
-		 * public E2(E2Id id, Taxpayer taxpayer, String location, String
-		 * position, String usage, float area, String tenantFullName, String
-		 * tenantAfm, Date from, Date to, float monthlyRental, float
-		 * rersentCoOwner, float revenueFreeHome, float revenueFreeOffice, float
-		 * revenuePrivateHotel, float revenuePrivateOffice, Set<E2estateTranfer>
-		 * e2estateTranfers, Set<E2coOwner> e2coOwners)
-		 */
 
-		// Step1
-		// gr.manousos.service.Taxpayer taxpayer = service.getTaxpayerByXX(xx);
+		e2.setE2otherEstates(listOfOtherEstates);
+		if (estate != null)
+			estate.setE2coOwners(listOfE2coOwner);
+		e2.setE2estates(listOfE2estates);
 
-		DocumentSrvImplService service = new DocumentSrvImplService();
-		DocumentSrv client = service.getDocumentSrvImplPort();
+		String result = "";
+
+		ClientConfig conf = new DefaultClientConfig();
+		Client client = Client.create(conf);
 
 		try {
-			client.finalSubmitE2(e2);
+			WebResource r = client
+					.resource("http://localhost:8098/TaxisNet/rest/");
+
+			result = r.path("DocumentService/submitE2")
+					.accept("application/json").type("application/json")
+					.post(String.class, e2);
+
+			this.error = result;
+			if (result == "E2 Saved !!")
+				return ("SuccessPage");
 		} catch (Exception ex) {
-			/*
-			 * this.setError(ex.toString()); //
-			 * System.err.println("submit Register Error= " + ex.toString());
-			 */
+			this.error = ex.toString();
+			return "";
 		}
-		System.out.println(client.test("my service test Message !!"));
-		// TODO: clear static Lists!!
+
 		return "";
 	}
 
 	public String addPartialEstateAction() {
+		this.dtPartialEstLstVisible = true;
 		partialEstateLst.add(new PartialEstates(this.location, this.point,
-				this.usage, this.area, this.coFullName, this.coAddress,
-				this.coAFM, this.cOwnPesr, this.rent));
+				this.usage, this.area, this.coFullName, this.coAFM,
+				this.coAddress, this.cOwnPesr, this.rent));
 
 		return "";
 	}
@@ -512,20 +583,20 @@ public class E2Bean implements Serializable {
 				this.fromMonth, this.toMonth, this.totalMonth, this.rnRent,
 				this.rnPesr, this.revFreeBuilding, this.revFreeOffice,
 				this.revFreeLand, this.revPropHotel, this.revPropOffice));
-		//TODO: Δες γιατί γεμίζει το other και όχι το partial
-		if (this.rnPesr > 0) {
-			this.dtPartialEstLstVisible = true;
-			this.location = this.rnLocation;
-			this.point = this.rnPoint;
-			this.usage = this.rnUsage;
-			this.area = this.rnArea;
 
-			/*
-			 * partialEstateLst.add(new PartialEstates(this.location,
-			 * this.point, this.usage, this.area, this.coFullName,
-			 * this.coAddress, this.coAFM, this.cOwnPesr, this.rent));
-			 */
-		}
+		// if (this.rnPesr > 0) {
+		// this.dtPartialEstLstVisible = true;
+		// this.location = this.rnLocation;
+		// this.point = this.rnPoint;
+		// this.usage = this.rnUsage;
+		// this.area = this.rnArea;
+
+		/*
+		 * partialEstateLst.add(new PartialEstates(this.location, this.point,
+		 * this.usage, this.area, this.coFullName, this.coAddress, this.coAFM,
+		 * this.cOwnPesr, this.rent));
+		 */
+		// }
 		return "";
 	}
 
@@ -617,6 +688,7 @@ public class E2Bean implements Serializable {
 		private String coAddress;
 		private float cOwnPers;
 		private float coRent;
+		private int vitualEstateID;
 
 		public PartialEstates(String location, String point, String usage,
 				float area, String coFullName, String coAFM, String coAddress,
@@ -738,7 +810,7 @@ public class E2Bean implements Serializable {
 			this.rent = rent;
 			this.fromMonth = fromMonth;
 			this.toMonth = toMonth;
-			this.toMonth = totalMonth;
+			this.totalMonth = toMonth - fromMonth + 1;
 			this.rnPesr = coPerecent;
 			this.revFreeBuilding = revFreeBuilding;
 			this.revFreeLand = revFreeLand;

@@ -1,10 +1,15 @@
 package gr.manousos.bean;
 
-import gr.manousos.service.Contact;
-import gr.manousos.service.Taxpayer;
-import gr.manousos.service.User;
-import gr.manousos.service.UserSrv;
-import gr.manousos.service.UserSrvImplService;
+/*
+ import gr.manousos.service.Contact;
+ import gr.manousos.service.Taxpayer;
+ import gr.manousos.service.User;
+ import gr.manousos.service.UserSrv;
+ import gr.manousos.service.UserSrvImplService;
+ */
+import gr.manousos.model.Contact;
+import gr.manousos.model.Taxpayer;
+import gr.manousos.model.User;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -13,6 +18,11 @@ import javax.faces.component.UIComponent;
 import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
 import javax.faces.validator.ValidatorException;
+
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.WebResource;
+import com.sun.jersey.api.client.config.ClientConfig;
+import com.sun.jersey.api.client.config.DefaultClientConfig;
 
 @ManagedBean
 @SessionScoped
@@ -136,10 +146,12 @@ public class RegisterBean extends LoginBean {
 	}
 
 	public String submit() {
-
-		UserSrvImplService service = new UserSrvImplService();
-		UserSrv client = service.getUserSrvImplPort();
-		
+		ClientConfig conf = new DefaultClientConfig();
+		Client client = Client.create(conf);
+		/*
+		 * UserSrvImplService service = new UserSrvImplService(); UserSrv client
+		 * = service.getUserSrvImplPort();
+		 */
 		User u = new User();
 		u.setUserName(super.getUserName());
 		u.setPassword(super.getPassword());
@@ -159,16 +171,25 @@ public class RegisterBean extends LoginBean {
 		taxPayer.setFname(this.firstName);
 		taxPayer.setLname(this.lastName);
 		taxPayer.setUser(u);
-
+		
 		try {
-			Taxpayer newUser = client.register(taxPayer);
+			Taxpayer newUser = null;
+			WebResource r = client
+					.resource("http://localhost:8098/TaxisNet/rest/");
+
+			newUser = r.path("UserService/Register").accept("application/json")
+					.type("application/json").post(Taxpayer.class, taxPayer);
 			if (newUser.getId() > 0)
 				return ("SuccessPage");
 		} catch (Exception ex) {
-			this.setError(ex.toString()); //
-			System.err.println("submit Register Error= " + ex.toString());
+			System.err.println(ex);
 		}
-
+		/*
+		 * try { Taxpayer newUser = client.register(taxPayer); if
+		 * (newUser.getId() > 0) return ("SuccessPage"); } catch (Exception ex)
+		 * { this.setError(ex.toString()); //
+		 * System.err.println("submit Register Error= " + ex.toString()); }
+		 */
 		return ("ErrorPage");
 	}
 }
