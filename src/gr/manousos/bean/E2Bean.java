@@ -584,19 +584,19 @@ public class E2Bean implements Serializable {
 				this.rnPesr, this.revFreeBuilding, this.revFreeOffice,
 				this.revFreeLand, this.revPropHotel, this.revPropOffice));
 
-		// if (this.rnPesr > 0) {
-		// this.dtPartialEstLstVisible = true;
-		// this.location = this.rnLocation;
-		// this.point = this.rnPoint;
-		// this.usage = this.rnUsage;
-		// this.area = this.rnArea;
+		if (this.rnPesr > 0) {
+			// this.dtPartialEstLstVisible = true;
+			this.location = this.rnLocation;
+			this.point = this.rnPoint;
+			this.usage = this.rnUsage;
+			this.area = this.rnArea;
 
-		/*
-		 * partialEstateLst.add(new PartialEstates(this.location, this.point,
-		 * this.usage, this.area, this.coFullName, this.coAddress, this.coAFM,
-		 * this.cOwnPesr, this.rent));
-		 */
-		// }
+			/*
+			 * partialEstateLst.add(new PartialEstates(this.location,
+			 * this.point, this.usage, this.area, this.coFullName,
+			 * this.coAddress, this.coAFM, this.cOwnPesr, this.rent));
+			 */
+		}
 		return "";
 	}
 
