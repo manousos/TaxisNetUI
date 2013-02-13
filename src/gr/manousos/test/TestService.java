@@ -11,9 +11,11 @@ import gr.manousos.model.E2estate;
 import gr.manousos.model.E2otherEstate;
 import gr.manousos.model.Taxpayer;
 
+import java.io.FileInputStream;
 import java.net.URI;
 import java.util.Calendar;
 import java.util.HashSet;
+import java.util.Properties;
 import java.util.Set;
 
 import javax.ws.rs.Consumes;
@@ -23,6 +25,7 @@ import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
+import com.sun.jersey.core.impl.provider.entity.XMLJAXBElementProvider.App;
 
 public class TestService {
 
@@ -40,7 +43,23 @@ public class TestService {
 		 */
 		ClientConfig conf = new DefaultClientConfig();
 		Client client = Client.create(conf);
+		testReadProperties(conf);
+		// testSubmitE2(client);
+	}
 
+	private static void testReadProperties(ClientConfig conf) {
+		Properties config = new Properties();
+		try {
+			// config.load(new FileInputStream("config.properties"));
+			config.load(App.class.getClassLoader().getResourceAsStream(
+					"config.properties"));
+			System.out.println(conf.getProperty("web_port"));
+		} catch (Exception ex) {
+			System.out.println(ex.toString());
+		}
+	}
+
+	private static void testSubmitE2(Client client) {
 		Taxpayer taxpayer = null;
 		try {
 			WebResource restSrv = client.resource(new URI(
@@ -82,7 +101,6 @@ public class TestService {
 		e2coOwners.setFullName("fullName from test");
 		e2coOwners.setPercent(50);
 		e2coOwners.setRent(new Float(100f));
-		
 
 		E2otherEstate otherEst = new E2otherEstate();
 		otherEst.setArea(111);

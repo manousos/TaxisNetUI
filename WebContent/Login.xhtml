@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Login</title>
+</h:head>
+<h:body>
+
+	<h:form>
+		<table>
+			<tr>
+				<td><h:outputLabel for="username">Username:</h:outputLabel></td>
+				<td><h:inputText id="username" value="#{loginBean.userName}" /></td>
+			</tr>
+			<tr>
+				<td><h:outputLabel for="password">Password:</h:outputLabel></td>
+				<td><h:inputSecret id="password" value="#{loginBean.password}" /></td>
+			</tr>
+		</table>
+		<div>
+			<h:commandButton value="Login" action="#{loginBean.Login}"
+				rendered="#{!loginBean.loggedIn}" />
+
+			<h:commandButton value="Logout" action="#{loginBean.Logout}"
+				rendered="#{loginBean.loggedIn}" />
+		</div>
+
+		<div id="error">
+			<h:outputText value="#{loginBean.errorMsg}"></h:outputText>
+		</div>
+	</h:form>
+
+</h:body>
+</html>

@@ -1,5 +1,6 @@
 package gr.manousos.bean;
 
+import gr.manousos.annotations.LoggedIn;
 import gr.manousos.model.Taxpayer;
 import gr.manousos.model.E2otherEstate;
 import gr.manousos.model.E2coOwner;
@@ -14,7 +15,9 @@ import java.util.Calendar;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.ws.rs.core.MediaType;
 
@@ -80,6 +83,18 @@ public class E2Bean implements Serializable {
 	/**
 	 * 
 	 */
+	@ManagedProperty(value = "#{loginBean}")
+	private LoginBean login;
+
+	public void setLogin(LoginBean login) {
+		this.login = login;
+	}
+
+	@PostConstruct
+	public void init() {
+		this.error = "Welcome: " + login.getLoggedInUsername();
+	}
+
 	public E2Bean() {
 		Taxpayer taxpayer = null;
 		try {
