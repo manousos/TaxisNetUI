@@ -1,6 +1,5 @@
 package gr.manousos.bean;
 
-import gr.manousos.annotations.LoggedIn;
 import gr.manousos.model.Taxpayer;
 import gr.manousos.model.E2otherEstate;
 import gr.manousos.model.E2coOwner;
@@ -8,6 +7,7 @@ import gr.manousos.model.E2estate;
 import gr.manousos.model.E2;
 import gr.manousos.model.E2Id;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.net.URI;
 import java.util.ArrayList;
@@ -19,6 +19,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+
 import javax.ws.rs.core.MediaType;
 
 import com.sun.jersey.api.client.Client;
@@ -91,19 +92,20 @@ public class E2Bean implements Serializable {
 	}
 
 	@PostConstruct
-	public void init() {
-		this.error = "Welcome: " + login.getLoggedInUsername();
-	}
+	public void init() throws IOException {
 
-	public E2Bean() {
+		this.error = "Welcome: " + login.getLoggedInUsername();
+
 		Taxpayer taxpayer = null;
+		ClientConfig conf = new DefaultClientConfig();
 		try {
 
-			ClientConfig conf = new DefaultClientConfig();
 			Client client = Client.create(conf);
 			WebResource restSrv = client.resource(new URI(
 					"http://localhost:8098/TaxisNet/rest/"));
-			taxpayer = (Taxpayer) restSrv.path("UserService/TaxPayer/9")
+			taxpayer = (Taxpayer) restSrv
+					.path("UserService/getTaxPayerByUserName/")
+					.path(login.getLoggedInUsername())
 					.accept(MediaType.APPLICATION_JSON).get(Taxpayer.class);
 
 			this.rentierAFM = taxpayer.getAfm();
@@ -115,6 +117,9 @@ public class E2Bean implements Serializable {
 			this.error = "Exeption: " + ex.toString() + "<br /> Stack Trace "
 					+ ex.getStackTrace() + "<br /> Caouse " + ex.getCause();
 		}
+	}
+
+	public E2Bean() {
 
 	}
 
@@ -476,7 +481,7 @@ public class E2Bean implements Serializable {
 		E2 e2 = new E2();
 		e2.setId(key);
 		e2.setIsComplete(0);
-		int virtualEstateID = 0;
+
 		// E2Estate db table
 		E2estate estate = null;
 		for (LeasesProperties item : E2Bean.rnEstateList) {
@@ -497,7 +502,7 @@ public class E2Bean implements Serializable {
 			estate.setTo(item.getToMonth());
 			// TODO: care it...maybe it is a bug !!
 			E2coOwner coOwner = null;
-			virtualEstateID++;
+
 			if (estate.getRersentCoOwner() != 100) {
 				for (PartialEstates pEstate : E2Bean.partialEstateLst) {
 					coOwner = new E2coOwner();
@@ -703,7 +708,6 @@ public class E2Bean implements Serializable {
 		private String coAddress;
 		private float cOwnPers;
 		private float coRent;
-		private int vitualEstateID;
 
 		public PartialEstates(String location, String point, String usage,
 				float area, String coFullName, String coAFM, String coAddress,

@@ -2,12 +2,16 @@ package gr.manousos.bean;
 
 import gr.manousos.annotations.LoggedIn;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.enterprise.inject.Produces;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.ws.rs.core.MediaType;
 
@@ -117,6 +121,32 @@ public class LoginBean implements Serializable {
 	}
 
 	public String Logout() {
+		((javax.servlet.http.HttpSession) FacesContext.getCurrentInstance()
+				.getExternalContext().getSession(false)).invalidate();
 		return "";
 	}
+
+	public void login() {
+
+		// boolean result = businessBean.checkCredentiais(username, password);
+
+		if (this.loggedIn) {
+			try {
+				// errorMessageLogin = "";
+				FacesContext.getCurrentInstance().getExternalContext()
+						.getSessionMap().put("username", this.userName);
+				FacesContext.getCurrentInstance().getExternalContext()
+						.redirect("main.xhtml");
+
+			} catch (IOException ex) {
+				Logger.getLogger(LoginBean.class.getName()).log(Level.SEVERE,
+						null, ex);
+			}
+		} else {
+			FacesContext.getCurrentInstance().getExternalContext()
+					.getSessionMap().put("username", "");
+			// errorMessageLogin = "Credentials not supported.";
+		}
+	}
+
 }
