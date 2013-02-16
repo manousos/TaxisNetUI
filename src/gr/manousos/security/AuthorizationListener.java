@@ -9,14 +9,15 @@ import javax.servlet.http.HttpSession;
 
 public class AuthorizationListener implements PhaseListener {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -6636167275041696510L;
 
 	@Override
 	public void afterPhase(PhaseEvent event) {
 		FacesContext facesContext = event.getFacesContext();
 		String currentPage = facesContext.getViewRoot().getViewId();
 
-		boolean isLoginPage = (currentPage.lastIndexOf("Login.xhtml") > -1);
+		boolean requiresAuthentication = (currentPage.lastIndexOf("Login.xhtml") > -1 || currentPage
+				.lastIndexOf("Register.xhtml") > -1);
 		HttpSession session = (HttpSession) facesContext.getExternalContext()
 				.getSession(false);
 
@@ -27,7 +28,7 @@ public class AuthorizationListener implements PhaseListener {
 		} else {
 			Object currentUser = session.getAttribute("username");
 
-			if (!isLoginPage && (currentUser == null || currentUser == "")) {
+			if (!requiresAuthentication && (currentUser == null || currentUser == "")) {
 				NavigationHandler nh = facesContext.getApplication()
 						.getNavigationHandler();
 				nh.handleNavigation(facesContext, null, "loginPage");
