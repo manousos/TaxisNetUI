@@ -481,6 +481,7 @@ public class E2Bean implements Serializable {
 		E2 e2 = new E2();
 		e2.setId(key);
 		e2.setIsComplete(0);
+		e2.setDateInserted(new java.util.Date());
 
 		// E2Estate db table
 		E2estate estate = null;
