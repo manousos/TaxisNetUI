@@ -4,10 +4,10 @@ import java.io.IOException;
 import java.net.URI;
 import java.util.Calendar;
 import java.util.HashSet;
-import java.util.Hashtable;
 import java.util.Set;
 
 import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.ws.rs.core.MediaType;
 
@@ -15,8 +15,6 @@ import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
-import com.sun.jndi.cosnaming.IiopUrl.Address;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import gr.manousos.model.Contact;
 import gr.manousos.model.E1;
@@ -36,6 +34,7 @@ import gr.manousos.model.E1taxableIncomes;
 import gr.manousos.model.RelatePerson;
 import gr.manousos.model.Taxpayer;
 
+@ManagedBean
 public class E1Bean {
 
 	@ManagedProperty(value = "#{loginBean}")
@@ -43,6 +42,14 @@ public class E1Bean {
 	private String error;
 	private int taxPayerId = 0;
 	// table 1
+	private String taxPayerFName;
+	private String taxPayerLName;
+	private String taxPayerFaName;
+	private String taxPayerAT;
+	private String taxPayerAFM;
+	private String taxPayerAddress;
+	private String taxPayerPhone;
+	private String taxPayerCell;
 	private String wifeFName;
 	private String wifeLName;
 	private String wifeFaName;
@@ -251,6 +258,7 @@ public class E1Bean {
 	private String houseAddr1;
 	private Boolean _203;
 	private Boolean _240;
+	private String floor1;
 	private Float _211;
 	private Float _212;
 	private Float _213;
@@ -260,6 +268,7 @@ public class E1Bean {
 	private String houseAddr2;
 	private Boolean _207;
 	private Boolean _241;
+	private String floor2;
 	private Float _218;
 	private Float _219;
 	private Float _220;
@@ -269,6 +278,7 @@ public class E1Bean {
 	private String houseAddr3;
 	private Boolean _209;
 	private Boolean _242;
+	private String floor3;
 	private Float _225;
 	private Float _226;
 	private Float _227;
@@ -312,8 +322,8 @@ public class E1Bean {
 	private String shippingName1;
 	private String shippingRegister1;
 	private String shippingCountry1;
-	private Integer sailShip1;
-	private Integer accommodationSpace1;
+	private Boolean sailShip1;
+	private Boolean accommodationSpace1;
 	private Float percentPrincipalCoOwner1;
 	private Float percentWifeCoOwner1;
 	private Integer firstRegister1;
@@ -322,8 +332,8 @@ public class E1Bean {
 	private String shippingName2;
 	private String shippingRegister2;
 	private String shippingCountry2;
-	private Integer sailShip2;
-	private Integer accommodationSpace2;
+	private Boolean sailShip2;
+	private Boolean accommodationSpace2;
 	private Float percentPrincipalCoOwner2;
 	private Float percentWifeCoOwner2;
 	private Integer firstRegister2;
@@ -339,7 +349,7 @@ public class E1Bean {
 	private String aircraftType;
 	private String aircraftSn;
 	private String airportBase;
-	private Integer aircraftOwnerShip;
+	private Integer aircraftMonthOwnerShip;
 	private Integer aircraftPowerLibres;
 	private Integer aircraftFirstRegister;
 	private Float _715;
@@ -468,6 +478,9 @@ public class E1Bean {
 	private Float _088;
 	private Float _079;
 	private Float _080;
+	private Float _081;
+	private Float _082;
+	private Float _083;
 	private Float _084;
 	private Float _085;
 	private Float _077;
@@ -587,6 +600,46 @@ public class E1Bean {
 
 	public void setError(String error) {
 		this.error = error;
+	}
+
+	public String getTaxPayerAT() {
+		return taxPayerAT;
+	}
+
+	public void setTaxPayerAT(String taxPayerAT) {
+		this.taxPayerAT = taxPayerAT;
+	}
+
+	public String getTaxPayerAddress() {
+		return taxPayerAddress;
+	}
+
+	public void setTaxPayerAddress(String taxPayerAddress) {
+		this.taxPayerAddress = taxPayerAddress;
+	}
+
+	public void setTaxPayerFName(String taxPayerFName) {
+		this.taxPayerFName = taxPayerFName;
+	}
+
+	public void setTaxPayerLName(String taxPayerLName) {
+		this.taxPayerLName = taxPayerLName;
+	}
+
+	public void setTaxPayerFaName(String taxPayerFaName) {
+		this.taxPayerFaName = taxPayerFaName;
+	}
+
+	public void setTaxPayerAFM(String taxPayerAFM) {
+		this.taxPayerAFM = taxPayerAFM;
+	}
+
+	public void setTaxPayerPhone(String taxPayerPhone) {
+		this.taxPayerPhone = taxPayerPhone;
+	}
+
+	public void setTaxPayerCell(String taxPayerCell) {
+		this.taxPayerCell = taxPayerCell;
 	}
 
 	public String getWifeFName() {
@@ -2693,19 +2746,19 @@ public class E1Bean {
 		this.shippingCountry1 = shippingCountry1;
 	}
 
-	public Integer getSailShip1() {
+	public Boolean getSailShip1() {
 		return sailShip1;
 	}
 
-	public void setSailShip1(Integer sailShip1) {
+	public void setSailShip1(Boolean sailShip1) {
 		this.sailShip1 = sailShip1;
 	}
 
-	public Integer getAccommodationSpace1() {
+	public Boolean getAccommodationSpace1() {
 		return accommodationSpace1;
 	}
 
-	public void setAccommodationSpace1(Integer accommodationSpace1) {
+	public void setAccommodationSpace1(Boolean accommodationSpace1) {
 		this.accommodationSpace1 = accommodationSpace1;
 	}
 
@@ -2773,19 +2826,19 @@ public class E1Bean {
 		this.shippingCountry2 = shippingCountry2;
 	}
 
-	public Integer getSailShip2() {
+	public Boolean getSailShip2() {
 		return sailShip2;
 	}
 
-	public void setSailShip2(Integer sailShip2) {
+	public void setSailShip2(Boolean sailShip2) {
 		this.sailShip2 = sailShip2;
 	}
 
-	public Integer getAccommodationSpace2() {
+	public Boolean getAccommodationSpace2() {
 		return accommodationSpace2;
 	}
 
-	public void setAccommodationSpace2(Integer accommodationSpace2) {
+	public void setAccommodationSpace2(Boolean accommodationSpace2) {
 		this.accommodationSpace2 = accommodationSpace2;
 	}
 
@@ -2910,11 +2963,11 @@ public class E1Bean {
 	}
 
 	public Integer getAircraftOwnerShip() {
-		return aircraftOwnerShip;
+		return aircraftMonthOwnerShip;
 	}
 
 	public void setAircraftOwnerShip(Integer aircraftOwnerShip) {
-		this.aircraftOwnerShip = aircraftOwnerShip;
+		this.aircraftMonthOwnerShip = aircraftOwnerShip;
 	}
 
 	public Integer getAircraftPowerLibres() {
@@ -2947,6 +3000,30 @@ public class E1Bean {
 
 	public void set_716(Float _716) {
 		this._716 = _716;
+	}
+
+	public String getFloor1() {
+		return floor1;
+	}
+
+	public void setFloor1(String floor1) {
+		this.floor1 = floor1;
+	}
+
+	public String getFloor2() {
+		return floor2;
+	}
+
+	public void setFloor2(String floor2) {
+		this.floor2 = floor2;
+	}
+
+	public String getFloor3() {
+		return floor3;
+	}
+
+	public void setFloor3(String floor3) {
+		this.floor3 = floor3;
 	}
 
 	public Float get_767() {
@@ -3925,6 +4002,30 @@ public class E1Bean {
 		this._080 = _080;
 	}
 
+	public Float get_081() {
+		return _081;
+	}
+
+	public void set_081(Float _081) {
+		this._081 = _081;
+	}
+
+	public Float get_082() {
+		return _082;
+	}
+
+	public void set_082(Float _082) {
+		this._082 = _082;
+	}
+
+	public Float get_083() {
+		return _083;
+	}
+
+	public void set_083(Float _083) {
+		this._083 = _083;
+	}
+
 	public Float get_084() {
 		return _084;
 	}
@@ -4720,7 +4821,7 @@ public class E1Bean {
 		// Table 1
 		E1relatePersons e1Wife = new E1relatePersons();
 		E1relatePersons e1Delegate = new E1relatePersons();
-		
+
 		Set<E1relatePersons> rlPersonsList = new HashSet<E1relatePersons>();
 
 		Contact wifeContact = new Contact(this.getWifePhone(),
@@ -4792,6 +4893,7 @@ public class E1Bean {
 				null, location, prodKind, population, locationType, hasWater,
 				netIncome);
 		// table 5
+		// TODO: add floors on constructor
 		E1objectiveSpending objectiveSpendingObj = new E1objectiveSpending(
 				_205, houseAddr1, BooleanToInt(_203), BooleanToInt(_240), _211,
 				_212, _213, _214, _215, _216, houseAddr2, BooleanToInt(_207),
@@ -4801,15 +4903,16 @@ public class E1Bean {
 				_771, _775, afm2, _751, _704, _762, _772, _776, afm3, _752,
 				_705, _763, _773, _777, afm4, _753, _706, _764, _774, _778,
 				_851, _852, _853, _854, _855, _856, _857, _858, shippingName1,
-				shippingRegister1, shippingCountry1, sailShip1,
-				accommodationSpace1, percentPrincipalCoOwner1,
+				shippingRegister1, shippingCountry1, BooleanToInt(sailShip1),
+				BooleanToInt(accommodationSpace1), percentPrincipalCoOwner1,
 				percentWifeCoOwner1, firstRegister1, ownershipMonths1, _747,
-				shippingName2, shippingRegister2, shippingCountry2, sailShip2,
-				accommodationSpace2, percentPrincipalCoOwner2,
-				percentWifeCoOwner2, firstRegister2, ownershipMonths2, _748,
-				_711, _712, _713, _714, _731, _732, aircraftRegisterData,
-				aircraftType, aircraftSn, airportBase, aircraftOwnerShip,
-				aircraftPowerLibres, aircraftFirstRegister, _715, _716, _767,
+				shippingName2, shippingRegister2, shippingCountry2,
+				BooleanToInt(sailShip2), BooleanToInt(accommodationSpace2),
+				percentPrincipalCoOwner2, percentWifeCoOwner2, firstRegister2,
+				ownershipMonths2, _748, _711, _712, _713, _714, _731, _732,
+				aircraftRegisterData, aircraftType, aircraftSn, airportBase,
+				aircraftMonthOwnerShip, aircraftPowerLibres,
+				aircraftFirstRegister, _715, _716, _767,
 				poolPrincipalCoOwnerOutdoor, poolWifeCoOwnerOutdoor, _768,
 				poolPrincipalCoOwnerIndoor, poolWifeCoOwnerIndoor, _765, _766,
 				_769, _770, _719, _720, _721, _722, _723, _724, _725, _726,

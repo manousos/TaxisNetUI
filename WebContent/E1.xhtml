@@ -1,0 +1,3061 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>E1</title>
+</h:head>
+<h:body>
+
+	<h:form>
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td colspan="2" align="center"><b><font size="3">ΔΗΛΩΣΗ ΦΟΡΟΛΟΓΙΑΣ ΕΙΣΟΔΗΜΑΤΟΣ ΟΙΚΟΝΟΜΙΚΟΥ ΕΤΟΥΣ 2012</font></b></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><font size="1">ΕΙΣΟΔΗΜΑΤΑ ΠΟΥ ΑΠΟΚΤΗΘΗΚΑΝ ΑΠΟ 1-1-2011 ΕΩΣ 31-12-2011</font></td>
+				</tr>
+				<tr>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;<b>Προς τη Δ.Ο.Υ.</b> &nbsp;&nbsp;<h:inputText name="DOY_NAME" style="text-align: Left" class="s" size="30"
+							title=" Εαν πρέπει να υποβάλετε την Δήλωση σας σε άλλη Δ.Ο.Υ. από αυτή που εμφανίζεται, θα πρέπει πρώτα να δηλώσετε
+					στην Δ.Ο.Υ. σας την αλλαγή. Από την επόμενη μέρα θα έχετε την δυνατότητα να υποβάλετε την δήλωση ηλεκτρονικά."
+							type="text" /></td>
+					<td>ΑΡΙΘΜΟΣ ΚΑΤΑΧΩΡΗΣΗΣ: <h:inputText name="AR_KATAXWRHSHS" style="text-align: Left" size="10" class="s" /></td>
+				</tr>
+			</tbody>
+		</table>
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td class="colordark" colspan="11"><em id="TOC1"></em> <b> <font size="1">ΠΙΝΑΚΑΣ 1. </font>ΣΤΟΙΧΕΙΑ ΦΟΡΟΛΟΓΟΥΜΕΝΟΥ
+					</b></td>
+				</tr>
+				<tr>
+					<td rowspan="4">Υ<br /> Π<br />Ο<br />Χ<br />Ρ
+					</td>
+					<td>ΕΠΩΝΥΜΟ</td>
+					<td>ΟΝΟΜΑ</td>
+					<td>ΟΝ.ΠΑΤ.</td>
+					<td>ΑΡΙΘ.ΤΑΥΤ.</td>
+					<td><b>Α.Φ.Μ.</b></td>
+				</tr>
+				<tr>
+					<td><h:inputText name="RG_TXP_D_SURNAME_APPELATI" size="35" class="s_l" readonly="true" value="#{e1Bean.taxPayerLName}" /></td>
+					<td><h:inputText name="RG_TXP_D_NAME" size="20" class="s_l" readonly="true" value="#{e1Bean.taxPayerFName}" /></td>
+					<td><h:inputText name="RG_TXP_D_FATHERS_NAME" size="10" class="s_l" readonly="true" value="#{e1Bean.taxPayerFaName}" /></td>
+					<td><h:inputText name="RG_TXP_D_ID_NO" size="14" class="s_l" value="#{e1Bean.taxPayerAT}" /></td>
+					<td><h:inputText style="background: none repeat scroll 0% 0% yellow;" tabindex="1" name="RG_TXP_AFM" size="12" readonly="true" class="s"
+							value="#{e1Bean.taxPayerAFM}" /></td>
+				</tr>
+				<tr>
+					<td colspan="2">ΔΙΕΥΘΥΝΣΗ</td>
+					<td>ΤΗΛΕΦΩΝΟ</td>
+					<td>ΚΙΝΗΤΟ ΤΗΛΕΦΩΝΟ</td>
+					<td></td>
+
+				</tr>
+				<tr>
+					<td colspan="2"><h:inputText name="RG_TXP_POSTAL_ADDRESS" size="50" class="s_l" value="#{e1Bean.taxPayerAddress}" /></td>
+					<td><h:inputText name="YPO_TEL" size="14" class="s_l" readonly="true" value="#{e1Bean.taxPayerPhone}" /></td>
+					<td><h:inputText name="YPO_KINHTO" size="14" class="s_l" readonly="true" value="#{e1Bean.taxPayerCell}" /></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td rowspan="4" width="9">Σ<br />Υ<br />Ζ<br />Υ<br />Γ<br />Ο<br />Υ
+					</td>
+					<td>ΕΠΩΝΥΜΟ</td>
+					<td>ΟΝΟΜΑ</td>
+					<td>ΟΝ.ΠΑΤ.</td>
+					<td>ΑΡΙΘ.ΤΑΥΤ.</td>
+					<td><b>Α.Φ.Μ. ΣΥΖΥΓΟΥ </b></td>
+				</tr>
+				<tr>
+					<td><h:inputText name="SYZ_RG_TXP_D_SURNAME_APPELATI" size="35" class="s_l" value="#{e1Bean.wifeLName}" /></td>
+					<td><h:inputText name="SYZ_RG_TXP_D_NAME" size="20" class="s_l" value="#{e1Bean.wifeFName}" /></td>
+					<td><h:inputText name="SYZ_RG_TXP_D_FATHERS_NAME" size="10" class="s_l" value="#{e1Bean.wifeFaName}" /></td>
+					<td><h:inputText name="SYZ_RG_TXP_D_ID_NO" size="14" class="s_l" value="#{e1Bean.wifeAT}" /></td>
+					<td><h:inputText style="background: none repeat scroll 0% 0% yellow;" name="SYZ_RG_TXP_AFM" size="12" class="s" value="#{e1Bean.wifeAFM}" /></td>
+				</tr>
+				<tr>
+					<td colspan="2">ΔΙΕΥΘΥΝΣΗ</td>
+					<td>ΤΗΛΕΦΩΝΟ</td>
+					<td>ΚΙΝΗΤΟ ΤΗΛΕΦΩΝΟ</td>
+					<td>ΕΓΓΑΜΟΣ</td>
+				</tr>
+				<tr>
+					<td colspan="2"><h:inputText name="SYZ_RG_TXP_POSTAL_ADDRESS" size="50" class="s_l" value="#{e1Bean.wifeAddress}" /></td>
+					<td><h:inputText name="SYZ_TEL" size="14" class="s_l" value="#{e1Bean.wifePhone}" /></td>
+					<td><h:inputText name="SYZ_KINHTO" size="14" class="s_l" value="#{e1Bean.wifeCell}" /></td>
+					<td><input name="EGGAMOS" disabled="disabled" type="checkbox" /></td>
+				</tr>
+				<tr>
+					<td rowspan="5" width="9">Ε<br />Κ<br />Π<br />Ρ
+					</td>
+					<td>ΕΠΩΝΥΜΟ</td>
+					<td>ΟΝΟΜΑ</td>
+					<td>ΟΝ.ΠΑΤ.</td>
+					<td></td>
+					<td><b>Α.Φ.Μ. ΕΚΠΡ/ΠΟΥ</b></td>
+				</tr>
+				<tr>
+					<td><h:inputText name="ANT_RG_TXP_D_SURNAME_APPELATI" size="35" class="s_l" value="#{e1Bean.delegateLName}" /></td>
+					<td><h:inputText name="ANT_RG_TXP_D_NAME" size="20" class="s_l" value="#{e1Bean.delegateFName}" /></td>
+					<td><h:inputText name="ANT_RG_TXP_D_FATHERS_NAME" size="10" class="s_l" value="#{e1Bean.delegateFaName}" /></td>
+					<td><h:inputText name="ANT_RG_TXP_D_ID_NO" rendered="false" size="14" class="s_l" /></td>
+					<td><h:inputText style="background: none repeat scroll 0% 0% yellow;" name="ANT_RG_TXP_AFM" size="12" class="s"
+							value="#{e1Bean.delegateAFM}" /></td>
+				</tr>
+				<tr>
+					<td colspan="2">ΔΙΕΥΘYΝΣΗ</td>
+					<td>ΤΗΛΕΦΩΝΟ</td>
+					<td colspan="2"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><h:inputText name="ANT_RG_TXP_POSTAL_ADDRESS" size="40" class="s_l" value="#{e1Bean.delegateAddress}" /></td>
+					<td><h:inputText name="ANT_TEL" size="14" class="s_l" value="#{e1Bean.delegatePhone}" /></td>
+					<td colspan="2"></td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- Πίνακας 2 -->
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="49"></td>
+					<td width="49"></td>
+					<td width="30"></td>
+					<td width="49"></td>
+					<td width="49"></td>
+				</tr>
+				<tr>
+					<td class="colordark" colspan="2"><em id="TOC2"></em> <b><font size="1">ΠΙΝΑΚΑΣ 2.</font>ΠΛΗΡΟΦΟΡΙΑΚΑ ΣΤΟΙΧΕΙΑ </b></td>
+					<td class="colordark" colspan="3" align="center"><b>ΥΠΟΧΡΕΟΥ</b></td>
+					<td class="colordark" colspan="3" align="center"><b>ΤΗΣ ΣΥΖΥΓΟΥ</b></td>
+				</tr>
+				<tr>
+					<td class="line" align="right">1.</td>
+					<td class="line">Είστε νέος φορολογούμενος (υποβάλλετε δήλωση για πρώτη φορά);</td>
+					<td class="line">327</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div327">
+							<h:selectBooleanCheckbox name="n327" value="#{e1Bean._327}" />
+						</div></td>
+					<td class="line">328</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div328">
+							<h:selectBooleanCheckbox name="n328" value="#{e1Bean._328}" />
+						</div></td>
+				</tr>
+				<tr>
+					<td class="line" align="right">2.</td>
+					<td class="line">Είστε κάτοικος εξωτερικού και υποχρεούσθε να υποβάλετε φορολ. δήλωση στην Ελλάδα;</td>
+					<td class="line">319</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div319">
+							<h:selectBooleanCheckbox name="n319" value="#{e1Bean._319}" />
+						</div></td>
+					<td class="line">320</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div320">
+							<h:selectBooleanCheckbox name="n320" value="#{e1Bean._320}" />
+						</div></td>
+				</tr>
+				<tr>
+					<td class="line" align="right">3.</td>
+					<td class="line">Εξαιρείσθε από την προσκόμιση αποδείξεων (εδάφιο γ' παρ. 1 άρθρο 9 Κ.Φ.Ε.);</td>
+					<td class="line">023</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div023">
+							<h:selectBooleanCheckbox name="n023" value="#{e1Bean._023}" />
+						</div></td>
+					<td class="line">024</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div024">
+							<h:selectBooleanCheckbox name="n024" value="#{e1Bean._024}" />
+						</div></td>
+				</tr>
+				<tr>
+					<td class="line" align="right">4.</td>
+					<td class="line2">Υποβάλλεται η δήλωση από κηδεμόνα σχολάζουσας κληρονομιάς, μεσεγγυούχο, προσωρινό διαχειριστή ή σύνδικο πτώχευσης;</td>
+					<td class="line">329</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div329">
+							<h:selectBooleanCheckbox name="n329" value="#{e1Bean._329}" />
+						</div></td>
+					<td class="line" colspan="3">&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="line" align="right">5.</td>
+					<td class="line">Υποβάλλεται η δήλωση από επίτροπο, κηδεμόνα ανηλίκου ή δικαστικό συμπαραστάτη;</td>
+					<td class="line">330</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div330">
+							<h:selectBooleanCheckbox name="n330" value="#{e1Bean._330}" />
+						</div></td>
+					<td class="line" colspan="3">&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="line" align="right">6.</td>
+					<td class="line">Υποβάλλεται η δήλωση από κληρονόμο του φορολογουμένου που απεβίωσε;</td>
+					<td class="line">331</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div331">
+							<h:selectBooleanCheckbox name="n331" value="#{e1Bean._331}" />
+						</div></td>
+					<td class="line" colspan="3">&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="line" align="right">7.</td>
+					<td class="line">Είστε μισθωτός και πήρατε στεγαστικό επίδομα μέσα στο 2011;</td>
+					<td class="line">011</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div011">
+							<h:selectBooleanCheckbox name="n011" value="#{e1Bean._011}" />
+						</div></td>
+					<td class="line">012</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div012">
+							<h:selectBooleanCheckbox name="n012" value="#{e1Bean._012}" />
+						</div></td>
+				</tr>
+				<tr>
+					<td class="line" align="right">8.</td>
+					<td class="line">Είστε συνταξιούχος και γεννηθήκατε μέχρι 31-12-1946;</td>
+					<td class="line">013</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div011">
+							<h:selectBooleanCheckbox name="n013" value="#{e1Bean._013}" />
+						</div></td>
+					<td class="line">014</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div012">
+							<h:selectBooleanCheckbox name="n014" value="#{e1Bean._014}" />
+						</div></td>
+				</tr>
+				<tr>
+					<td class="line" align="right">9.</td>
+					<td class="line">Είστε μισθωτός ή συνταξιούχος σε παραμεθόρια περιοχή;</td>
+					<td class="line">015</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div015">
+							<h:selectBooleanCheckbox name="n015" value="#{e1Bean._015}" />
+						</div></td>
+					<td class="line">016</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div016">
+							<h:selectBooleanCheckbox name="n016" value="#{e1Bean._016}" />
+						</div></td>
+				</tr>
+				<tr>
+					<td class="line" align="right">10.</td>
+					<td class="line">Γεννηθήκατε από 01-01-1981 και μετά;</td>
+					<td class="line">017</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div017">
+							<h:selectBooleanCheckbox name="n017" value="#{e1Bean._017}" />
+						</div></td>
+					<td class="line">018</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div018">
+							<h:selectBooleanCheckbox name="n018" value="#{e1Bean._018}" />
+						</div></td>
+				</tr>
+				<tr>
+					<td class="line" align="right">11.</td>
+					<td class="line">Έχετε υποπέσει σε παραβάσεις των περ. α' &amp; η' παρ. 8 και περ. α' και β' παρ. 10 αρθρ. 5 ν. 2523/97;</td>
+					<td class="line">021</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div021">
+							<h:selectBooleanCheckbox name="n021" value="#{e1Bean._021}" />
+						</div></td>
+					<td class="line">022</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div022">
+							<h:selectBooleanCheckbox name="n022" value="#{e1Bean._022}" />
+						</div></td>
+				</tr>
+				<tr>
+					<td class="line" align="right">12.</td>
+					<td class="line">Εμπίπτετε στις διατάξεις της παρ. 5 του άρθρου 73 ν. 3842/2010;</td>
+					<td class="line">025</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div025">
+							<h:selectBooleanCheckbox name="n025" value="#{e1Bean._025}" />
+						</div></td>
+					<td class="line">026</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div026">
+							<h:selectBooleanCheckbox name="n026" value="#{e1Bean._026}" />
+						</div></td>
+				</tr>
+				<tr>
+					<td class="line" align="right">13.</td>
+					<td class="line">Κατοικείτε μόνιμα σε νησί με πληθυσμό κάτω από 3.100 κατοίκους;</td>
+					<td class="line">007</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div007">
+							<h:selectBooleanCheckbox name="n007" value="#{e1Bean._007}" />
+						</div></td>
+					<td class="line">008</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div008">
+							<h:selectBooleanCheckbox name="n008" value="#{e1Bean._008}" />
+						</div></td>
+				</tr>
+
+				<tr>
+					<td class="line" align="right">14.</td>
+					<td class="line">Μεταβλήθηκε η περιουσιακή σας κατάσταση ή άλλα στοιχεία του Ε9 το 2011 κτλ;</td>
+					<td class="line">617</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div617">
+							<h:selectBooleanCheckbox name="n617" value="#{e1Bean._617}" />
+						</div></td>
+					<td class="line" colspan="3">&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="line" align="right">15.</td>
+					<td class="line2">Είστε κάτοικος χώρας της Ε.Ε. (εκτός Ελλάδας) και αποκτήσατε στην Ελλάδα πάνω από το 90% του συνολ. εισοδ. σας;</td>
+					<td class="line">385</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div385">
+							<h:selectBooleanCheckbox name="n385" value="#{e1Bean._385}" />
+						</div></td>
+					<td class="line">386</td>
+					<td class="line">ΝΑΙ</td>
+					<td><div id="div386">
+							<h:selectBooleanCheckbox name="n386" value="#{e1Bean._386}" />
+						</div></td>
+				</tr>
+				<tr>
+					<td class="line" align="right">16.</td>
+					<td class="line">Έχετε περιουσία (ακίνητα, καταθέσεις κλπ.) στο εξωτερικό;</td>
+					<td class="line">029</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div029">
+							<h:selectBooleanCheckbox name="n029" value="#{e1Bean._029}" />
+						</div></td>
+					<td class="line">030</td>
+					<td class="line">ΝΑΙ</td>
+					<td><div id="div030">
+							<h:selectBooleanCheckbox name="n030" value="#{e1Bean._030}" />
+						</div></td>
+				</tr>
+				<tr>
+					<td class="line" align="right">17.</td>
+					<td class="line">Ανήκετε στην κατηγορία των ολικώς τυφλών, κινητικά αναπήρων πάνω από το 80% κτλ.;</td>
+					<td class="line">905</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div905">
+							<h:selectBooleanCheckbox name="n905" value="#{e1Bean._905}" />
+						</div></td>
+					<td class="line">906</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div906">
+							<h:selectBooleanCheckbox name="n906" value="#{e1Bean._906}" />
+						</div></td>
+				</tr>
+				<tr>
+					<td class="line" align="right">18.</td>
+					<td class="line">Είστε αξιωματικός ή ημεδαπό κατώτερο πλήρωμα εμπορ. πλοίου;</td>
+					<td class="line">911</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div911">
+							<h:selectBooleanCheckbox name="n911" value="#{e1Bean._911}" />
+						</div></td>
+					<td class="line">912</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div912">
+							<h:selectBooleanCheckbox name="n912" value="#{e1Bean._912}" />
+						</div></td>
+				</tr>
+				<tr>
+					<td class="line" align="right">19.</td>
+					<td class="line2">Σημειώστε <b>Χ</b> αν <b>δεν</b> επιθυμείτε να ενταχθείτε στην τηλεφωνική και ηλεκτρονική πληροφόρηση για την εκκαθάριση
+						της δήλωσής σας.
+					</td>
+					<td class="line">010</td>
+					<td class="line">&nbsp;</td>
+					<td class="line"><div id="div010">
+							<h:selectBooleanCheckbox name="n010" value="#{e1Bran._010}" />
+						</div></td>
+					<td class="line">&nbsp;</td>
+					<td class="line">&nbsp;</td>
+					<td class="line">&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- Πίνακας 3 -->
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="49"></td>
+					<td width="49"></td>
+					<td width="30"></td>
+					<td width="49"></td>
+					<td width="49"></td>
+				</tr>
+				<tr>
+					<td class="colordark" colspan="2"><em id="TOC3"></em> <b><font size="1">ΠΙΝΑΚΑΣ 3. </font>ΑΦΑΙΡΕΣΗ ΠΟΣΟΥ ΛΟΓΩ ΑΝΑΠΗΡΙΑΣ κτλ ΚΑΙ ΜΕΙΩΣΗ
+							ΦΟΡΟΥ</b></td>
+					<td class="colordark" colspan="3" align="center"><b>ΥΠΟΧΡΕΟΥ</b></td>
+					<td class="colordark" colspan="3" align="center"><b>ΤΗΣ ΣΥΖΥΓΟΥ</b></td>
+				</tr>
+				<tr>
+					<td align="right">1.</td>
+					<td class="line">Έχετε αυξημένο αφορολόγητο 2.000 ευρώ λόγω αναπηρίας 67% και πάνω κτλ.;</td>
+					<td class="line">001</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div001">
+							<h:selectBooleanCheckbox name="n001" value="#{e1Bean._001}" />
+						</div></td>
+					<td class="line">002</td>
+					<td class="line">ΝΑΙ</td>
+					<td class="line"><div id="div002">
+							<h:selectBooleanCheckbox name="n002" value="#{e1Bean._002}" />
+						</div></td>
+				</tr>
+				<tr>
+					<td align="right">2.</td>
+					<td class="line">Αριθμός παιδιών του Πίνακα 9 περίπτ. 1 (αριθμητικά)</td>
+					<td class="line">003</td>
+					<td class="line" colspan="2"><h:inputText name="n003" size="3" class="s" value="#{e1Bean._003}" /></td>
+					<td class="line">004</td>
+					<td class="line" colspan="2"><h:inputText name="n004" size="3" class="s" value="#{e1Bean._004}" /></td>
+				</tr>
+				<tr>
+					<td align="right">3.</td>
+					<td class="line">Αριθμός προσώπων του Πίνακα 9 με αναπηρία 67% και πάνω κτλ. (αριθμητικά)</td>
+					<td class="line">005</td>
+					<td class="line" colspan="2"><h:inputText name="n005" size="3" class="s" value="#{e1Bean._005}" /></td>
+					<td class="line">006</td>
+					<td class="line" colspan="2"><h:inputText name="n006" size="3" class="s" value="#{e1Bean._006}" /></td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- Πίνακας 4 -->
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td class="colordark" colspan="2"><em id="TOC4"></em> <b><font size="1">ΠΙΝΑΚΑΣ 4. </font>ΦΟΡΟΛΟΓΟΥΜΕΝΑ ΕΙΣΟΔΗΜΑΤΑ</b></td>
+					<td class="colordark" colspan="2" align="center"><b>ΥΠΟΧΡΕΟΥ</b></td>
+					<td class="colordark" colspan="2" align="center"><b>ΤΗΣ ΣΥΖΥΓΟΥ</b></td>
+				</tr>
+				<tr>
+					<td colspan="6"><em id="TOC41"></em> <b>Α. ΕΙΣΟΔΗΜΑ ΑΠΟ ΜΙΣΘΩΤΕΣ ΥΠΗΡΕΣΙΕΣ</b></td>
+				</tr>
+				<tr>
+					<td align="right">1.</td>
+					<td class="line">Αθροισμα καθαρών ποσών από μισθούς, ημερομίσθια κτλ. (εκτός περιπτ. 2, 3, 4)</td>
+					<td class="line">301</td>
+					<td class="line"><h:inputText name="n301" size="14" class="s" value="#{e1Bean._301}" /></td>
+					<td class="line">302</td>
+					<td class="line"><h:inputText name="n302" size="14" class="s" value="#{e1Bean._301}" /></td>
+				</tr>
+
+				<tr>
+					<td align="right">2.</td>
+					<td class="line">Αθροισμα καθαρών ποσών από κύριες συντάξεις (εκτός περιπτ. 1, 3, 4)</td>
+					<td class="line">303</td>
+					<td class="line"><h:inputText name="n303" size="14" class="s" value="#{e1Bean._303}" /></td>
+					<td class="line">304</td>
+					<td class="line"><h:inputText name="n304" size="14" class="s" value="#{e1Bean._304}" /></td>
+				</tr>
+				<tr>
+					<td align="right">3.</td>
+					<td class="line">Αθροισμα καθαρών ποσών από επικουρικές συντάξεις, μερίσματα, κτλ. (εκτός περιπτ. 1, 2, 4)</td>
+					<td class="line">321</td>
+					<td class="line"><h:inputText name="n321" size="14" class="s" value="#{e1Bean._321}" /></td>
+					<td class="line">322</td>
+					<td class="line"><h:inputText name="n322" size="14" class="s" value="#{e1Bean._322}" /></td>
+				</tr>
+
+				<tr>
+					<td align="right">4.</td>
+					<td class="line">Αμοιβές αθλητών και επιδόματα ανέργων των παρ. 2 &amp; 3 του αρθρ. 33 ν. 1892/90</td>
+					<td class="line">317</td>
+					<td class="line"><h:inputText name="n317" size="14" class="s" value="#{e1Bean._317}" /></td>
+					<td class="line">318</td>
+					<td class="line"><h:inputText name="n318" size="14" class="s" value="#{e1Bean._318}" /></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><em id="TOC42"></em> <b>Β. ΕΙΣΟΔΗΜΑ ΑΠΟ ΓΕΩΡΓΙΚΕΣ ΕΠΙΧΕΙΡΗΣΕΙΣ</b></td>
+					<td colspan="2" align="center"><b>ΥΠΟΧΡΕΟΥ</b></td>
+					<td colspan="2" align="center"><b>ΤΗΣ ΣΥΖΥΓΟΥ</b></td>
+				</tr>
+				<tr>
+					<td align="right">1.</td>
+					<td class="line">Καθαρό εισόδημα ατομικής επιχείρησης βάσει βιβλίων ή στοιχείων</td>
+					<td class="line">461</td>
+					<td class="line"><h:inputText name="n461" size="14" class="s" value="#{e1Bean._461}" /></td>
+					<td class="line">462</td>
+					<td class="line"><h:inputText name="n462" size="14" class="s" value="#{e1Bean._462}" /></td>
+				</tr>
+				<tr>
+					<td align="right">2.</td>
+					<td class="line">Καθαρό εισόδημα προηγ. περιπτ. 1 μόνο από αλιευτική δραστηριότητα</td>
+					<td class="line">921</td>
+					<td class="line"><h:inputText name="n921" size="14" class="s" value="#{e1Bean._921}" /></td>
+					<td class="line">922</td>
+					<td class="line"><h:inputText name="n922" size="14" class="s" value="#{e1Bean._922}" /></td>
+				</tr>
+				<tr>
+					<td align="right">3.</td>
+					<td class="line">Καθαρό εισόδημα από συμμετοχή σε συνεκμετάλλευση μη υπαγόμενη στο αρθ.10 ΚΦΕ</td>
+					<td class="line">919</td>
+					<td class="line"><h:inputText name="n919" size="14" class="s" value="#{e1Bean._919}" /></td>
+					<td class="line">920</td>
+					<td class="line"><h:inputText name="n920" size="14" class="s" value="#{e1Bean._920}" /></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="NewPage" id="msg2">&nbsp;</div>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+
+
+				<tr>
+					<td align="right">4.</td>
+					<td class="line">Καθαρό εισόδημα ατομικής επιχείρησης με βάση το αντικειμενικό σύστημα</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr valign="middle">
+					<td rowspan="5"></td>
+					<td rowspan="5" align="center">
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td class="small" align="center">Περιοχή<br />(Δήμος/Διαμέρισμα ή Κοινότητα)<br />εκμετάλλευσης
+									</td>
+									<td class="small" align="center">Είδος παραγωγής:<br />α)καλλιέργειας γης<br />β)εκτροφής ζώων<br />γ)άλλης μονάδας
+									</td>
+									<td class="small" align="center">Αριθμός: <b>(1)</b><br />α) στρεμμάτων<br />β) ζώων<br />γ) άλλων μονάδων
+									</td>
+									<td class="small" align="center">Ορεινό<br />Ημιορεινό<br />Πεδινό
+									</td>
+									<td class="small" align="center">Αρδευόμενο<br />Μή αρδευόμενο
+									</td>
+									<td class="small" align="center">Καθαρό εισόδημα: <b>(2)</b><br />α) ανά στρέμμα<br />β) ανά κεφαλή ζώου<br />γ) ανά άλλη μονάδα
+									</td>
+								</tr>
+								<tr>
+									<td align="center"><inputText name="k001" size="20" class="s_l""></td>
+									<td align="center"><inputText name="k002" size="8" class="s_l" readonly="readonly" type="text"></td>
+									<td align="center"><inputText name="k003" size="7" class="s" readonly="readonly" type="text"></td>
+									<td align="center"><inputText name="k004" size="7" class="s_l" readonly="readonly" type="text"></td>
+									<td align="center"><inputText name="k005" size="12" class="s_l" readonly="readonly" type="text"></td>
+									<td align="center"><inputText name="k006" size="14" class="s" readonly="readonly" type="text"></td>
+								</tr>
+								<tr height="20">
+									<td align="center"><inputText name="k009" size="20" class="s_l" readonly="readonly" type="text"></td>
+									<td align="center"><inputText name="k010" size="8" class="s_l" readonly="readonly" type="text"></td>
+									<td align="center"><inputText name="k011" size="7" class="s" readonly="readonly" type="text"></td>
+									<td align="center"><inputText name="k012" size="7" class="s_l" readonly="readonly" type="text"></td>
+									<td align="center"><inputText name="k013" size="12" class="s_l" readonly="readonly" type="text"></td>
+									<td align="center"><inputText name="k014" size="14" class="s" readonly="readonly" type="text"></td>
+								</tr>
+								<tr height="20">
+									<td align="center"><inputText name="k017" size="20" class="s_l" readonly="readonly" type="text"></td>
+									<td align="center"><inputText name="k018" size="8" class="s_l" readonly="readonly" type="text"></td>
+									<td align="center"><inputText name="k019" size="7" class="s" readonly="readonly" type="text"></td>
+									<td align="center"><inputText name="k020" size="7" class="s_l" readonly="readonly" type="text"></td>
+									<td align="center"><inputText name="k021" size="12" class="s_l" readonly="readonly" type="text"></td>
+									<td align="center"><inputText name="k022" size="14" class="s" readonly="readonly" type="text"></td>
+								</tr>
+								<tr height="20">
+									<td align="center"><inputText name="k025" size="20" class="s_l" readonly="readonly" type="text"></td>
+									<td align="center"><inputText name="k026" size="8" class="s_l" readonly="readonly" type="text"></td>
+									<td align="center"><inputText name="k027" size="7" class="s" readonly="readonly" type="text"></td>
+									<td align="center"><inputText name="k028" size="7" class="s_l" readonly="readonly" type="text"></td>
+									<td align="center"><inputText name="k029" size="12" class="s_l" readonly="readonly" type="text"></td>
+									<td align="center"><inputText name="k030" size="14" class="s" readonly="readonly" type="text"></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+					<td colspan="4" height="40" align="center"><b>Συνολικό Καθαρό Εισόδημα<br />
+					</b><b>(3) = (1) x (2)</b></td>
+				</tr>
+				<tr height="20">
+					<td></td>
+					<td><h:inputText name="k007" size="14" class="s" readonly="readonly" type="text"></td>
+					<td></td>
+					<td><h:inputText name="k008" size="14" class="s" readonly="readonly" type="text"></td>
+				</tr>
+				<tr height="20">
+					<td></td>
+					<td><h:inputText name="k015" size="14" class="s" readonly="readonly" type="text"></td>
+					<td></td>
+					<td><h:inputText name="k016" size="14" class="s" readonly="readonly" type="text"></td>
+				</tr>
+				<tr height="20">
+					<td></td>
+					<td><h:inputText name="k023" size="14" class="s" readonly="readonly" type="text"></td>
+					<td></td>
+					<td><h:inputText name="k024" size="14" class="s" readonly="readonly" type="text"></td>
+				</tr>
+				<tr height="20">
+					<td></td>
+					<td><h:inputText name="k031" size="14" class="s" readonly="readonly" type="text"></td>
+					<td></td>
+					<td><h:inputText name="k032" size="14" class="s" readonly="readonly" type="text"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line" align="right">Σύνολο καθαρού γεωργικού εισοδήματος με βάση το αντικειμενικό σύστημα &nbsp; &nbsp;</td>
+					<td class="line">915</td>
+					<td class="line"><h:inputText name="n915" size="14" class="s" value="#{e1Bean._915}" /></td>
+					<td class="line">916</td>
+					<td class="line"><h:inputText name="n916" size="14" class="s" value="#{e1Bean._916}" /></td>
+				</tr>
+				<tr>
+					<td align="right">5.</td>
+					<td class="line">Καθαρό εισόδημα προηγ. πεπίπτ. 4 μόνο από αλιευτική δραστηριότητα</td>
+					<td class="line">923</td>
+					<td class="line"><h:inputText name="n923" size="14" class="s" value="#{e1Bean._923}" /></td>
+					<td class="line">924</td>
+					<td class="line"><h:inputText name="n924" size="14" class="s" value="#{e1Bean._924}" /></td>
+				</tr>
+
+			</tbody>
+		</table>
+
+
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="line"><b>Μείον: </b>α) Ενοίκια που καταβλήθηκαν για μίσθωση γεωργικής γης</td>
+					<td class="line">335</td>
+					<td class="line"><h:inputText name="n335" size="14" class="s" value="#{e1Bean._335}" /></td>
+					<td class="line">336</td>
+					<td class="line"><h:inputText name="n336" size="14" class="s" value="#{e1Bean._336}" /></td>
+				</tr>
+				<tr>
+					<td align="right">β)</td>
+					<td class="line">Αξία καινούργιου πάγιου εξοπλισμού 326 <h:inputText name="n326" size="14" class="s" value="@=#{e1Bean._326}" /> &nbsp;x
+						25% ή 50%
+					</td>
+					<td class="line">337</td>
+					<td class="line"><h:inputText name="n337" size="14" class="s" value="#{e1Bean._337}" /></td>
+					<td class="line">338</td>
+					<td class="line"><h:inputText name="n338" size="14" class="s" value="#{e1Bean._338}" /></td>
+				</tr>
+				<tr>
+					<td align="right">γ)</td>
+					<td class="line">Για κατά κύριο επάγγελμα αγρότες 1.500 ή 3.000 ευρώ αν πήραν εξισωτικές αποζημιώσεις ή 2.250 (ή 1.875) ή 4.500 (ή 3.750)
+						ευρώ, αντίστοιχα, αν είναι νέοι αγρότες</td>
+					<td class="line">339</td>
+					<td class="line"><h:inputText name="n339" size="14" class="s" value="#{e1Bean._339}" /></td>
+					<td class="line">340</td>
+					<td class="line"><h:inputText name="n340" size="14" class="s" value="#{e1Bean._340}" /></td>
+				</tr>
+				<tr>
+					<td align="right">6.</td>
+					<td class="line">Ζημιά του ίδιου οικονομικού έτους από ατομική άσκηση γεωργικής επιχείρησης</td>
+					<td class="line">465</td>
+					<td class="line"><h:inputText name="n465" size="14" class="s" value="#{e1Bean._465}" /></td>
+					<td class="line">466</td>
+					<td class="line"><h:inputText name="n466" size="14" class="s" value="#{e1Bean._466}" /></td>
+				</tr>
+				<tr>
+					<td align="right">7.</td>
+					<td class="line">Ζημιές προηγούμενων οικονομικών ετών από ατομική άσκηση γεωργικής επιχείρησης</td>
+					<td class="line">467</td>
+					<td class="line"><h:inputText name="n467" size="14" class="s" value="#{e1Bean._467}" /></td>
+					<td class="line">468</td>
+					<td class="line"><h:inputText name="n468" size="14" class="s" value="#{e1Bean._468}" /></td>
+				</tr>
+				<tr>
+					<td align="right">8.</td>
+					<td class="line">Ακαθάριστα έσοδα από ατομική άσκηση γεωργικής επιχείρησης</td>
+					<td class="line">475</td>
+					<td class="line"><h:inputText name="n475" size="14" class="s" value="#{e1Bean._475}" /></td>
+					<td class="line">476</td>
+					<td class="line"><h:inputText name="n476" size="14" class="s" value="#{e1Bean._476}" /></td>
+				</tr>
+				<tr>
+					<td align="right">9.</td>
+					<td class="line">Καθαρά κέρδη από ανανεώσιμες πηγές ενέργειας μέχρι 100kw</td>
+					<td class="line">479</td>
+					<td class="line"><h:inputText name="n479" size="14" class="s" value="#{e1Bean._479}" /></td>
+					<td class="line">480</td>
+					<td class="line"><h:inputText name="n480" size="14" class="s" value="#{e1Bean._480}" /></td>
+				</tr>
+				<tr>
+					<td align="right">10.</td>
+					<td class="line">Καθαρά κέρδη από αγροτοτουριστική μονάδα μέχρι 10 δωμάτια</td>
+					<td class="line">481</td>
+					<td class="line"><h:inputText name="n481" size="14" class="s" value="#{e1Bean._481}" /></td>
+					<td class="line">482</td>
+					<td class="line"><h:inputText name="n482" size="14" class="s" value="#{e1Bean._482}" /></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td colspan="6"><em id="TOC43"></em> <b>Γ. ΕΙΣΟΔΗΜΑ ΑΠΟ ΕΜΠΟΡΙΚΕΣ ΕΠΙΧΕΙΡΗΣΕΙΣ</b></td>
+				</tr>
+				<tr>
+					<td align="right">1.</td>
+					<td class="line">Καθαρά κέρδη από <b>ατομική επιχείρηση </b>(εκτός περίπτ. 4)
+					</td>
+					<td class="line">401</td>
+					<td class="line"><h:inputText name="n401" size="14" class="s" value="#{e1Bean._401}" /></td>
+					<td class="line">402</td>
+					<td class="line"><h:inputText name="n402" size="14" class="s" value="#{e1Bean._402}" /></td>
+				</tr>
+				<tr>
+					<td align="right">2.</td>
+					<td class="line">Επιχειρηματική αμοιβή από Ο.Ε. ή Ε.Ε. ή κοινωνία κληρονομικού δικαίου</td>
+					<td class="line">403</td>
+					<td class="line"><h:inputText name="n403" size="14" class="s" value="#{e1Bean._403}" /></td>
+					<td class="line">404</td>
+					<td class="line"><h:inputText name="n404" size="14" class="s" value="#{e1Bean._404}" /></td>
+				</tr>
+				<tr>
+					<td align="right">3.</td>
+					<td class="line">Καθαρά κέρδη από Ο.Ε. ή Ε.Ε. ή Κοινωνία κτλ. μη υπαγόμενες στο άρθρο 10 Κ.Φ.Ε.</td>
+					<td class="line">405</td>
+					<td class="line"><h:inputText name="n405" size="14" class="s" value="#{e1Bean._405}" /></td>
+					<td class="line">406</td>
+					<td class="line"><h:inputText name="n406" size="14" class="s" value="#{e1Bean._406}" /></td>
+				</tr>
+				<tr>
+					<td align="right">4.</td>
+					<td class="line">Υπερτίμημα από πώληση αυτοκινήτου επιχείρησης</td>
+					<td class="line">407</td>
+					<td class="line"><h:inputText name="n407" size="14" class="s" value="#{e1Bean._407}" /></td>
+					<td class="line">408</td>
+					<td class="line"><h:inputText name="n408" size="14" class="s" value="#{e1Bean._408}" /></td>
+				</tr>
+				<tr>
+					<td align="right">5.</td>
+					<td class="line">Ζημιά του ίδιου οικονομικού έτους από ατομική επιχείρηση (εκτός περίπτ. 4)</td>
+					<td class="line">413</td>
+					<td class="line"><h:inputText name="n413" size="14" class="s" value="#{e1Bean._413}" /></td>
+					<td class="line">414</td>
+					<td class="line"><h:inputText name="n414" size="14" class="s" value="#{e1Bean._414}" /></td>
+				</tr>
+				<tr>
+					<td align="right">6.</td>
+					<td class="line">Ζημιές προηγούμενων οικονομικών ετών από ατομική επιχείρηση</td>
+					<td class="line">415</td>
+					<td class="line"><h:inputText name="n415" size="14" class="s" value="#{e1Bean._415}" /></td>
+					<td class="line">416</td>
+					<td class="line"><h:inputText name="n416" size="14" class="s" value="#{e1Bean._416}" /></td>
+				</tr>
+				<tr>
+					<td align="right">7.</td>
+					<td class="line">Ακαθάριστα έσοδα από ατομική επιχείρηση</td>
+					<td class="line">425</td>
+					<td class="line"><h:inputText name="n425" size="14" class="s" value="#{e1Bean._425}" /></td>
+					<td class="line">426</td>
+					<td class="line"><h:inputText name="n426" size="14" class="s" value="#{e1Bean._426}" /></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td colspan="6"><em id="TOC44"></em> <b>Δ. ΕΙΣΟΔΗΜΑ ΑΠΟ ΕΛΕΥΘΕΡΙΑ ΕΠΑΓΓΕΛΜΑΤΑ</b></td>
+				</tr>
+				<tr>
+					<td align="right">1.</td>
+					<td class="line">Καθαρό εισόδημα από <b>ατομικό επάγγελμα</b></td>
+					<td class="line">501</td>
+					<td class="line"><h:inputText name="n501" size="14" class="s" value="#{e1Bean._501}" /></td>
+					<td class="line">502</td>
+					<td class="line"><h:inputText name="n502" size="14" class="s" value="#{e1Bean._502}" /></td>
+				</tr>
+				<tr>
+					<td align="right">2.</td>
+					<td class="line">Καθαρές αμοιβές ελεγκτή Α.Ε., διαιτητή, εκτελεστή διαθήκης κτλ.</td>
+					<td class="line">503</td>
+					<td class="line"><h:inputText name="n503" size="14" class="s" value="#{e1Bean._503}" /></td>
+					<td class="line">504</td>
+					<td class="line"><h:inputText name="n504" size="14" class="s" value="#{e1Bean._504}" /></td>
+				</tr>
+
+
+				<tr>
+					<td align="right">3.</td>
+					<td class="line">Ποσό διατροφής που έχει εισπραχθεί από σύζυγο (εκτός των παιδιών)</td>
+					<td class="line">505</td>
+					<td class="line"><h:inputText name="n505" size="14" class="s" value="#{e1Bean._505}" /></td>
+					<td class="line">506</td>
+					<td class="line"><h:inputText name="n506" size="14" class="s" value="#{e1Bean._506}" /></td>
+				</tr>
+				<tr>
+					<td align="right">4.</td>
+					<td class="line">Εισόδημα που δεν εντάσσεται σε άλλη περίπτωση του Πίν. 4</td>
+					<td class="line">507</td>
+					<td class="line"><h:inputText name="n507" size="14" class="s" value="#{e1Bean._507}" /></td>
+					<td class="line">508</td>
+					<td class="line"><h:inputText name="n508" size="14" class="s" value="#{e1Bean._508}" /></td>
+				</tr>
+				<tr>
+					<td align="right">5.</td>
+					<td class="line">Ζημιά του ίδιου οικονομικού έτους από ατομικό επάγγελμα</td>
+					<td class="line">511</td>
+					<td class="line"><h:inputText name="n511" size="14" class="s" value="#{e1Bean._511}" /></td>
+					<td class="line">512</td>
+					<td class="line"><h:inputText name="n512" size="14" class="s" value="#{e1Bean._512}" /></td>
+				</tr>
+				<tr>
+					<td align="right">6.</td>
+					<td class="line">Ζημιές προηγούμενου οικον. έτους από ελευθέριο επάγγελμα</td>
+					<td class="line">515</td>
+					<td class="line"><h:inputText name="n515" size="14" class="s" value="#{e1Bean._515}" /></td>
+					<td class="line">516</td>
+					<td class="line"><h:inputText name="n516" size="14" class="s" value="#{e1Bean._516}" /></td>
+				</tr>
+
+				<tr>
+					<td align="right">7.</td>
+					<td class="line">Ακαθάριστα έσοδα από ατομική άσκηση ελευθέριου επαγγέλματος</td>
+					<td class="line">517</td>
+					<td class="line"><h:inputText name="n517" size="14" class="s" value="#{e1Bean._517}" /></td>
+					<td class="line">518</td>
+					<td class="line"><h:inputText name="n518" size="14" class="s" value="#{e1Bean._518}" /></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td colspan="6"><em id="TOC45"></em> <b>Ε. ΕΙΣΟΔΗΜΑ ΑΠΟ ΑΚΙΝΗΤΑ</b> &nbsp; 1. Ακαθάριστο εισόδημα από <b>εκμίσθωση</b>:</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">α) κατοικιών</td>
+					<td class="line">103</td>
+					<td class="line"><h:inputText name="n103" size="14" class="s" value="#{e1Bean._103}" /></td>
+					<td class="line">104</td>
+					<td class="line"><h:inputText name="n104" size="14" class="s" value="#{e1Bean._104}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">β) ξενοδοχείων, κλινικών, σχολείων, αιθουσών κιν/φων ή θεάτρων κτλ.</td>
+					<td class="line">121</td>
+					<td class="line"><h:inputText name="n121" size="14" class="s" value="#{e1Bean._121}" /></td>
+					<td class="line">122</td>
+					<td class="line"><h:inputText name="n122" size="14" class="s" value="#{e1Bean._122}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">γ) καταστημάτων, γραφείων, αποθηκών κτλ.</td>
+					<td class="line">105</td>
+					<td class="line"><h:inputText name="n105" size="14" class="s" value="#{e1Bean._105}" /></td>
+					<td class="line">106</td>
+					<td class="line"><h:inputText name="n106" size="14" class="s" value="#{e1Bean._106}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">δ) γηπέδων, χώρων τοποθέτησης επιγραφών</td>
+					<td class="line">107</td>
+					<td class="line"><h:inputText name="n107" size="14" class="s" value="#{e1Bean._107}" /></td>
+					<td class="line">108</td>
+					<td class="line"><h:inputText name="n108" size="14" class="s" value="#{e1Bean._108}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">ε) βιομηχανοστασίων, εμπορικών κέντρων που επέλεξαν υπαγωγή σε ΦΠΑ</td>
+					<td class="line">109</td>
+					<td class="line"><h:inputText name="n109" size="14" class="s" value="#{e1Bean._109}" /></td>
+					<td class="line">110</td>
+					<td class="line"><h:inputText name="n110" size="14" class="s" value="#{e1Bean._110}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">στ) γαιών</td>
+					<td class="line">101</td>
+					<td class="line"><h:inputText name="n101" size="14" class="s" value="#{e1Bean._101}" /></td>
+					<td class="line">102</td>
+					<td class="line"><h:inputText name="n102" size="14" class="s" value="#{e1Bean._102}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">ζ) γαιών με βάση το αντικειμενικό σύστημα</td>
+					<td class="line">909</td>
+					<td class="line"><h:inputText name="n909" size="14" class="s" value="#{e1Bean._909}" /></td>
+					<td class="line">910</td>
+					<td class="line"><h:inputText name="n910" size="14" class="s" value="#{e1Bean._910}" /></td>
+				</tr>
+				<tr>
+					<td align="right">2.</td>
+					<td class="line">α) Ακαθάριστο εισόδημα από<b> υπεκμίσθωση</b> ακινήτων
+					</td>
+					<td class="line">111</td>
+					<td class="line"><h:inputText name="n111" size="14" class="s" value="#{e1Bean._111}" /></td>
+					<td class="line">112</td>
+					<td class="line"><h:inputText name="n112" size="14" class="s" value="#{e1Bean._112}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">β) Στην περίπτωση αυτή, ποιό μίσθωμα έχετε καταβάλει</td>
+					<td class="line">113</td>
+					<td class="line"><h:inputText name="n113" size="14" class="s" value="#{e1Bean._113}" /></td>
+					<td class="line">114</td>
+					<td class="line"><h:inputText name="n114" size="14" class="s" value="#{e1Bean._114}" /></td>
+				</tr>
+				<tr>
+					<td align="right">3.</td>
+					<td colspan="5" class="line">Ακαθάριστο εισόδημα από <b>δωρεάν παραχώρηση - ιδιόχρηση:</b></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">α) κατοικιών (μόνο δωρεάν παραχώρηση)</td>
+					<td class="line">129</td>
+					<td class="line"><h:inputText name="n129" size="14" class="s" value="#{e1Bean._129}" /></td>
+					<td class="line">130</td>
+					<td class="line"><h:inputText name="n130" size="14" class="s" value="#{e1Bean._130}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">β) ξενοδοχείων, κλινικών, σχολείων, αιθουσών κινηματογράφων ή θεάτρων κτλ.</td>
+					<td class="line">143</td>
+					<td class="line"><h:inputText name="n143" size="14" class="s" value="#{e1Bean._143}" /></td>
+					<td class="line">144</td>
+					<td class="line"><h:inputText name="n144" size="14" class="s" value="#{e1Bean._144}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">γ) καταστημάτων, γραφείων, αποθηκών κτλ.</td>
+					<td class="line">145</td>
+					<td class="line"><h:inputText name="n145" size="14" class="s" value="#{e1Bean._145}" /></td>
+					<td class="line">146</td>
+					<td class="line"><h:inputText name="n146" size="14" class="s" value="#{e1Bean._146}" /></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">δ) γηπέδων, χώρων τοποθέτησης επιγραφών</td>
+					<td class="line">147</td>
+					<td class="line"><h:inputText name="n147" size="14" class="s" value="#{e1Bean._147}" /></td>
+					<td class="line">148</td>
+					<td class="line"><h:inputText name="n148" size="14" class="s" value="#{e1Bean._148}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">ε) γαιών (μόνο δωρεάν παραχώρηση)</td>
+					<td class="line">141</td>
+					<td class="line"><h:inputText name="n141" size="14" class="s" value="#{e1Bean._141}" /></td>
+					<td class="line">142</td>
+					<td class="line"><h:inputText name="n142" size="14" class="s" value="#{e1Bean._142}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">στ) γαιών (μόνο δωρεάν παραχώρηση) με βάση το αντικειμενικό σύστημα</td>
+					<td class="line">701</td>
+					<td class="line"><h:inputText name="n701" size="14" class="s" value="#{e1Bean._701}" /></td>
+					<td class="line">702</td>
+					<td class="line"><h:inputText name="n702" size="14" class="s" value="#{e1Bean._702}" /></td>
+				</tr>
+				<tr>
+					<td align="right">4.</td>
+					<td class="line">Ακαθάριστο εισόδημα οικοδομών: α) σε έδαφος του εκμισθωτή</td>
+					<td class="line">123</td>
+					<td class="line"><h:inputText name="n123" size="14" class="s" value="#{e1Bean._123}" /></td>
+					<td class="line">124</td>
+					<td class="line"><h:inputText name="n124" size="14" class="s" value="#{e1Bean._124}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">β) σε έδαφος του παρέχοντος δωρεάν τη χρήση</td>
+					<td class="line">125</td>
+					<td class="line"><h:inputText name="n125" size="14" class="s" value="#{e1Bean._125}" /></td>
+					<td class="line">126</td>
+					<td class="line"><h:inputText name="n126" size="14" class="s" value="#{e1Bean._126}" /></td>
+				</tr>
+
+				<tr>
+					<td align="right">5.</td>
+					<td class="line">α) Δαπάνες για ασφάλιστρα, δικαστ. δαπάνη, αμοιβές δικηγόρων (περ. 1α,1β,1γ,1ε,3α,3β,3γ)</td>
+					<td class="line">151</td>
+					<td class="line"><h:inputText name="n151" size="14" class="s" value="#{e1Bean._151}" /></td>
+					<td class="line">152</td>
+					<td class="line"><h:inputText name="n152" size="14" class="s" value="#{e1Bean._152}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">β) Αποζημίωση καταβληθείσα με νόμο στο μισθωτή κατά τη λύση επαγγελματικής μίσθωσης</td>
+					<td class="line">163</td>
+					<td class="line"><h:inputText name="n163" size="14" class="s" value="#{e1Bean._163}" /></td>
+					<td class="line">164</td>
+					<td class="line"><h:inputText name="n164" size="14" class="s" value="#{e1Bean._164}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">γ) Ακαθάριστο εισόδημα από την εκμίσθωση του ακινήτου της περίπτ. 5β</td>
+					<td class="line">165</td>
+					<td class="line"><h:inputText name="n165" size="14" class="s" value="#{e1Bean._165}" /></td>
+					<td class="line">166</td>
+					<td class="line"><h:inputText name="n166" size="14" class="s" value="#{e1Bean._166}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">δ) Λοιπές περιπτώσεις δαπανών άρθρου 23 ΚΦΕ (γαίες κτλ.)</td>
+					<td class="line">159</td>
+					<td class="line"><h:inputText name="n159" size="14" class="s" value="#{e1Bean._159}" /></td>
+					<td class="line">160</td>
+					<td class="line"><h:inputText name="n160" size="14" class="s" value="#{e1Bean._160}" /></td>
+				</tr>
+				<tr>
+					<td align="right">6.</td>
+					<td class="line">Ακαθάριστο εισόδημα κατοικιών επιφάνειας πάνω από 300 τ.μ. καθεμιά (περ. 1α, 2α και 3α)</td>
+					<td class="line">175</td>
+					<td class="line"><h:inputText name="n175" size="14" class="s" value="#{e1Bean._175}" /></td>
+					<td class="line">176</td>
+					<td class="line"><h:inputText name="n176" size="14" class="s" value="#{e1Bean._176}" /></td>
+				</tr>
+				<tr>
+					<td align="right">7.</td>
+					<td class="line">Ακαθάριστο εισόδημα ανακατασκευασμένων διατηρητέων (περ 1α, 1β, 3α και 3β)</td>
+					<td class="line">131</td>
+					<td class="line"><h:inputText name="n131" size="14" class="s" value="#{e1Bean._131}" /></td>
+					<td class="line">132</td>
+					<td class="line"><h:inputText name="n132" size="14" class="s" value="#{e1Bean._132}" /></td>
+				</tr>
+				<tr>
+					<td align="right">8.</td>
+					<td class="line">Ακαθάριστο εισόδημα ανακατασκευασμένων διατηρητέων (περ 1γ, 1ε και 3γ)</td>
+					<td class="line">133</td>
+					<td class="line"><h:inputText name="n133" size="14" class="s" value="#{e1Bean._133}" /></td>
+					<td class="line">134</td>
+					<td class="line"><h:inputText name="n134" size="14" class="s" value="#{e1Bean._134}" /></td>
+				</tr>
+				<tr>
+					<td align="right">9.</td>
+					<td class="line">Ακαθάριστο εισόδημα για το οποίο δε βεβαιώνεται χαρτόσημο, εκτός από την περίπτ. 1ε</td>
+					<td class="line">741</td>
+					<td class="line"><h:inputText name="n741" size="14" class="s" value="#{e1Bean._741}" /></td>
+					<td class="line">742</td>
+					<td class="line"><h:inputText name="n742" size="14" class="s" value="#{e1Bean._742}" /></td>
+
+				</tr>
+			</tbody>
+		</table>
+		<div class="NewPage" id="msg3">&nbsp;</div>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td colspan="6"><em id="TOC46"></em><b>ΣΤ. ΕΙΣΟΔΗΜΑ ΑΠΟ ΚΙΝΗΤΕΣ ΑΞΙΕΣ</b></td>
+				</tr>
+				<tr>
+					<td align="right">1.</td>
+					<td class="line">Καθαρό εισόδημα από τόκους δανείων κτλ. ημεδαπής προέλευσης</td>
+					<td class="line">291</td>
+					<td class="line"><h:inputText name="n291" size="14" class="s" value="#{e1Bean._291}" /></td>
+					<td class="line">292</td>
+					<td class="line"><h:inputText name="n292" size="14" class="s" value="#{e1Bean._292}" /></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td colspan="6"><em id="TOC47"></em><b>Ζ. ΕΙΣΟΔΗΜΑ ΑΛΛΟΔΑΠΗΣ ΠΡΟΕΛΕΥΣΗΣ</b></td>
+				</tr>
+				<tr>
+					<td align="right">1.</td>
+					<td class="line">Καθαρό ποσό από μισθούς κτλ. αλλοδαπής προέλευσης</td>
+					<td class="line">389</td>
+					<td class="line"><h:inputText name="n389" size="14" class="s" value="#{e1Bean._389}" /></td>
+					<td class="line">390</td>
+					<td class="line"><h:inputText name="n390" size="14" class="s" value="#{e1Bean._390}" /></td>
+				</tr>
+				<tr>
+					<td align="right">2.</td>
+					<td class="line">Καθαρό ποσό από συντάξεις κτλ. αλλοδαπής προέλευσης</td>
+					<td class="line">391</td>
+					<td class="line"><h:inputText name="n391" size="14" class="s" value="#{e1Bean._391}" /></td>
+					<td class="line">392</td>
+					<td class="line"><h:inputText name="n392" size="14" class="s" value="#{e1Bean._392}" /></td>
+				</tr>
+
+				<tr>
+					<td align="right">3.</td>
+					<td class="line">Καθαρά κέρδη από γεωργικές επιχειρήσεις (ατομική, εταιρικές) στην αλλοδαπή</td>
+					<td class="line">463</td>
+					<td class="line"><h:inputText name="n463" size="14" class="s" value="#{e1Bean._463}" /></td>
+					<td class="line">464</td>
+					<td class="line"><h:inputText name="n464" size="14" class="s" value="#{e1Bean._464}" /></td>
+				</tr>
+				<tr>
+					<td align="right">4.</td>
+					<td class="line">Ζημιές από γεωργικές επιχειρήσεις (ατομική, εταιρικές) στην αλλοδαπή</td>
+					<td class="line">471</td>
+					<td class="line"><h:inputText name="n471" size="14" class="s" value="#{e1Bean._471}" /></td>
+					<td class="line">472</td>
+					<td class="line"><h:inputText name="n472" size="14" class="s" value="#{e1Bean._472}" /></td>
+				</tr>
+				<tr>
+					<td align="right">5.</td>
+					<td class="line">Καθαρά κέρδη από εμπορικές επιχ/σεις (ατομική, εταιρικές) στην αλλοδαπή</td>
+					<td class="line">411</td>
+					<td class="line"><h:inputText name="n411" size="14" class="s" value="#{e1Bean._411}" /></td>
+					<td class="line">412</td>
+					<td class="line"><h:inputText name="n412" size="14" class="s" value="#{e1Bean._412}" /></td>
+				</tr>
+				<tr>
+					<td align="right">6.</td>
+					<td class="line">Ζημιές από εμπορικές επιχειρήσεις (ατομική, εταιρικές) στην αλλοδαπή</td>
+					<td class="line">421</td>
+					<td class="line"><h:inputText name="n421" size="14" class="s" value="#{e1Bean._421}" /></td>
+					<td class="line">422</td>
+					<td class="line"><h:inputText name="n422" size="14" class="s" value="#{e1Bean._422}" /></td>
+				</tr>
+				<tr>
+					<td align="right">7.</td>
+					<td class="line">Καθαρά κέρδη από ελευθέριο επάγγελμα (ατομικά, εταιρικά) στην αλλοδαπή</td>
+					<td class="line">509</td>
+					<td class="line"><h:inputText name="n509" size="14" class="s" value="#{e1Bean._509}" /></td>
+					<td class="line">510</td>
+					<td class="line"><h:inputText name="n510" size="14" class="s" value="#{e1Bean._510}" /></td>
+				</tr>
+				<tr>
+					<td align="right">8.</td>
+					<td class="line">Ζημιές από ελευθέριο επάγγελμα (ατομικά, εταιρικά) στην αλλοδαπή</td>
+					<td class="line">513</td>
+					<td class="line"><h:inputText name="n513" size="14" class="s" value="#{e1Bean._513}" /></td>
+					<td class="line">514</td>
+					<td class="line"><h:inputText name="n514" size="14" class="s" value="#{e1Bean._514}" /></td>
+				</tr>
+				<tr>
+					<td align="right">9.</td>
+					<td class="line">Εισοδήματα από κινητές αξίες αλλοδαπής προέλευσης που φορολογούνται με τις γενικές διατάξεις</td>
+					<td class="line">295</td>
+					<td class="line"><h:inputText name="n295" size="14" class="s" value="#{e1Bean._295}" /></td>
+					<td class="line">296</td>
+					<td class="line"><h:inputText name="n296" size="14" class="s" value="#{e1Bean._296}" /></td>
+				</tr>
+				<tr>
+					<td align="right">10.</td>
+					<td class="line">Ακαθάριστο εισόδημα από ακίνητα που βρίσκονται στην αλλοδαπή</td>
+					<td class="line">171</td>
+					<td class="line"><h:inputText name="n171" size="14" class="s" value="#{e1Bean._171}" /></td>
+					<td class="line">172</td>
+					<td class="line"><h:inputText name="n172" size="14" class="s" value="#{e1Bean._172}" /></td>
+				</tr>
+				<tr>
+					<td align="right">11.</td>
+					<td class="line">Καθαρό εισόδημα της περίπτ. 10</td>
+					<td class="line">173</td>
+					<td class="line"><h:inputText name="n173" size="14" class="s" value="#{e1Bean._173}" /></td>
+					<td class="line">174</td>
+					<td class="line"><h:inputText name="n174" size="14" class="s" value="#{e1Bean._174}" /></td>
+				</tr>
+				<tr>
+					<td align="right">12.</td>
+					<td class="line">Ακαθάριστο εισόδημα της περίπτ. 10 από κατοικίες με επιφάνεια πάνω από 300 τ.μ. η καθεμιά</td>
+					<td class="line">395</td>
+					<td class="line"><h:inputText name="n395" size="14" class="s" value="#{e1Bean._395}" /></td>
+					<td class="line">396</td>
+					<td class="line"><h:inputText name="n396" size="14" class="s" value="#{e1Bean._396}" /></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<!-- Πίνακας 5 -->
+
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td height="10"></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="colordark"><b><font size="1">ΠΙΝΑΚΑΣ 5.</font> ΠΡΟΣΔΙΟΡΙΣΜΟΣ ΕΤΗΣΙΑΣ ΑΝΤΙΚΕΙΜΕΝΙΚΗΣ ΔΑΠΑΝΗΣ</b></td>
+					<td class="colordark" colspan="2" align="center"><b>ΥΠΟΧΡΕΟΥ</b></td>
+					<td class="colordark" colspan="2" align="center"><b>ΤΗΣ ΣΥΖΥΓΟΥ</b></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="3%"></td>
+					<td width="97%"></td>
+				</tr>
+				<tr>
+					<td align="right" valign="top"><b>1.</b></td>
+					<td valign="top"><b>Ετήσια αντικειμενική δαπάνη διαβίωσης με βάση:</b> α) Την ετήσια αντικειμενική δαπάνη για ιδιοκατοικημένη ή μισθούμενη ή
+						δωρεάν παραχωρούμενη κύρια κατοικία και έως δύο δευτερεύουσες κατοικίες.</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellpadding="2" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td rowspan="3" width="20"></td>
+					<td></td>
+					<td rowspan="3" width="20"></td>
+				</tr>
+				<tr>
+					<td align="center">
+						<table cellpadding="1" border="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td rowspan="2" class="small" width="20%"><b> ΣΤΟΙΧΕΙΑ ΑΚΙΝΗΤΟΥ</b><br />ΔΙΕΥΘΥΝΣΗ - ΟΔΟΙ ΠΟΥ ΠΕΡΙΚΛΕΙΟΥΝ ΤΟ ΤΕΤΡΑΓΩΝΟ</td>
+									<td colspan="2" class="small" align="center" width="8%">ΑΡΙΘΜΟΣ ΠΑΡΟΧΗΣ ΡΕΥΜΑΤΟΣ</td>
+									<td rowspan="2" class="small" align="center" width="8%">ΜΙΣΘΩΜΕΝΗ ΚΑΤΟΙΚΙΑ Ή <br /> ΔΩΡΕΑΝ ΠΑΡΑΧΩΡΗΜΕΝΗ
+									</td>
+									<td rowspan="2" class="small" align="center" width="10%">ΜΟΝΟΚΑ-<br />ΤΟΙΚΙΑ
+									</td>
+									<td rowspan="2" class="small" align="center" width="5%">ΘΕΣΗ ΟΡΟΦΟΣ</td>
+									<td rowspan="2" class="small" align="center" width="8%">ΕΠΙΦΑΝΕΙΑ ΚΥΡΙΩΝ ΧΩΡΩΝ</td>
+									<td rowspan="2" class="small" align="center" width="7%">ΕΠΙΦΑΝΕΙΑ ΒΟΗΘΗΤΙΚΩΝ<br />ΧΩΡΩΝ
+									</td>
+									<td colspan="2" class="small" align="center" width="10%">ΠΟΣΟΣΤΟ ΣΥΝΙΔΙΟΚΤΗΣΙΑΣ<br />Ή ΧΡΗΣΗΣ
+									</td>
+									<td rowspan="2" class="small" align="center" width="7%">ΜΗΝΕΣ ΙΔΙΟΚΑ-<br />ΤΟΙΚΗΣΗΣ
+									</td>
+									<td rowspan="2" class="small" align="center" width="8%">ΤΙΜΗ ΖΩΝΗΣ ή ΤΙΜΗ ΕΚΚΙΝΗΣΗΣ</td>
+								</tr>
+								<tr>
+									<td class="line" align="center">205</td>
+									<td class="small"><h:inputText name="n205" size="6" class="s" value="#{e1Bean._205}" /></td>
+
+									<td class="small">ΥΠΟΧΡΕΟΥ</td>
+									<td class="small">ΣΥΖΥΓΟΥ</td>
+								</tr>
+								<tr>
+									<td class="small" colspan="3">α) ΚΥΡΙΑ ΚΑΤΟΙΚΙΑ</td>
+									<td class="line" align="center">203</td>
+									<td class="line" align="center">240</td>
+									<td></td>
+									<td class="line" align="center">211</td>
+									<td class="line" align="center">212</td>
+									<td class="line" align="center">213</td>
+									<td class="line" align="center">214</td>
+									<td class="line" align="center">215</td>
+									<td class="line" align="center">216</td>
+								</tr>
+								<tr>
+									<td class="small" colspan="3" align="center"><h:inputTextarea style="height: 50px; Width: 200px" name="k033" cols="36" class="s_l"
+											rows="2" value="#{e1Bean.houseAddr1}" /> <script>if (!ie) document.forms[0]['k033'].rows=2;</script></td>
+									<td class="line" align="center">ΝΑΙ
+										<div id="div203">
+											<h:selectBooleanCheckbox name="n203" value="#{e1Bean._203}" />
+										</div>
+									</td>
+									<td class="line" align="center">ΝΑΙ
+										<div id="div240">
+											<h:selectBooleanCheckbox name="n240" value="#{e1Bean._240}" />
+										</div>
+									</td>
+
+									<td align="center"><input name="k035" size="3" class="s" value="#{e1Bean.floor1}" /></td>
+									<td align="center"><h:inputText name="n211" size="4" class="s" value="#{e1Bean._211}" /></td>
+									<td align="center"><h:inputText name="n212" size="4" class="s" r value="#{e1Bean._212}" /></td>
+									<td align="center"><h:inputText name="n213" size="3" class="s" value="#{e1Bean._213}" /></td>
+									<td align="center"><h:inputText name="n214" size="3" class="s" value="#{e1Bean._214}" /></td>
+									<td align="center"><h:inputText name="n215" size="3" class="s" value="#{e1Bean._215}" /></td>
+									<td align="center"><h:inputText name="n216" size="8" class="s" value="#{e1Bean._216}" /></td>
+								</tr>
+								<tr>
+									<td class="small" colspan="3">β)ΠΡΩΤΗ ΔΕΥΤΕΡΕΥΟΥΣΑ</td>
+									<td class="line" align="center">207</td>
+									<td class="line" align="center">241</td>
+									<td></td>
+									<td class="line" align="center">218</td>
+									<td class="line" align="center">219</td>
+									<td class="line" align="center">220</td>
+									<td class="line" align="center">221</td>
+									<td class="line" align="center">222</td>
+									<td class="line" align="center">223</td>
+								</tr>
+								<tr>
+									<td class="SMALL" colspan="3" align="center"><h:inputTextarea style="height: 50px; Width: 200px" name="k036" cols="36" class="s_l"
+											rows="2" value="#{e1Bean.houseAddr2}" /> <script>if (!ie) document.forms[0]['k036'].rows=2;</script></td>
+									<td class="line" align="center">ΝΑΙ
+										<div id="div207">
+											<h:selectBooleanCheckbox name="n207" value="#{e1Bean._207}" />
+										</div>
+									</td>
+									<td class="line" align="center">ΝΑΙ
+										<div id="div241">
+											<h:selectBooleanCheckbox name="n241" value="#{e1Bean._241}" />
+										</div>
+									</td>
+									<td class="line" align="center"><h:inputText name="k038" size="3" class="s" value="#{e1Bean.floor2}" /></td>
+									<td class="line" align="center"><h:inputText name="n218" size="4" class="s" value="#{e1Bean._218}" /></td>
+									<td class="line" align="center"><h:inputText name="n219" size="4" class="s" value="#{e1Bean._219}" /></td>
+									<td class="line" align="center"><h:inputText name="n220" size="3" class="s" value="#{e1Bean._220}" /></td>
+									<td class="line" align="center"><h:inputText name="n221" size="3" class="s" value="#{e1Bean._221}" /></td>
+									<td class="line" align="center"><h:inputText name="n222" size="3" class="s" value="#{e1Bean._222}" /></td>
+									<td class="line" align="center"><h:inputText name="n223" size="8" class="s" value="#{e1Bean._223}" /></td>
+								</tr>
+								<tr>
+									<td class="small" colspan="3">γ)ΔΕΥΤΕΡΗ ΔΕΥΤΕΡΕΥΟΥΣΑ</td>
+									<td class="line" align="center">209</td>
+									<td class="line" align="center">242</td>
+									<td></td>
+									<td class="line" align="center">225</td>
+									<td class="line" align="center">226</td>
+									<td class="line" align="center">227</td>
+									<td class="line" align="center">228</td>
+									<td class="line" align="center">229</td>
+									<td class="line" align="center">230</td>
+								</tr>
+								<tr>
+									<td class="small" colspan="3" align="center"><h:inputTextarea style="height: 50px; Width: 200px" name="k039" cols="36" class="s_l"
+											rows="2" value="#{e1Bean.houseAddr3}" /> <script>if (!ie) document.forms[0]['k039'].rows=2;</script></td>
+									<td class="line" align="center">ΝΑΙ
+										<div id="div209">
+											<h:selectBooleanCheckbox name="n209" value="#{e1Bean._209}" />
+										</div>
+									</td>
+									<td class="line" align="center">ΝΑΙ
+										<div id="div242">
+											<h:selectBooleanCheckbox name="n242" value="#{e1Bean._242}" />
+										</div>
+									</td>
+									<td align="center"><h:inputText name="k041" size="3" class="s" value="#{e1Bean.floor3}" /></td>
+									<td align="center"><h:inputText name="n225" size="4" class="s" value="#{e1Bean._225}" /></td>
+									<td align="center"><h:inputText name="n226" size="4" class="s" value="#{e1Bean._226}" /></td>
+									<td align="center"><h:inputText name="n227" size="3" class="s" value="#{e1Bean._227}" /></td>
+									<td align="center"><h:inputText name="n228" size="3" class="s" value="#{e1Bean._228}" /></td>
+									<td align="center"><h:inputText name="n229" size="3" class="s" value="#{e1Bean._229}" /></td>
+									<td align="center"><h:inputText name="n230" size="8" class="s" value="#{e1Bean._230}" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td align="right">β)</td>
+					<td class="line">Η ετήσια αντικειμενική δαπάνη για λοιπές δευτερεύουσες κατοικίες</td>
+					<td class="line">707</td>
+					<td class="line"><input name="n707" size="14" class="s" value="#{e1Bean._707}" /></td>
+					<td class="line">708</td>
+					<td class="line"><input name="n708" size="14" class="s" value="#{e1Bean._708}" /></td>
+				</tr>
+			</tbody>
+		</table>
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td align="right" valign="top">γ)</td>
+					<td colspan="5" class="line" valign="top">τα επιβατικά αυτ/τα Ι.Χ., Μ.Χ. (οικογένειας, ατομικής-εταιρικής επιχ/σης, κοινωνιών και
+						κοινοπραξιών)</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td rowspan="6" width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td rowspan="5" align="center">
+						<table cellpadding="0" border="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td rowspan="2" class="line" align="center" valign="middle">Α/Α</td>
+									<td rowspan="2" class="line" align="center">Α.Φ.Μ. κυρίου ή κατόχου Ε.Ι.Χ, Μ.Χ.</td>
+									<td rowspan="2">Κ.Α.</td>
+									<td class="line" align="center" valign="middle">Στοιχεία<br />κυκλοφορίας
+									</td>
+									<td rowspan="2">Κ.Α.</td>
+									<td rowspan="2" class="line" align="center">Κυβ.<br />εκατ.
+									</td>
+									<td rowspan="2">Κ.Α.</td>
+									<td rowspan="2" class="line" align="center">Μήνες κυρ/τας<br />μέσα στο 2011
+									</td>
+									<td rowspan="2">Κ.Α.</td>
+									<td rowspan="2" class="line" align="center">Πoσοστό συνιδιοκτ. %</td>
+									<td rowspan="2">Κ.Α.</td>
+									<td rowspan="2" class="line" align="center">Ετος<br />πρώτης κυκλοφ.
+									</td>
+								</tr>
+								<tr>
+									<td class="small" align="center">Γράμματα Αριθμός</td>
+								</tr>
+								<tr>
+									<td class="line" height="25" align="center">1.</td>
+									<td align="center"><h:inputText name="k042" size="20" class="s_l" value="#{e1Bean.afm1}" /></td>
+									<td class="line" align="right">750</td>
+									<td align="center"><h:inputText name="n750" size="10" class="s_l" value="#{e1Bean._750}" /></td>
+									<td class="line" align="right">703</td>
+									<td align="center"><h:inputText name="n703" size="5" class="s" value="#{e1Bean._703}" /></td>
+									<td class="line" align="right">761</td>
+									<td align="center"><h:inputText name="n761" size="3" class="s" value="#{e1Bean._761}" /></td>
+									<td class="line" align="right">771</td>
+									<td align="center"><h:inputText name="n771" size="6" class="s" value="#{e1Bean._771}" /></td>
+									<td class="line" align="right">775</td>
+									<td align="center"><h:inputText name="n775" size="4" class="s" value="#{e1Bean._775}" /></td>
+								</tr>
+								<tr>
+									<td class="line" height="25" align="center">2.</td>
+									<td align="center"><h:inputText name="k047" size="20" class="s_l" value="#{e1Bean.afm2}" /></td>
+									<td class="line" align="right">751</td>
+									<td align="center"><h:inputText name="n751" size="10" class="s_l" value="#{e1Bean._751}" /></td>
+									<td class="line" align="right">704</td>
+									<td align="center"><h:inputText name="n704" size="5" class="s" value="#{e1Bean._704}" /></td>
+									<td class="line" align="right">762</td>
+									<td align="center"><h:inputText name="n762" size="3" class="s" value="#{e1Bean._762}" /></td>
+									<td class="line" align="right">772</td>
+									<td align="center"><h:inputText name="n772" size="6" class="s" value="#{e1Bean._772}" /></td>
+									<td class="line" align="right">776</td>
+									<td align="center"><h:inputText name="n776" size="4" class="s" value="#{e1Bean._776}" /></td>
+
+								</tr>
+								<tr>
+									<td class="line" height="25" align="center">3.</td>
+									<td align="center"><h:inputText name="k052" size="20" class="s_l" value="#{e1Bean.afm3}" /></td>
+									<td class="line" align="right">752</td>
+									<td align="center"><h:inputText name="n752" size="10" class="s_l" value="#{e1Bean._752}" /></td>
+									<td class="line" align="right">705</td>
+									<td align="center"><h:inputText name="n705" size="5" class="s" value="#{e1Bean._705}" /></td>
+									<td class="line" align="right">763</td>
+									<td align="center"><h:inputText name="n763" size="3" class="s" value="#{e1Bean._763}" /></td>
+									<td class="line" align="right">773</td>
+									<td align="center"><h:inputText name="n773" size="6" class="s" value="#{e1Bean._773}" /></td>
+									<td class="line" align="right">777</td>
+									<td align="center"><h:inputText name="n777" size="4" class="s" value="#{e1Bean._777}" /></td>
+
+								</tr>
+								<tr>
+									<td class="line" height="25" align="center">4.</td>
+									<td align="center"><h:inputText name="k095" size="20" class="s_l" value="#{e1Bean.afm4}" /></td>
+									<td class="line" align="right">753</td>
+									<td align="center"><h:inputText name="n753" size="10" class="s_l" maxlength="7" value="#{e1Bean._753}" /></td>
+									<td class="line" align="right">706</td>
+									<td align="center"><h:inputText name="n706" size="5" class="s" value="#{e1Bean._706}" /></td>
+									<td class="line" align="right">764</td>
+									<td align="center"><h:inputText name="n764" size="3" class="s" value="#{e1Bean._764}" /></td>
+									<td class="line" align="right">774</td>
+									<td align="center"><h:inputText name="n774" size="6" class="s" value="#{e1Bean._774}" /></td>
+									<td class="line" align="right">778</td>
+									<td align="center"><h:inputText name="n778" size="4" class="s" value="#{e1Bean._778}" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+					<td height="50"></td>
+					<td align="center">ΥΠΟΧΡΕΟΥ</td>
+					<td></td>
+					<td align="center">ΤΗΣ ΣΥΖΥΓΟΥ</td>
+				</tr>
+				<tr>
+					<td class="line" height="20">851</td>
+					<td><h:inputText name="n851" size="14" class="s" value="#{e1Bean._851}" /></td>
+					<td class="line">852</td>
+					<td><h:inputText name="n852" size="14" class="s" value="#{e1Bean._852}" /></td>
+				</tr>
+				<tr>
+					<td class="line" height="20">853</td>
+					<td><h:inputText name="n853" size="14" class="s" value="#{e1Bean._853}" /></td>
+					<td class="line">854</td>
+					<td><h:inputText name="n854" size="14" class="s" value="#{e1Bean._854}" /></td>
+				</tr>
+				<tr>
+					<td class="line" height="20">855</td>
+					<td><h:inputText name="n855" size="14" class="s" value="#{e1Bean._855}" /></td>
+					<td class="line">856</td>
+					<td><h:inputText name="n856" size="14" class="s" value="#{e1Bean._856}" /></td>
+				</tr>
+				<tr>
+					<td class="line" height="20">857</td>
+					<td><h:inputText name="n857" size="14" class="s" value="#{e1Bean._857}" /></td>
+					<td class="line">858</td>
+					<td><h:inputText name="n858" size="14" class="s" value="#{e1Bean._858}" /></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td align="right" valign="top">δ)</td>
+					<td class="line" valign="top">τα σκάφη αναψυχής Ι.Χ. (οικογένειας κτλ)</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td rowspan="4" width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td rowspan="3" align="center">
+						<table cellpadding="0" border="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td rowspan="2" class="small" align="center" valign="middle">Ονομα σκάφους</td>
+									<td rowspan="2" class="small" align="center">Αριθμός και λιμάνι νηολογίου</td>
+									<td rowspan="2" class="small" align="center" valign="middle">Χώρα</td>
+									<td rowspan="2" class="small" align="center" valign="middle">Ιστιοφόρα</td>
+									<td rowspan="2" class="small" align="center" valign="middle">Χώροι<br /> ενδιαίτησης
+									</td>
+									<td colspan="2" class="small" align="center">Ποσοστό συνιδ.%</td>
+									<td rowspan="2" class="small" align="center">Πρώτη νηολογ.</td>
+									<td rowspan="2" class="small" align="center" valign="middle">Μήνες κυρ/τας<br /> μέσα στο 2011
+									</td>
+									<td class="small" align="center" valign="middle">Κ.Α.</td>
+									<td rowspan="2" class="small" align="center">Μέτρα μήκους</td>
+
+								</tr>
+								<tr>
+									<td class="line" align="center">υπόχρεου</td>
+									<td class="line" align="center">συζύγου</td>
+								</tr>
+								<tr>
+									<td align="center"><h:inputText name="k057" size="15" class="s_l" value="#{e1Bean.shippingName1}" /></td>
+									<td align="center"><h:inputText name="k058" size="8" class="s_l" value="#{e1Bean.shippingRegister1}" /></td>
+									<td align="center"><h:inputText name="k059" size="5" class="s_l" value="#{e1Bean.shippingCountry1}" /></td>
+									<td align="center"><div id="div043">
+											ΝΑΙ
+											<h:selectBooleanCheckbox name="k043" value="#{e1Bean.sailShip1}" />
+										</div></td>
+									<td align="center"><div id="div044">
+											ΝΑΙ
+											<h:selectBooleanCheckbox name="k044" value="#{e1Bean.accommodationSpace1}" />
+										</div></td>
+									<td align="center"><h:inputText name="k060" size="6" class="s" value="#{e1Bean.percentPrincipalCoOwner1}" /></td>
+									<td align="center"><h:inputText name="k061" size="6" class="s" value="#{e1Bean.percentWifeCoOwner1}" /></td>
+									<td align="center"><h:inputText name="k062" size="6" class="s" value="#{e1Bean.firstRegister1}" /></td>
+									<td align="center"><h:inputText name="k063" size="5" class="s" value="#{e1Bean.ownershipMonths1}" /></td>
+									<td align="center">747</td>
+									<td align="center"><h:inputText name="n747" size="4" class="s" value="#{e1Bean._747}" /></td>
+								</tr>
+								<tr>
+									<td align="center"><h:inputText name="k105" size="15" class="s_l" value="#{e1Bean.shippingName2}" /></td>
+									<td align="center"><h:inputText name="k130" size="8" class="s_l" value="#{e1Bean.shippingRegister2}" /></td>
+									<td align="center"><h:inputText name="k131" size="5" class="s_l" value="#{e1Bean.shippingCountry2}" /></td>
+									<td align="center"><div id="div045">
+											ΝΑΙ
+											<h:selectBooleanCheckbox name="k045" value="#{e1Bean.sailShip2}" />
+										</div></td>
+									<td align="center"><div id="div046">
+											ΝΑΙ
+											<h:selectBooleanCheckbox name="k046" value="#{e1Bean.accommodationSpace2}" />
+										</div></td>
+									<td align="center"><h:inputText name="k132" size="6" class="s" value="#{e1Bean.percentPrincipalCoOwner2}" /></td>
+									<td align="center"><h:inputText name="k133" size="6" class="s" value="#{e1Bean.percentWifeCoOwner2}" /></td>
+									<td align="center"><h:inputText name="k134" size="6" class="s" value="#{e1Bean.firstRegister2}" /></td>
+									<td align="center"><h:inputText name="k135" size="5" class="s" value="#{e1Bean.ownershipMonths2}" /></td>
+									<td align="center">748</td>
+									<td align="center"><h:inputText name="n748" size="4" class="s" value="#{e1Bean._748}" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="line">711</td>
+					<td><h:inputText name="n711" size="14" class="s" value="#{e1Bean._711}" /></td>
+					<td class="line">712</td>
+					<td><h:inputText name="n712" size="14" class="s" value="#{e1Bean._712}" /></td>
+				</tr>
+				<tr>
+					<td class="line">713</td>
+					<td><h:inputText name="n713" size="14" class="s" value="#{e1Bean._713}" /></td>
+					<td class="line">714</td>
+					<td><h:inputText name="n714" size="14" class="s" value="#{e1Bean._714}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td align="right">δα)</td>
+					<td class="line">τις αμοιβές πληρωμάτων σκαφών αναψυχής</td>
+					<td class="line">731</td>
+					<td><h:inputText name="n731" size="14" class="s" value="#{e1Bean._731}" /></td>
+					<td class="line">732</td>
+					<td><h:inputText name="n732" size="14" class="s" value="#{e1Bean._732}" /></td>
+				</tr>
+				<tr>
+					<td align="right">ε)</td>
+					<td class="line">τα αεροσκάφη, ελικόπτερα Ι.Χ. και ανεμόπτερα</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td rowspan="4" width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td rowspan="2" align="center">
+						<table cellpadding="0" border="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td class="small" align="center" valign="middle">Στοιχεία εθνικότητας και νηολόγησης</td>
+									<td class="small" align="center" valign="middle">Τύπος</td>
+									<td class="small" align="center" valign="middle">Αριθμ. σειράς<br /> κατ/στή
+									</td>
+									<td colspan="2" class="small" align="center" valign="middle">Αερολιμένας συνήθους<br /> παραμονής
+									</td>
+									<td class="small" align="center">Μήνες κυρ/τας μέσα στο 2011</td>
+									<td class="small" align="center">Ίπποι ή Λίμπρες</td>
+									<td class="small" align="center">Πρώτη<br /> νηολογ.
+									</td>
+								</tr>
+								<tr>
+									<td align="center"><h:inputText name="k065" size="10" class="s_l" value="#{e1Bean.aircraftRegisterData}" /></td>
+									<td align="center"><h:inputText name="k066" size="5" class="s_l" value="#{e1Bean.aircraftType}" /></td>
+									<td align="center"><h:inputText name="k067" size="5" class="s" value="#{e1Bean.aircraftSn}" /></td>
+									<td colspan="2" align="center"><h:inputText name="k068" size="10" class="s_l" value="#{e1Bean.airportBase}" /></td>
+									<td align="center"><h:inputText name="k069" size="3" class="s" value="#{e1Bean.aircraftOwnerShip}" /></td>
+									<td align="center"><h:inputText name="k070" size="5" class="s" value="#{e1Bean.aircraftPowerLibres}" /></td>
+									<td align="center"><h:inputText name="k071" size="5" class="s" value="#{e1Bean.aircraftFirstRegister}" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="line">715</td>
+					<td><h:inputText name="n715" size="14" class="s" value="#{e1Bean._715}" /></td>
+					<td class="line">716</td>
+					<td><h:inputText name="n716" size="14" class="s" value="#{e1Bean._716}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="NewPage" id="msg4">&nbsp;</div>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td align="right">στ)</td>
+					<td class="line">τις δεξαμενές κολύμβησης (πισίνες)</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td rowspan="4" width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td rowspan="2" align="center">
+						<table cellpadding="0" border="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td class="small" rowspan="2" align="center" width="14%">Κ.Α</td>
+									<td rowspan="2" class="small" align="center" valign="middle" width="14%">Εξωτερική (τετρ. μέτρα)</td>
+									<td colspan="2" class="small" align="center" valign="middle" width="20%">Ποσοστό συνιδιοκτησίας %</td>
+									<td class="small" rowspan="2" align="center" width="14%">Κ.Α</td>
+									<td class="small" rowspan="2" align="center" width="14%">Εσωτερική (τετρ. μέτρα)</td>
+									<td colspan="2" class="small" align="center" width="20%">Ποσοστό συνιδιοκτησίας %</td>
+								</tr>
+								<tr>
+									<td class="line" align="center">υπόχρεου</td>
+									<td class="line" align="center">της συζύγου</td>
+									<td class="line" align="center">υπόχρεου</td>
+									<td class="line" align="center">της συζύγου</td>
+								</tr>
+								<tr>
+									<td align="center">767</td>
+									<td align="center"><h:inputText name="n767" size="5" class="s" value="#{e1Bean._767}" /></td>
+									<td align="center"><h:inputText name="k073" size="5" class="s" value="#{e1Bean.poolPrincipalCoOwnerOutdoor}" /></td>
+									<td align="center"><h:inputText name="k074" size="5" class="s" value="#{e1Bean.poolWifeCoOwnerOutdoor}" /></td>
+									<td align="center">768</td>
+									<td align="center"><h:inputText name="n768" size="5" class="s" value="#{e1Bean._768}" /></td>
+									<td align="center"><h:inputText name="k076" size="5" class="s" value="#{e1Bean.poolPrincipalCoOwnerIndoor}" /></td>
+									<td align="center"><h:inputText name="k077" size="5" class="s" value="#{e1Bean.poolWifeCoOwnerIndoor}" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="line">765</td>
+					<td class="line"><h:inputText name="n765" size="14" class="s" value="#{e1Bean._765}" /></td>
+					<td class="line">766</td>
+					<td><h:inputText name="n766" size="14" class="s" value="#{e1Bean._766}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td align="right">ζ)</td>
+					<td class="line">Γράψτε την αντικειμενική δαπάνη για δίδακτρα σε σχολεία</td>
+					<td class="line">769</td>
+					<td><h:inputText name="n769" size="14" class="s" value="#{e1Bean._769}" /></td>
+					<td class="line">&nbsp;</td>
+					<td class="line"></td>
+				</tr>
+				<tr>
+					<td align="right">η)</td>
+					<td class="line">Γράψτε την αντικειμενική δαπάνη για οκιακούς βοηθούς, οδηγούς αυτ/των και δασκάλους</td>
+					<td class="line">770</td>
+					<td class="line"><h:inputText name="n770" size="14" class="s" value="#{e1Bean._770}" /></td>
+					<td class="line">&nbsp;</td>
+					<td class="line"></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td align="right" valign="top"><b>2.</b></td>
+					<td valign="top"><b>Απο τη δαπάνη που καταβάλατε:</b></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td align="right">α)</td>
+					<td class="line">Για την αγορά ή χρηματοδοτική μίσθωση αυτοκινήτων, δίτροχων κτλ. οχημάτων</td>
+					<td class="line">719</td>
+					<td class="line"><h:inputText name="n719" size="14" class="s" value="#{e1Bean._719}" /></td>
+					<td class="line">720</td>
+					<td class="line"><h:inputText name="n720" size="14" class="s" value="#{e1Bean._720}" /></td>
+				</tr>
+				<tr>
+					<td align="right">β)</td>
+					<td class="line">Για την αγορά ή χρηματοδοτική μίσθωση πλοίων αναψυχής κτλ. σκαφών αναψυχής και αεροσκαφών</td>
+					<td class="line">721</td>
+					<td class="line"><h:inputText name="n721" size="14" class="s" value="#{e1Bean._721}" /></td>
+					<td class="line">722</td>
+					<td class="line"><h:inputText name="n722" size="14" class="s" value="#{e1Bean._722}" /></td>
+				</tr>
+				<tr>
+					<td align="right">γ)</td>
+					<td class="line">Για την αγορά ή χρηματοδοτική μίσθωση κινητών πραγμάτων αξίας πάνω από 10.000 ευρώ</td>
+					<td class="line">723</td>
+					<td class="line"><h:inputText name="n723" size="14" class="s" value="#{e1Bean._723}" /></td>
+					<td class="line">724</td>
+					<td class="line"><h:inputText name="n724" size="14" class="s" value="#{e1Bean._724}" /></td>
+				</tr>
+				<tr>
+					<td align="right">δ)</td>
+					<td class="line">για δωρεές ή γονικές παροχές ή χορηγίες χρηματικών ποσών (εκτός προς το Δημόσιο, κτλ.)</td>
+					<td class="line">725</td>
+					<td class="line"><h:inputText name="n725" size="14" class="s" value="#{e1Bean._725}" /></td>
+					<td class="line">726</td>
+					<td class="line"><h:inputText name="n726" size="14" class="s" value="#{e1Bean._726}" /></td>
+				</tr>
+				<tr>
+					<td align="right">ε)</td>
+					<td class="line">για την τοκοχρεολυτική απόσβεση δανείων ή πιστώσεων κτλ.</td>
+					<td class="line">727</td>
+					<td class="line"><h:inputText name="n727" size="14" class="s" value="#{e1Bean._727}" /></td>
+					<td class="line">728</td>
+					<td class="line"><h:inputText name="n728" size="14" class="s" value="#{e1Bean._728}" /></td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- Πίνακας 6 -->
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td height="10"></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="colordark"><em id="TOC6"></em> <b><font size="1">ΠΙΝΑΚΑΣ 6. </font> ΠΡΟΣΘΕΤΑ ΠΛΗΡΟΦΟΡΙΑΚΑ ΣΤΟΙΧΕΙΑ - ΠΟΣΑ ΠΟΥ
+							ΜΕΙΩΝΟΥΝ ΤΗΝ ΕΤΗΣΙΑ ΔΑΠΑΝΗ </b></td>
+					<td class="colordark" colspan="2" align="center"><b>ΥΠΟΧΡΕΟΥ</b></td>
+					<td class="colordark" colspan="2" align="center"><b>ΤΗΣ ΣΥΖΥΓΟΥ</b></td>
+				</tr>
+				<tr>
+					<td align="right">1.</td>
+					<td class="line">Καθαρό εισόδημα που δεν υπήρχε την 1-1-2012</td>
+					<td class="line">655</td>
+					<td><h:inputText name="n655" size="14" class="s" value="#{e1Bean._655}" /></td>
+					<td class="line">656</td>
+					<td><h:inputText name="n656" size="14" class="s" value="#{e1Bean._656}" /></td>
+				</tr>
+				<tr>
+					<td align="right">2.</td>
+					<td class="line">Ποσό ετήσιας δαπάνης που δεν υπήρχε την 1-1-2012</td>
+					<td class="line">693</td>
+					<td><h:inputText name="n693" size="14" class="s" value="#{e1Bean._693}" /></td>
+					<td class="line">694</td>
+					<td><h:inputText name="n694" size="14" class="s" value="#{e1Bean._694}" /></td>
+				</tr>
+				<tr>
+					<td align="right">3.</td>
+					<td class="line">Εισοδήματα που αποκτήσατε το 2011, τα οποία απαλλάσσονται από το φόρο, φορολογούνται με ειδικό τρόπο, καθώς και από
+						μερίσματα ημεδαπών Α.Ε., ΕΠΕ, κτλ.</td>
+					<td class="line">659</td>
+					<td><h:inputText name="n659" size="14" class="s" value="#{e1Bean._659}" /></td>
+					<td class="line">660</td>
+					<td><h:inputText name="n660" size="14" class="s" value="#{e1Bean._660}" /></td>
+				</tr>
+				<tr>
+					<td align="right">4.</td>
+					<td class="line">Εισοδήματα που εξαιρούνται της εισφοράς (παρ. 2 άρθρ. 29 ν. 3986/2011)</td>
+					<td class="line">657</td>
+					<td><h:inputText name="n657" size="14" class="s" value="#{e1Bean._657}" /></td>
+					<td class="line">658</td>
+					<td><h:inputText name="n658" size="14" value="#{e1Bean._658}" /></td>
+				</tr>
+
+				<tr>
+					<td align="right">5.</td>
+					<td class="line">Επίδομα ανεργίας του Ο.Α.Ε.Δ.</td>
+					<td class="line">661</td>
+					<td><h:inputText name="n661" size="14" class="s" value="#{e1Bean._661}" /></td>
+					<td class="line">662</td>
+					<td><h:inputText name="n662" size="14" class="s" value="#{e1Bean._662}" /></td>
+				</tr>
+				<tr>
+					<td align="right">6.</td>
+					<td class="line">Καθαρά κέρδη από εταιρίες κτλ., που φορολογήθηκαν με το άρθρο 10 Κ.Φ.Ε.</td>
+					<td class="line">431</td>
+					<td><h:inputText name="n431" size="14" class="s" value="#{e1Bean._431}" /></td>
+					<td class="line">432</td>
+					<td><h:inputText name="n432" size="14" class="s" value="#{e1Bean._432}" /></td>
+				</tr>
+				<tr>
+					<td align="right">7.</td>
+					<td class="line">Φόρος που παρακρατήθηκε στα εισοδήματα της περ. 3 και στα καθαρά κέρδη της περ. 6</td>
+					<td class="line">433</td>
+					<td class="line"><h:inputText name="n433" size="14" value="#{e1Bean._433}" /></td>
+					<td class="line">434</td>
+					<td class="line"><h:inputText name="n434" size="14" class="s" value="#{e1Bean._434}" /></td>
+				</tr>
+				<tr>
+					<td align="right">8.</td>
+					<td class="line">Καθαρό ποσό επιδόματος κοινωνικής αλληλεγγύης (ΕΚΑΣ)</td>
+					<td class="line">305</td>
+					<td><h:inputText name="n305" size="14" class="s" value="#{e1Bean._305}" /></td>
+					<td class="line">306</td>
+					<td><h:inputText name="n306" size="14" class="s" value="#{e1Bean._306}" /></td>
+				</tr>
+				<tr>
+					<td align="right">9.</td>
+					<td class="line">Αγροτικές ενισχύσεις (επιδοτ., αποζημ., οικον.ενισχ. κτλ) εκτός αυτών επί της παραγωγής</td>
+					<td class="line">477</td>
+					<td class="line"><h:inputText name="n477" size="14" class="s" value="#{e1Bean._477}" /></td>
+					<td class="line">478</td>
+					<td class="line"><h:inputText name="n478" size="14" class="s" value="#{e1Bean._478}" /></td>
+				</tr>
+				<tr>
+					<td align="right">10.</td>
+					<td class="line">Ενοίκιο εγκατάστασης ατομικής επιχείρησης ή ελευθέριου επαγγέλματος</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td rowspan="7" width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td rowspan="4" align="center">
+						<table cellpadding="0" border="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td class="line" align="center" width="30%">Ονοματεπώνυμο ή Επωνυμία εκμισθωτή</td>
+									<td class="line" align="center" width="19%">K.A.</td>
+									<td class="line" align="center" width="19%">Α.Φ.Μ. εκμισθωτή</td>
+									<td class="line" align="center" width="19%">K.A.</td>
+									<td class="line" align="center" width="19%">Επιφάνεια σε τ.μ.</td>
+								</tr>
+								<tr>
+									<td align="center"><h:inputText name="k078" size="30" class="s_l" value="#{e1Bean.lessorName1}" /></td>
+									<td class="line" align="center">790</td>
+									<td align="center"><h:inputText name="n790" size="14" class="s" value="#{e1Bean._790}" /></td>
+									<td class="line" align="center">795</td>
+									<td align="center"><h:inputText name="n795" size="12" class="s" value="#{e1Bean._795}" /></td>
+								</tr>
+								<tr>
+									<td align="center"><h:inputText name="k080" size="30" class="s_l" value="#{e1Bean.lassorName2}" /></td>
+									<td class="line" align="center">791</td>
+									<td align="center"><h:inputText name="n791" size="14" class="s" value="#{e1Bean._791}" /></td>
+									<td class="line" align="center">796</td>
+									<td align="center"><h:inputText name="n796" size="12" class="s" value="#{e1Bean._796}" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+					<td height="30"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+
+				</tr>
+				<tr>
+					<td class="line">793</td>
+					<td><h:inputText name="n793" size="14" class="s" value="#{e1Bean._793}" /></td>
+					<td class="line">794</td>
+					<td><h:inputText name="n794" size="14" class="s" value="#{e1Bean._794}" /></td>
+				</tr>
+				<tr>
+					<td class="line">615</td>
+					<td><h:inputText name="n615" size="14" class="s" value="#{e1Bean._615}" /></td>
+					<td class="line">616</td>
+					<td><h:inputText name="n616" size="14" class="s" value="#{e1Bean._616}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td align="right">11.</td>
+					<td class="line">Ενοίκιο ακινήτων εκτός από κύρια κατοικία, κατοικία παιδιών που σπουδάζουν και περίπτ. 10</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td rowspan="4" width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td rowspan="2" align="center">
+						<table cellpadding="0" border="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td class="line" align="center" width="30%"><h:inputText name="k086" size="30" class="s_l" value="#{e1Bean.lassorNameForStudent}" /></td>
+									<td class="line" align="center" width="19%">417</td>
+									<td class="line" align="center" width="19%"><h:inputText name="n417" size="14" class="s" value="#{e1Bean._417}" /></td>
+									<td class="line" align="center" width="19%">797</td>
+									<td class="line" align="center" width="19%"><h:inputText name="n797" size="12" maxlength="7" class="s"
+											value="#{e1Bean.areaStudentHouse}" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="line">419</td>
+					<td><h:inputText name="n419" size="14" class="s" value="#{e1Bean._419}" /></td>
+					<td class="line">420</td>
+					<td><h:inputText name="n420" size="14" class="s" value="#{e1Bean._420}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td align="right">12.</td>
+					<td class="line">Δαπάνη για την αγορά ή ανέγερση ακινήτων ή χρηματοδοτική μίσθωση αυτών κτλ.</td>
+					<td class="line">735</td>
+					<td><h:inputText name="n735" size="14" class="s" value="#{e1Bean._735}" /></td>
+					<td class="line">736</td>
+					<td><h:inputText name="n736" size="14" class="s" value="#{e1Bean._736}" /></td>
+				</tr>
+
+				<tr>
+					<td align="right">13.</td>
+					<td class="line">Χρηματικά ποσά που προέρχονται από διάθεση περιουσιακών στοιχείων, εισαγωγή χρηματικών κεφαλαίων αλλοδαπής, δάνεια, δωρεές
+						κτλ.</td>
+					<td class="line">781</td>
+					<td><input name="n781" size="14" class="s" value="#{e1Bean._781}" /></td>
+					<td class="line">782</td>
+					<td><input name="n782" size="14" class="s" value="#{e1Bean._782}" /></td>
+				</tr>
+				<tr>
+					<td align="right">14.</td>
+					<td class="line">Επαναπατριζόμενα κεφάλια (άρθρ. 18ν.3842/10)</td>
+					<td class="line">783</td>
+					<td><input name="n783" size="14" class="s" value="#{e1Bean._783}" /></td>
+					<td class="line">784</td>
+					<td><input name="n784" size="14" class="s" value="#{e1Bean._784}" /></td>
+				</tr>
+
+				<tr>
+					<td align="right">15.</td>
+					<td class="line">Ανάλωση κεφαλαίου που ήδη φορολογήθηκε ή απαλλασσόταν από το φόρο</td>
+					<td class="line">787</td>
+					<td><input name="n787" size="14" class="s" value="#{e1Bean._787}" /></td>
+					<td class="line">788</td>
+					<td><input name="n788" size="14" class="s" value="#{e1Bean._788}" /></td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- Πίνακας 7 -->
+
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="colordark"><em id="TOC7"></em> <b><font size="1">ΠΙΝΑΚΑΣ 7. </font> ΠΟΣΑ ΔΑΠΑΝΩΝ ΠΟΥ ΑΦΑΙΡΟΥΝΤΑΙ ΑΠΟ ΤΟ ΣΥΝΟΛΙΚΟ
+							ΕΙΣΟΔΗΜΑ Ή ΑΠΟ ΤΟ ΦΟΡΟ</b></td>
+					<td class="colordark" colspan="2" align="center"><b>ΥΠΟΧΡΕΟΥ</b></td>
+					<td class="colordark" colspan="2" align="center"><b>ΤΗΣ ΣΥΖΥΓΟΥ</b></td>
+				</tr>
+				<tr>
+					<td align="right">1.</td>
+					<td class="line">Δαπάνη αγοράς αγαθών και παροχής υπηρεσιών (παρ. 1 άρθρο 9 Κ.Φ.Ε.)</td>
+					<td class="line">049</td>
+					<td class="line"><h:inputText name="n049" size="14" class="s" value="#{e1Bean._049}" /></td>
+					<td class="line"></td>
+					<td class="line"></td>
+				</tr>
+				<tr>
+					<td align="right">2.</td>
+					<td class="line">Εξοδα ιατρικής και νοσοκομειακής περίθαλψης</td>
+					<td class="line">051</td>
+					<td class="line"><h:inputText name="n051" size="14" class="s" value="#{e1Bean._051}" /></td>
+					<td class="line">052</td>
+					<td class="line"><h:inputText name="n052" size="14" class="s" value="#{e1Bean._052}" /></td>
+				</tr>
+				<tr>
+					<td align="right">3.</td>
+					<td class="line">Υποχρεωτικές εισφορές σε ταμεία ασφάλισης (Ο.Α.Ε.Ε. κτλ)</td>
+					<td class="line">053</td>
+					<td class="line"><h:inputText name="n053" size="14" class="s" value="#{e1Bean._053}" /></td>
+					<td class="line">054</td>
+					<td class="line"><h:inputText name="n054" size="14" class="s" value="#{e1Bean._054}" /></td>
+				</tr>
+				<tr>
+					<td align="right">4.</td>
+					<td class="line">Δωρεές ιατρικών μηχανημάτων κτλ., σε νοσοκομεία κτλ.</td>
+					<td class="line">057</td>
+					<td class="line"><h:inputText name="n057" size="14" class="s" value="#{e1Bean._057}" /></td>
+					<td class="line">058</td>
+					<td class="line"><h:inputText name="n058" size="14" class="s" value="#{e1Bean._058}" /></td>
+				</tr>
+				<tr>
+					<td align="right">5.</td>
+					<td class="line2">Δωρεές χρημ. ποσών στο Δημόσιο κτλ: Στο εξωτερικό 031<h:inputText name="n031" size="14" class="s" value="#{e1Bean._031}" />
+						032<h:inputText name="n032" size="14" class="s" value="#{e1Bean._032}" /> και συνολικά
+					</td>
+					<td class="line">059</td>
+					<td class="line"><h:inputText name="n059" size="14" class="s" value="#{e1Bean._059}" /></td>
+					<td class="line">060</td>
+					<td class="line"><h:inputText name="n060" size="14" class="s" value="#{e1Bean._060}" /></td>
+				</tr>
+				<tr>
+					<td align="right">6.</td>
+					<td class="line">Δωρεές χρημ. ποσών στο λογαριασμό αλληλοβοήθειας για την απόσβεση του Δημόσιου χρέους</td>
+					<td class="line">075</td>
+					<td class="line"><h:inputText name="n075" size="14" class="s" value="#{e1Bean._075}" /></td>
+					<td class="line">076</td>
+					<td class="line"><h:inputText name="n076" size="14" class="s" value="#{e1Bean._076}" /></td>
+				</tr>
+
+				<tr>
+					<td align="right">7.</td>
+					<td class="line">Πολιτιστικές χορηγίες του ν.3525/2007:</td>
+					<td class="line">061</td>
+					<td class="line"><h:inputText name="n061" size="14" class="s" value="#{e1Bean._061}" /></td>
+					<td class="line">062</td>
+					<td class="line"><h:inputText name="n062" size="14" class="s" value="#{e1Bean._062}" /></td>
+				</tr>
+				<tr>
+					<td align="right" valign="top">8.</td>
+					<td class="line">Δεδουλευμένοι τόκοι που καταβλήθηκαν για στεγαστικά δάνεια απόκτησης πρώτης κατοικίας και αναστήλωσης κτλ. διατηρητέων
+						κτιρίων:<nobr>Επιφάνεια σε τ.μ. 071 <h:inputText name="n071" size="4" class="s" value="#{e1Bean._071}" /></nobr>
+					</td>
+					<td class="line">063</td>
+					<td class="line"><h:inputText name="n063" size="14" class="s" value="#{e1Bean._063}" /></td>
+					<td class="line">064</td>
+					<td class="line"><h:inputText name="n064" size="14" class="s" value="#{e1Bean._064}" /></td>
+				</tr>
+				<tr>
+					<td align="right">9</td>
+					<td class="line">Συνολικό ποσό δανείων της προηγούμενης περίπτωσης</td>
+					<td class="line">069</td>
+					<td class="line"><h:inputText name="n069" size="14" class="s" value="#{e1Bean._069}" /></td>
+					<td class="line">070</td>
+					<td class="line"><h:inputText name="n070" size="14" class="s" value="#{e1Bean._070}" /></td>
+				</tr>
+				<tr>
+					<td align="right">10.</td>
+					<td colspan="5" class="line">Ενοίκιο που πληρώσατε για κύρια κατοικία της οικογένειας:</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td rowspan="6" width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td rowspan="5">
+						<table cellpadding="0" border="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td class="line" align="center">Ονοματεπώνυμο ή<br />Επωνυμία εκμισθωτή
+									</td>
+									<td width="20">Κ.Α.</td>
+									<td class="line" align="center">Α.Φ.Μ. εκμισθωτή</td>
+									<td width="20">Κ.Α.</td>
+									<td class="line" align="center">Φιλοξενία</td>
+									<td width="20">Κ.Α.</td>
+									<td class="line" align="center">Επιφάνεια<br />σε τ.μ.
+									</td>
+									<td width="20">Κ.Α.</td>
+									<td class="line" align="center">Μήνες</td>
+								</tr>
+								<tr>
+									<td align="center"><h:inputText name="k088" size="30" class="s_l" style="text-align: Left" value="#{e1Bean.rentalForFamilyOwnerName1}" /></td>
+									<td class="line" align="center">801</td>
+									<td class="line" align="center"><h:inputText name="n801" size="14" class="s" value="#{e1Bean._801}" /></td>
+									<td class="line" align="center">092</td>
+									<td class="line" align="center"><h:selectBooleanCheckbox name="n092" value="#{e1Bean._092}" /></td>
+									<td class="line" align="center">091</td>
+									<td class="line" align="center"><h:inputText name="n091" size="4" class="s" value="#{e1Bean._091}" /></td>
+									<td class="line" align="center">097</td>
+									<td class="line" align="center"><h:inputText value="12" name="n097" size="4" class="s" value="#{e1Bean._097}" /></td>
+								</tr>
+
+								<tr>
+									<td align="center"><h:inputText name="k090" size="30" class="s_l" style="text-align: Left" value="#{e1Bean.rentalForFamilyOwnerName2}" /></td>
+									<td class="line" align="center">802</td>
+									<td class="line" align="center"><h:inputText name="n802" size="14" class="s" value="#{e1Bean._802}" /></td>
+									<td class="line" align="center">094</td>
+									<td class="line" align="center"><h:selectBooleanCheckbox name="n094" value="#{e1Bean._094}" /></td>
+									<td class="line" align="center">093</td>
+									<td class="line" align="center"><h:inputText name="n093" size="4" class="s" value="#{e1Bean._093}" /></td>
+									<td class="line" align="center">098</td>
+									<td class="line" align="center"><h:inputText name="n098" size="4" class="s" value="#{e1Bean._098}" /></td>
+								</tr>
+
+								<tr>
+									<td align="center"><h:inputText name="k092" size="30" class="s_l" style="text-align: Left" value="#{e1Bean.rentalForFamilyOwnerName3}" /></td>
+									<td class="line" align="center">803</td>
+									<td class="line" align="center"><h:inputText name="n803" size="14" class="s" value="#{e1Bean._803}" /></td>
+									<td class="line" align="center">096</td>
+									<td class="line" align="center"><h:selectBooleanCheckbox name="n096" value="#{e1Bean._096}" /></td>
+									<td class="line" align="center">095</td>
+									<td class="line" align="center"><h:inputText name="n095" size="4" class="s" value="#{e1Bean._095}" /></td>
+									<td class="line" align="center">099</td>
+									<td class="line" align="center"><h:inputText name="n099" size="4" class="s" value="#{e1Bean._099}" /></td>
+								</tr>
+
+							</tbody>
+						</table>
+					</td>
+					<td height="40"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="line">811</td>
+					<td><h:inputText name="n811" size="14" class="s" value="#{e1Bean._811}" /></td>
+					<td class="line">812</td>
+					<td><h:inputText name="n812" size="14" class="s" value="#{e1Bean._812}" /></td>
+				</tr>
+				<tr>
+					<td class="line">813</td>
+					<td><h:inputText name="n813" size="14" class="s" value="#{e1Bean._813}" /></td>
+					<td class="line">814</td>
+					<td><h:inputText name="n814" size="14" class="s" value="#{e1Bean._814}" /></td>
+				</tr>
+				<tr>
+					<td class="line">815</td>
+					<td><h:inputText name="n815" size="14" class="s" value="#{e1Bean._815}" /></td>
+					<td class="line">816</td>
+					<td><h:inputText name="n816" size="14" class="s" value="#{e1Bean._816}" /></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="NewPage" id="msg5">&nbsp;</div>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td align="right">11.</td>
+					<td class="line">Ενοίκιο που πληρώσατε για κατοικία παιδιών της οικογένειας που σπουδάζουν στο εσωτερικό:</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td rowspan="9" width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td rowspan="7">
+						<table cellpadding="0" border="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td align="center"><h:inputText name="k094" size="30" class="s_l" style="text-align: Left" value="#{e1Bean.rentalForStudyOwnerName1}" /></td>
+									<td rowspan="6" width="20"></td>
+									<td class="line" align="center">804 <h:inputText name="n804" size="14" class="s" value="#{e1Bean._804}" /></td>
+									<td rowspan="6" width="20"></td>
+									<td align="center"></td>
+								</tr>
+								<tr>
+									<td align="center"><h:inputText name="k096" size="30" class="s_l" style="text-align: Left" value="#{e1Bean.rentalForStudyOwnerName2}" /></td>
+									<td class="line" align="center">805 <h:inputText name="n805" size="14" class="s" value="#{e1Bean._805}" /></td>
+									<td align="center"></td>
+								</tr>
+								<tr>
+									<td align="center"><h:inputText name="k098" size="30" class="s_l" style="text-align: Left" value="#{e1Bean.rentalForStudyOwnerName3}" /></td>
+									<td class="line" align="center">806 <h:inputText name="n806" size="14" class="s" value="#{e1Bean._806}" /></td>
+									<td align="center"></td>
+								</tr>
+								<tr>
+									<td align="center"><h:inputText name="k100" size="30" class="s_l" style="text-align: Left" value="#{e1Bean.rentalForStudyOwnerName4}" /></td>
+									<td class="line" align="center">807 <h:inputText name="n807" size="14" class="s" value="#{e1Bean._807}" /></td>
+									<td align="center"></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="line">817</td>
+					<td><h:inputText name="n817" size="14" class="s" value="#{e1Bean._817}" /></td>
+					<td colspan="2" rowspan="2" align="left" valign="middle">
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td><img src="formE1Print_data/Arrow_Green.gif" height="45" width="35" /></td>
+									<td rowspan="2" valign="middle">&nbsp; &nbsp; 1ο παιδί</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td class="line">819</td>
+					<td><h:inputText name="n819" size="14" class="s" value="#{e1Bean._819}" /></td>
+				</tr>
+				<tr>
+					<td class="line">821</td>
+					<td><h:inputText name="n821" size="14" class="s" value="#{e1Bean._821}" /></td>
+					<td colspan="2" rowspan="1" align="left" valign="middle">
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td><img src="formE1Print_data/Arrow_Green.gif" height="25" width="35" /></td>
+									<td rowspan="2" valign="middle">&nbsp; &nbsp; 2ο παιδί</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td class="line">823</td>
+					<td><h:inputText name="n823" size="14" class="s" value="#{e1Bean._823}" /></td>
+
+					<td colspan="2" rowspan="1" align="left" valign="middle">
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td><img src="formE1Print_data/Arrow_Green.gif" height="25" width="35" /></td>
+									<td rowspan="2" valign="middle">&nbsp; &nbsp; 3ο παιδί</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td align="right">12.</td>
+					<td class="line">Ποσό ασφαλίστρων για ασφάλιση ζωής, προσωπικών ατυχημάτων, ασθένειας</td>
+					<td class="line">073</td>
+					<td><h:inputText name="n073" size="14" class="s" value="#{e1Bean._073}" /></td>
+					<td class="line">074</td>
+					<td><h:inputText name="n074" size="14" class="s" value="#{e1Bean._074}" /></td>
+				</tr>
+
+				<tr>
+					<td align="right">13.</td>
+					<td class="line">Ποσό διατροφής που κατέβαλε ο ένας σύζυγος στον άλλον</td>
+					<td class="line">089</td>
+					<td><h:inputText name="n089" size="14" class="s" value="#{e1Bean._089}" /></td>
+					<td class="line">090</td>
+					<td><h:inputText name="n090" size="14" class="s" value="#{e1Bean._090}" /></td>
+				</tr>
+				<tr>
+					<td align="right">14.</td>
+					<td class="line">Δαπάνη για αλλαγή εγκατάστασης καυσίμου ή για εγκατάσταση φυσικού αερίου κτλ.</td>
+					<td class="line">087</td>
+					<td><h:inputText name="n087" size="14" class="s" value="#{e1Bean._087}" /></td>
+					<td class="line">088</td>
+					<td><h:inputText name="n088" size="14" class="s" value="#{e1Bean._088}" /></td>
+				</tr>
+				<tr>
+
+				</tr>
+				<tr>
+					<td align="right">15.</td>
+					<td class="line">Δίδακτρα σε φροντιστήρια εκπαιδευτικών μαθημάτων ή ξένων γλωσσών:</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td align="right">α)</td>
+					<td class="line">Για τον υπόχρεο και τη σύζυγο</td>
+					<td class="line">079</td>
+					<td><h:inputText name="n079" size="14" class="s" value="#{e1Bean._079}" /></td>
+					<td class="line">080</td>
+					<td><h:inputText name="n080" size="14" class="s" value="#{e1Bean._080}" /></td>
+				</tr>
+				<tr>
+					<td align="right">β)</td>
+					<td class="line">
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td class="line">Για κάθε παιδί τους χωριστά</td>
+									<td class="line" align="center" valign="top"><nobr>081 <h:inputText name="n081" size="14" class="s" value="#{e1Bean._081}" /></nobr></td>
+									<td class="line" align="center" valign="top"><nobr>082 <h:inputText name="n082" size="14" class="s" value="#{e1Bean._082}" /></nobr></td>
+									<td class="line" align="center" valign="top"><nobr>083 <h:inputText name="n083" size="14" class="s" value="#{e1Bean._083}" /></nobr></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+					<td class="line">084</td>
+					<td><h:inputText name="n084" size="14" class="s" value="#{e1Bean._084}" /></td>
+					<td class="line">085</td>
+					<td><h:inputText name="n085" size="14" class="s" value="#{e1Bean._085}" /></td>
+				</tr>
+				<tr>
+					<td align="right">16.</td>
+					<td class="line">Μισθώματα επιχειρήσεων τριτογενούς τομέα (παρ. Β2 αρθρ.43 και 44 ν.4030/2011)</td>
+					<td class="line">077</td>
+					<td class="line"><h:inputText name="n077" size="14" class="s" value="#{e1Bean._077}" /></td>
+					<td class="line">078</td>
+					<td class="line"><h:inputText name="n078" size="14" class="s" value="#{e1Bean._078}" /></td>
+				</tr>
+				<tr>
+					<td align="right">17.</td>
+					<td class="line">Ποσό επένδυσης για κινηματογραφικές ταινίες (παρ. 9 άρθρ. 73 ν. 3842/2010)</td>
+					<td class="line">663</td>
+					<td class="line"><h:inputText name="n663" size="14" class="s" value="#{e1Bean._663}" /></td>
+					<td class="line">664</td>
+					<td class="line"><h:inputText name="n664" size="14" class="s" value="#{e1Bean._664}" /></td>
+				</tr>
+				<tr>
+					<td align="right">18.</td>
+					<td class="line">Εμπίπτετε στις διατάξεις των περιπτώσεων α ή β της παρ. 9 του άρθρου 73 ν. 3842/2010;</td>
+
+					<td class="line">033</td>
+					<td class="line">α <h:selectBooleanCheckbox name="n033" value="#{e1Bean._033}" /> 035 β <h:selectBooleanCheckbox name="n035"
+							value="#{e1Bean._035}" /></td>
+					<td class="line">034</td>
+					<td class="line">α <h:selectBooleanCheckbox name="n034" value=" #{e1Bean._033}" /> 036 β <h:selectBooleanCheckbox name="n036"
+							value="#{e1Bean._036}" /></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+		<!-- Πίνακας 8 -->
+
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="colordark"><em id="TOC8"></em> <b><font size="1">ΠΙΝΑΚΑΣ 8. </font>ΠΡΟΚΑΤΑΒΛΗΘΕΝΤΕΣ - ΠΑΡΑΚΡΑΤΗΘΕΝΤΕΣ ΦΟΡΟΙ</b></td>
+					<td class="colordark" colspan="2" align="center"><b>ΥΠΟΧΡΕΟΥ</b></td>
+					<td class="colordark" colspan="2" align="center"><b>ΤΗΣ ΣΥΖΥΓΟΥ</b></td>
+				</tr>
+				<tr>
+					<td align="right">1.</td>
+					<td class="line">Φόροι <strong>4%, 10% και 15%</strong> που προκαταβλήθηκαν (άρθρο <strong>52</strong> Κ.Φ.Ε.)
+					</td>
+					<td class="line">601</td>
+					<td class="line"><h:inputText name="n601" size="14" class="s" value="#{e1Bean._601}" /></td>
+					<td class="line">602</td>
+					<td class="line"><h:inputText name="n602" size="14" class="s" value="#{e1Bean._602}" /></td>
+				</tr>
+				<tr>
+					<td align="right">2.</td>
+					<td class="line">Φόροι <strong>1%, 4%, 8%, 15%</strong> και <strong>20%</strong> που παρακρατήθηκαν (άρθρο <strong>55</strong> Κ.Φ.Ε.)
+					</td>
+					<td class="line">603</td>
+					<td class="line"><h:inputText name="n603" size="14" class="s" value="#{e1Bean._603}" /></td>
+					<td class="line">604</td>
+					<td class="line"><h:inputText name="n604" size="14" class="s" value="#{e1Bean._604}" /></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td align="right">3.</td>
+					<td class="line">Φόροι <strong>20%</strong> και <strong>10%</strong> (άρθρο <strong>58</strong> Κ.Φ.Ε.) και <strong>15%</strong> (περ. γ
+						παρ. 5 άρθρ. 52 Κ.Φ.Ε.) που παρακρατήθηκαν
+					</td>
+					<td class="line">605</td>
+					<td class="line"><h:inputText name="n605" size="14" class="s" value="#{e1Bean._605}" /></td>
+					<td class="line">606</td>
+					<td class="line"><h:inputText name="n606" size="14" class="s" value="#{e1Bean._606}" /></td>
+				</tr>
+				<tr>
+					<td align="right">4.</td>
+					<td class="line">Φόρος που καταλογίστηκε για ωφέλεια από πώληση αυτοκινήτου επιχείρησης</td>
+					<td class="line">607</td>
+					<td class="line"><h:inputText name="n607" size="14" class="s" value="#{e1Bean._607}" /></td>
+					<td class="line">608</td>
+					<td class="line"><h:inputText name="n608" size="14" class="s" value="#{e1Bean._608}" /></td>
+				</tr>
+				<tr>
+					<td align="right">5.</td>
+					<td class="line">Φόρος που παρακρατήθηκε στις αμοιβές της περίπτ. 4 του Πίν. 4Α</td>
+					<td class="line">609</td>
+					<td class="line"><h:inputText name="n609" size="14" class="s" value="#{e1Bean._609}" /></td>
+					<td class="line">610</td>
+					<td class="line"><h:inputText name="n610" size="14" class="s" value="#{e1Bean._610}" /></td>
+				</tr>
+				<tr>
+					<td align="right">6.</td>
+					<td class="line">Φόρος που καταβλήθηκε στο εξωτερικό</td>
+					<td class="line">651</td>
+					<td class="line"><h:inputText name="n651" size="14" class="s" value="#{e1Bean._651}" /></td>
+					<td class="line">652</td>
+					<td class="line"><h:inputText name="n652" size="14" class="s" value="#{e1Bean._652}" /></td>
+				</tr>
+				<tr>
+					<td align="right">7.</td>
+					<td class="line">Φόρος που παρακρατήθηκε στα εισοδήματα από τόκους δανείων κτλ. ημεδαπής (Πίν. 4 ΣΤ)</td>
+					<td class="line">293</td>
+					<td class="line"><h:inputText name="n293" size="14" class="s" value="#{e1Bean._293}" /></td>
+					<td class="line">294</td>
+					<td class="line"><h:inputText name="n294" size="14" class="s" value="#{e1Bean._294}" /></td>
+				</tr>
+				<tr>
+					<td align="right">8.</td>
+					<td class="line">Φόρος που αναλογεί στους μισθούς, συντάξεις (περιπτ. 1,2 και 3 του Πίν. 4Α)</td>
+					<td class="line">313</td>
+					<td class="line"><h:inputText name="n313" size="14" class="s" value="#{e1Bean._313}" /></td>
+					<td class="line">314</td>
+					<td class="line"><h:inputText name="n314" size="14" class="s" value="#{e1Bean._314}" /></td>
+				</tr>
+				<tr>
+					<td align="right">9.</td>
+					<td class="line">Φόρος που παρακρατήθηκε στους μισθούς, συντάξεις (περιπτώσεις 1,2 και 3 του Πίν. 4Α)</td>
+					<td class="line">315</td>
+					<td class="line"><h:inputText name="n315" size="14" class="s" value="#{e1Bean._315}" /></td>
+					<td class="line">316</td>
+					<td class="line"><h:inputText name="n316" size="14" class="s" value="#{e1Bean._316}" /></td>
+				</tr>
+				<tr>
+					<td align="right">10.</td>
+					<td class="line">Φόρος που παρακρατήθηκε στην Ελλάδα στα εισοδήματα από τόκους,κτλ.(περ. 9 του Πίν. 4Ζ)</td>
+					<td class="line">297</td>
+					<td class="line"><h:inputText name="n297" size="14" class="s" value="#{e1Bean._297}" /></td>
+					<td class="line">298</td>
+					<td class="line"><h:inputText name="n298" size="14" class="s" value="#{e1Bean._298}" /></td>
+				</tr>
+				<tr>
+					<td align="right">11.</td>
+					<td class="line">Φόρος που καταβλήθηκε για άϋλη εμπορική αξία ακινήτου των περ. 1β εως 1ζ του πίν. 4Ε.</td>
+					<td class="line">127</td>
+					<td class="line"><h:inputText name="n127" size="14" class="s" value="#{e1Bean._127}" /></td>
+					<td class="line">128</td>
+					<td class="line"><h:inputText name="n128" size="14" class="s" value="#{e1Bean._128}" /></td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- Πίνακας 9 -->
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td class="colordark" colspan="9"><em id="TOC9"></em> <b> <font size="1">ΠΙΝΑΚΑΣ 9.</font> ΣΤΟΙΧΕΙΑ ΠΡΟΣΩΠΩΝ ΠΟΥ ΣΥΝΟΙΚΟΥΝ ΜΕ ΤΟΥΣ
+							ΦΟΡΟΛΟΓΟΥΜΕΝΟΥΣ ΚΑΙ ΤΟΥΣ ΒΑΡΥΝΟΥΝ
+					</b></td>
+				</tr>
+				<tr>
+					<td colspan="5" class="small">1. Ανύπαντρα παιδιά που γεννήθηκαν από <strong>1/1/1993</strong> έως <strong>31/12/2011</strong> ή από <strong>1/1/1986</strong>
+						και σπουδάζουν σε αναγνωρισμένες σχολές, καθώς και άγαμα παιδιά που είναι άνεργα εγγεγραμμένα στους καταλόγους του ΟΑΕΔ. Παιδιά ανύπαντρα,
+						διαζευγμένα ή σε κατάσταση χηρείας, με αναπηρία 67% και πάνω, καθώς και ανύπαντρα παιδιά που υπηρετούν την στρατιωτική τους θητεία, ανεξάρτητα
+						από ηλικία.
+					</td>
+					<td colspan="6" class="small">2. α) Ανιόντες των συζύγων (γονείς, παπούδες κτλ.)<br />&nbsp;&nbsp;&nbsp;β) Ανήλικοι συγγενείς μέχρι τον 3ο
+						βαθμό, ορφανοί από πατέρα και μητέρα<br />&nbsp;&nbsp;&nbsp;γ) Ανύπαντροι ή χήροι ή διαζευγμένοι αδελφοί και αδελφές, με αναπηρία 67% και πάνω.
+					</td>
+				</tr>
+				<tr>
+					<td class="line" align="center" width="15%">Ονομα</td>
+					<td class="line" align="center" width="12%">Ετος γέννησης</td>
+					<td class="line" align="center" width="15%">Σχολή ή σχολείο φοίτησης</td>
+					<td class="line" width="3%">Κ.Α.</td>
+					<td class="line" align="center" width="10%">Α.Φ.Μ.</td>
+
+					<td colspan="1" class="line" align="center" width="15%">Ονοματεπώνυμο</td>
+					<td class="line" width="3%">Κ.Α.</td>
+					<td class="line" align="center" width="10%">Α.Φ.Μ.</td>
+					<td></td>
+					<td class="line" align="center" width="12%">Με Υπόχρεο</td>
+					<td class="line" align="center" width="17%">Με Σύζυγο</td>
+				</tr>
+				<tr>
+					<td align="center"><h:inputText name="k106" size="20" class="s_l" value="#{e1Bean.name1}" /></td>
+					<td align="center"><h:inputText name="k107" size="4" maxlength="4" class="s" value="#{e1Bean.birthYear1}" /></td>
+					<td align="center"><h:inputText name="k108" size="20" class="s_l" value="#{e1Bean.schoolName1}" /></td>
+					<td class="line" align="center">831</td>
+					<td><h:inputText name="n831" size="14" maxlength="9" class="s" value="#{e1Bean._831}" /></td>
+					<td align="center"><h:inputText name="k109" size="20" class="s_l" style="text-align: Left" value="#{e1Bean.fullName1}" /></td>
+					<td class="line" align="center">835</td>
+					<td><h:inputText name="n835" size="14" maxlength="9" class="s" value="#{e1Bean._835}" /></td>
+					<td rowspan="5" class="small" align="center" valign="middle" width="1%">Σ<br />υ<br />γ<br />γ<br />έ<br />ν<br />ε<br />ι<br />α<br /></td>
+					<td align="center"><h:inputText name="k110" size="14" class="s" value="#{e1Bean.relationshipWithPrincipal1}" /></td>
+					<td align="center"><h:inputText name="k111" size="14" class="s" value="#{e1Bean.relationShipWithWife1}" /></td>
+				</tr>
+				<tr>
+					<td align="center"><h:inputText name="k112" size="20" class="s_l" value="#{e1Bean.name2}" /></td>
+					<td align="center"><h:inputText name="k113" size="4" maxlength="4" class="s" value="#{e1Bean.birthYear2}" /></td>
+					<td align="center"><h:inputText name="k114" size="20" class="s_l" value="#{e1Bean.schoolName2}" /></td>
+					<td class="line" align="center">832</td>
+					<td><h:inputText name="n832" size="14" maxlength="9" class="s" value="#{e1Bean._832}" /></td>
+					<td align="center"><h:inputText name="k115" size="20" class="s_l" style="text-align: Left" value="#{e1Bean.fullName2}" /></td>
+					<td class="line" align="center">836</td>
+					<td><h:inputText name="n836" size="14" maxlength="9" class="s" value="#{e1Bean._836}" /></td>
+					<td align="center"><h:inputText name="k116" size="14" class="s" value="#{e1Bean.relationshipWithPrincipal2}" /></td>
+					<td align="center"><h:inputText name="k117" size="14" class="s" value="#{e1Bean.relationShipWithWife2}" /></td>
+				</tr>
+				<tr>
+					<td align="center"><h:inputText name="k118" size="20" class="s_l" value="#{e1Bean.name3}" /></td>
+					<td align="center"><h:inputText name="k119" size="4" maxlength="4" class="s" value="#{e1Bean.birthYear3}" /></td>
+					<td align="center"><h:inputText name="k120" size="20" class="s_l" value="#{e1Bean.schoolName3}" /></td>
+					<td class="line" align="center">833</td>
+					<td><h:inputText name="n833" size="14" maxlength="9" class="s" value="#{e1Bean._833}" /></td>
+					<td align="center"><h:inputText name="k121" size="20" class="s_l" style="text-align: Left" value="#{e1Bean.fullName3}" /></td>
+					<td class="line" align="center">837</td>
+					<td><h:inputText name="n837" size="14" maxlength="9" class="s" value="#{e1Bean._837}" /></td>
+					<td align="center"><h:inputText name="k122" size="14" class="s" value="#{e1Bean.relationshipWithPrincipal3}" /></td>
+					<td align="center"><h:inputText name="k123" size="14" class="s" value="#{e1Bean.relationShipWithWife3}" /></td>
+				</tr>
+				<tr>
+					<td align="center"><h:inputText name="k124" size="20" class="s_l" value="#{e1Bean.name4}" /></td>
+					<td align="center"><h:inputText name="k125" size="4" maxlength="4" class="s" value="#{e1Bean.birthYear4}" /></td>
+					<td align="center"><h:inputText name="k126" size="20" class="s_l" value="#{e1Bean.schoolName4}" /></td>
+					<td class="line" align="center">834</td>
+					<td><h:inputText name="n834" size="14" maxlength="9" class="s" value="#{e1Bean._834}" /></td>
+					<td align="center"><h:inputText name="k127" size="20" class="s_l" style="text-align: Left" value="#{e1Bean.fullName4}" /></td>
+					<td class="line" align="center">838</td>
+					<td><h:inputText name="n838" size="14" class="s" value="#{e1Bean._838}" /></td>
+					<td align="center"><h:inputText name="k128" size="14" class="s" value="#{e1Bean.relationshipWithPrincipal4}" /></td>
+					<td align="center"><h:inputText name="k129" size="14" class="s" value="#{e1Bean.relationShipWithWife4}" /></td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- Πίνακας 10 -->
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="colordark"><em id="TOC10"></em> <b> <font size="1">ΠΙΝΑΚΑΣ 10. </font> ΣΤΟΙΧΕΙΑ ΑΠΟ ΤΟ ΦΑΚΕΛΟ ΤΟΥ ΦΟΡΟΛΟΓΟΥΜΕΝΟΥ
+					</b></td>
+					<td class="colordark" colspan="2" align="center"><b>ΥΠΟΧΡΕΟΥ</b></td>
+					<td class="colordark" colspan="2" align="center"><b>ΤΗΣ ΣΥΖΥΓΟΥ</b></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">Προκαταβολή φόρου εισοδήματος από το προηγούμενο οικονομικό έτος</td>
+					<td class="line">901</td>
+					<td class="line"><h:inputText name="n901" size="14" class="s" value="#{e1Bean._901}" /></td>
+					<td class="line">902</td>
+					<td class="line"><h:inputText name="n902" size="14" class="s" value="#{e1Bean._902}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">Εισφορά Ο.Γ.Α. φόρου εισοδήματος οικον. έτους 2011</td>
+					<td class="line">903</td>
+					<td class="line"><h:inputText name="n903" size="14" class="s" value="#{e1Bean._903}" /></td>
+					<td class="line">904</td>
+					<td class="line"><h:inputText name="n904" size="14" class="s" value="#{e1Bean._904}" /></td>
+				</tr>
+
+				<tr>
+					<td></td>
+					<td class="line">Επιδοτήσεις - αποζημιώσεις επί της γεωργικής παραγωγής</td>
+					<td class="line">995</td>
+					<td class="line"><h:inputText name="n995" size="14" class="s" value="#{e1Bean._995}" /></td>
+					<td class="line">996</td>
+					<td class="line"><h:inputText name="n996" size="14" class="s" value="#{e1Bean._996}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="line">Ποσό δαπανών από την Κάρτα Αποδείξεων</td>
+					<td class="line">341</td>
+					<td class="line"><h:inputText name="n341" size="14" class="s" value="#{e1Bean._341}" /></td>
+					<td class="line"></td>
+					<td class="line"></td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- Πίνακας 11 -->
+
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td class="colordark"><em id="TOC11"></em> <b> <font size="1">ΠΙΝΑΚΑΣ 11. </font> Αν προκύψει επιστρεφόμενο ποσό να κατατεθεί στον
+							ακόλουθο λογαριασμό μου
+					</b></td>
+				</tr>
+				<tr>
+					<td align="center">
+						<table cellpadding="0" border="0" cellspacing="0" width="500">
+							<tbody>
+								<tr>
+									<td class="line" align="center">ΤΡΑΠΕΖΑ</td>
+									<td width="20"></td>
+									<td class="line" align="center">ΑΡΙΘΜΟΣ ΛΟΓΑΡΙΑΣΜΟΥ</td>
+								</tr>
+								<tr>
+									<td align="center"><h:selectOneMenu tabindex="11000" name="TRAPEZALEKT" onchange="javascript:TrapezaCode ('parent',this,0)" class="s_l">
+											<f:selectItem selected="selected" value="0">
+											</f:selectItem>
+											<f:selectItem itemValue="011">ΕΘΝΙΚΗ</f:selectItem>
+											<f:selectItem itemValue="012">ΕΜΠΟΡΙΚΗ</f:selectItem>
+											<f:selectItem itemValue="014">ALPHA BANK</f:selectItem>
+											<f:selectItem itemValue="015">ΓΕΝΙΚΗ</f:selectItem>
+											<f:selectItem itemValue="016">ΑΤΤΙΚΗΣ</f:selectItem>
+											<f:selectItem itemValue="017">ΠΕΙΡΑΙΩΣ</f:selectItem>
+											<f:selectItem itemValue="026">E.F.G. EUROBANK ERGASIAS</f:selectItem>
+											<f:selectItem itemValue="028">MARFIN ΕΓΝΑΤΙΑ ΤΡΑΠΕΖΑ</f:selectItem>
+											<f:selectItem itemValue="032">ΕΛΛΗΝΙΚΗ ΤΡΑΠΕΖΑ</f:selectItem>
+											<f:selectItem itemValue="037">PROTON ΤΡΑΠΕΖΑ</f:selectItem>
+											<f:selectItem itemValue="038">MILLENIUM BANK</f:selectItem>
+											<f:selectItem itemValue="043">ΑΓΡΟΤΙΚΗ</f:selectItem>
+											<f:selectItem itemValue="047">T BANK ATE</f:selectItem>
+											<f:selectItem itemValue="049">ΠΑΝΕΛΛΗΝΙΑ ΤΡΑΠΕΖΑ</f:selectItem>
+											<f:selectItem itemValue="054">PROBANK</f:selectItem>
+											<f:selectItem itemValue="069">ΣΥΝΕΤ. ΤΡΑΠΕΖΑ ΧΑΝΙΩΝ</f:selectItem>
+											<f:selectItem itemValue="073">ΤΡΑΠΕΖΑ ΚΥΠΡΟΥ</f:selectItem>
+											<f:selectItem itemValue="087">ΠΑΓΚΡΗΤΙΑ ΣΥΝΕΤ. ΤΡΑΠΕΖΑ</f:selectItem>
+											<f:selectItem itemValue="096">HELLENIC POSTBANK - ΤΤ</f:selectItem>
+										</h:selectOneMenu></td>
+									<td align="center"></td>
+									<td align="center"><h:inputText name="" size="2" class="s" readonly="true" value="GR" /> <h:inputText name="LOGARIASMOS" size="30"
+											class="s" value="#{e1Bean.iban}" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+		<!-- 		<script language="javascript"> -->
+// 			<!--
+// 			function spouseUnchangable(field) {
+// 				alert('Η τροποποίηση των στοιχείων της συζύγου γίνεται μόνο από τον πίνακα 1 του εντύπου Ε1');
+// 				field.blur();
+// 			}
+// 			// -->
+		<!-- 		</script> -->
+
+	</h:form>
+
+</h:body>
+</html>
