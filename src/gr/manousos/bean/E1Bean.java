@@ -552,35 +552,27 @@ public class E1Bean {
 	private Float _902;
 	private Float _903;
 	private Float _904;
-	private Float _341;
-	private Float _342;
-	private Float _745;
-	private Float _746;
 	private Float _995;
 	private Float _996;
-	private Float _997;
-	private Float _998;
-	private Float _959;
-	private Float _960;
-	private Float _743;
-	private Float _744;
-	private Float _323;
-	private Float _324;
-	private Float _399;
-	private Float _400;
-	private Float _907;
-	private Float _908;
-	private Float _985;
-	private Float _986;
-	private Float _987;
-	private Float _988;
-	private Float _989;
-	private Float _990;
+	private Float _341;
+
 	// table 11
 	private String bic;
 	private String iban;
 
 	// table 12
+	private Float _255;
+	private Float _256;
+	private Float _257;
+	private Float _258;
+	private Float _263;
+	private Float _264;
+	private Float _265;
+	private Float _266;
+	private Float _253;
+	private Float _254;
+	private Float _201;
+	private Float _202;
 
 	public int getTaxPayerId() {
 		return taxPayerId;
@@ -4578,30 +4570,6 @@ public class E1Bean {
 		this._341 = _341;
 	}
 
-	public Float get_342() {
-		return _342;
-	}
-
-	public void set_342(Float _342) {
-		this._342 = _342;
-	}
-
-	public Float get_745() {
-		return _745;
-	}
-
-	public void set_745(Float _745) {
-		this._745 = _745;
-	}
-
-	public Float get_746() {
-		return _746;
-	}
-
-	public void set_746(Float _746) {
-		this._746 = _746;
-	}
-
 	public Float get_995() {
 		return _995;
 	}
@@ -4618,150 +4586,6 @@ public class E1Bean {
 		this._996 = _996;
 	}
 
-	public Float get_997() {
-		return _997;
-	}
-
-	public void set_997(Float _997) {
-		this._997 = _997;
-	}
-
-	public Float get_998() {
-		return _998;
-	}
-
-	public void set_998(Float _998) {
-		this._998 = _998;
-	}
-
-	public Float get_959() {
-		return _959;
-	}
-
-	public void set_959(Float _959) {
-		this._959 = _959;
-	}
-
-	public Float get_960() {
-		return _960;
-	}
-
-	public void set_960(Float _960) {
-		this._960 = _960;
-	}
-
-	public Float get_743() {
-		return _743;
-	}
-
-	public void set_743(Float _743) {
-		this._743 = _743;
-	}
-
-	public Float get_744() {
-		return _744;
-	}
-
-	public void set_744(Float _744) {
-		this._744 = _744;
-	}
-
-	public Float get_323() {
-		return _323;
-	}
-
-	public void set_323(Float _323) {
-		this._323 = _323;
-	}
-
-	public Float get_324() {
-		return _324;
-	}
-
-	public void set_324(Float _324) {
-		this._324 = _324;
-	}
-
-	public Float get_399() {
-		return _399;
-	}
-
-	public void set_399(Float _399) {
-		this._399 = _399;
-	}
-
-	public Float get_400() {
-		return _400;
-	}
-
-	public void set_400(Float _400) {
-		this._400 = _400;
-	}
-
-	public Float get_907() {
-		return _907;
-	}
-
-	public void set_907(Float _907) {
-		this._907 = _907;
-	}
-
-	public Float get_908() {
-		return _908;
-	}
-
-	public void set_908(Float _908) {
-		this._908 = _908;
-	}
-
-	public Float get_985() {
-		return _985;
-	}
-
-	public void set_985(Float _985) {
-		this._985 = _985;
-	}
-
-	public Float get_986() {
-		return _986;
-	}
-
-	public void set_986(Float _986) {
-		this._986 = _986;
-	}
-
-	public Float get_987() {
-		return _987;
-	}
-
-	public void set_987(Float _987) {
-		this._987 = _987;
-	}
-
-	public Float get_988() {
-		return _988;
-	}
-
-	public void set_988(Float _988) {
-		this._988 = _988;
-	}
-
-	public Float get_989() {
-		return _989;
-	}
-
-	public void set_989(Float _989) {
-		this._989 = _989;
-	}
-
-	public Float get_990() {
-		return _990;
-	}
-
-	public void set_990(Float _990) {
-		this._990 = _990;
-	}
-
 	public String getBic() {
 		return bic;
 	}
@@ -4776,6 +4600,102 @@ public class E1Bean {
 
 	public void setIban(String iban) {
 		this.iban = iban;
+	}
+
+	public Float get_255() {
+		return _255;
+	}
+
+	public void set_255(Float _255) {
+		this._255 = _255;
+	}
+
+	public Float get_256() {
+		return _256;
+	}
+
+	public void set_256(Float _256) {
+		this._256 = _256;
+	}
+
+	public Float get_257() {
+		return _257;
+	}
+
+	public void set_257(Float _257) {
+		this._257 = _257;
+	}
+
+	public Float get_258() {
+		return _258;
+	}
+
+	public void set_258(Float _258) {
+		this._258 = _258;
+	}
+
+	public Float get_263() {
+		return _263;
+	}
+
+	public void set_263(Float _263) {
+		this._263 = _263;
+	}
+
+	public Float get_264() {
+		return _264;
+	}
+
+	public void set_264(Float _264) {
+		this._264 = _264;
+	}
+
+	public Float get_265() {
+		return _265;
+	}
+
+	public void set_265(Float _265) {
+		this._265 = _265;
+	}
+
+	public Float get_266() {
+		return _266;
+	}
+
+	public void set_266(Float _266) {
+		this._266 = _266;
+	}
+
+	public Float get_253() {
+		return _253;
+	}
+
+	public void set_253(Float _253) {
+		this._253 = _253;
+	}
+
+	public Float get_254() {
+		return _254;
+	}
+
+	public void set_254(Float _254) {
+		this._254 = _254;
+	}
+
+	public Float get_201() {
+		return _201;
+	}
+
+	public void set_201(Float _201) {
+		this._201 = _201;
+	}
+
+	public Float get_202() {
+		return _202;
+	}
+
+	public void set_202(Float _202) {
+		this._202 = _202;
 	}
 
 	public E1Bean() {
@@ -4892,31 +4812,135 @@ public class E1Bean {
 		E1incomeFromAgricularCompanyData incomeFromAgricularCompanyDataObj = new E1incomeFromAgricularCompanyData(
 				null, location, prodKind, population, locationType, hasWater,
 				netIncome);
+
 		// table 5
-		// TODO: add floors on constructor
-		E1objectiveSpending objectiveSpendingObj = new E1objectiveSpending(
-				_205, houseAddr1, BooleanToInt(_203), BooleanToInt(_240), _211,
-				_212, _213, _214, _215, _216, houseAddr2, BooleanToInt(_207),
-				BooleanToInt(_241), _218, _219, _220, _221, _222, _223,
-				houseAddr3, BooleanToInt(_209), BooleanToInt(_242), _225, _226,
-				_227, _228, _229, _230, _707, _708, afm1, _750, _703, _761,
-				_771, _775, afm2, _751, _704, _762, _772, _776, afm3, _752,
-				_705, _763, _773, _777, afm4, _753, _706, _764, _774, _778,
-				_851, _852, _853, _854, _855, _856, _857, _858, shippingName1,
-				shippingRegister1, shippingCountry1, BooleanToInt(sailShip1),
-				BooleanToInt(accommodationSpace1), percentPrincipalCoOwner1,
-				percentWifeCoOwner1, firstRegister1, ownershipMonths1, _747,
-				shippingName2, shippingRegister2, shippingCountry2,
-				BooleanToInt(sailShip2), BooleanToInt(accommodationSpace2),
-				percentPrincipalCoOwner2, percentWifeCoOwner2, firstRegister2,
-				ownershipMonths2, _748, _711, _712, _713, _714, _731, _732,
-				aircraftRegisterData, aircraftType, aircraftSn, airportBase,
-				aircraftMonthOwnerShip, aircraftPowerLibres,
-				aircraftFirstRegister, _715, _716, _767,
-				poolPrincipalCoOwnerOutdoor, poolWifeCoOwnerOutdoor, _768,
-				poolPrincipalCoOwnerIndoor, poolWifeCoOwnerIndoor, _765, _766,
-				_769, _770, _719, _720, _721, _722, _723, _724, _725, _726,
-				_727, _728, null);
+		E1objectiveSpending objectiveSpendingObj = new E1objectiveSpending();
+		objectiveSpendingObj.set203(BooleanToInt(_203));
+		objectiveSpendingObj.set205(_205);
+		objectiveSpendingObj.set207(BooleanToInt(_207));
+		objectiveSpendingObj.set209(BooleanToInt(_209));
+		objectiveSpendingObj.set211(_211);
+		objectiveSpendingObj.set212(_212);
+		objectiveSpendingObj.set213(_213);
+		objectiveSpendingObj.set214(_214);
+		objectiveSpendingObj.set215(_215);
+		objectiveSpendingObj.set216(_216);
+		objectiveSpendingObj.set218(_218);
+		objectiveSpendingObj.set219(_219);
+		objectiveSpendingObj.set220(_220);
+		objectiveSpendingObj.set221(_221);
+		objectiveSpendingObj.set222(_222);
+		objectiveSpendingObj.set223(_223);
+		objectiveSpendingObj.set225(_225);
+		objectiveSpendingObj.set226(_226);
+		objectiveSpendingObj.set227(_227);
+		objectiveSpendingObj.set228(_228);
+		objectiveSpendingObj.set229(_229);
+		objectiveSpendingObj.set230(_230);
+		objectiveSpendingObj.set240(BooleanToInt(_240));
+		objectiveSpendingObj.set241(BooleanToInt(_241));
+		objectiveSpendingObj.set242(BooleanToInt(_242));
+		objectiveSpendingObj.set703(_703);
+		objectiveSpendingObj.set704(_704);
+		objectiveSpendingObj.set705(_705);
+		objectiveSpendingObj.set708(_708);
+		objectiveSpendingObj.set711(_711);
+		objectiveSpendingObj.set712(_712);
+		objectiveSpendingObj.set713(_713);
+		objectiveSpendingObj.set714(_714);
+		objectiveSpendingObj.set715(_715);
+		objectiveSpendingObj.set716(_716);
+		objectiveSpendingObj.set719(_719);
+		objectiveSpendingObj.set720(_720);
+		objectiveSpendingObj.set721(_721);
+		objectiveSpendingObj.set722(_722);
+		objectiveSpendingObj.set723(_723);
+		objectiveSpendingObj.set724(_724);
+		objectiveSpendingObj.set725(_725);
+		objectiveSpendingObj.set726(_726);
+		objectiveSpendingObj.set727(_727);
+		objectiveSpendingObj.set728(_728);
+		objectiveSpendingObj.set731(_731);
+		objectiveSpendingObj.set732(_732);
+		objectiveSpendingObj.set747(_747);
+		objectiveSpendingObj.set748(_748);
+		objectiveSpendingObj.set750(_750);
+		objectiveSpendingObj.set751(_751);
+		objectiveSpendingObj.set752(_752);
+		objectiveSpendingObj.set753(_753);
+		objectiveSpendingObj.set761(_761);
+		objectiveSpendingObj.set762(_762);
+		objectiveSpendingObj.set763(_763);
+		objectiveSpendingObj.set764(_764);
+		objectiveSpendingObj.set765(_765);
+		objectiveSpendingObj.set766(_766);
+		objectiveSpendingObj.set767(_767);
+		objectiveSpendingObj.set768(_768);
+		objectiveSpendingObj.set769(_769);
+		objectiveSpendingObj.set770(_770);
+		objectiveSpendingObj.set771(_771);
+		objectiveSpendingObj.set772(_772);
+		objectiveSpendingObj.set773(_773);
+		objectiveSpendingObj.set774(_774);
+		objectiveSpendingObj.set775(_775);
+		objectiveSpendingObj.set776(_776);
+		objectiveSpendingObj.set777(_777);
+		objectiveSpendingObj.set778(_778);
+		objectiveSpendingObj.set851(_851);
+		objectiveSpendingObj.set852(_852);
+		objectiveSpendingObj.set853(_853);
+		objectiveSpendingObj.set854(_854);
+		objectiveSpendingObj.set855(_855);
+		objectiveSpendingObj.set856(_856);
+		objectiveSpendingObj.set857(_857);
+		objectiveSpendingObj.set858(_858);
+		objectiveSpendingObj
+				.setAccommodationSpace1(BooleanToInt(accommodationSpace1));
+		objectiveSpendingObj
+				.setAccommodationSpace2(BooleanToInt(accommodationSpace2));
+		objectiveSpendingObj.setAfm1(afm1);
+		objectiveSpendingObj.setAfm2(afm2);
+		objectiveSpendingObj.setAfm3(afm3);
+		objectiveSpendingObj.setAfm4(afm4);
+		objectiveSpendingObj.setAircraftFirstRegister(aircraftFirstRegister);
+		objectiveSpendingObj.setAircraftOwnerShip(aircraftMonthOwnerShip);
+		objectiveSpendingObj.setAircraftPowerLibres(aircraftPowerLibres);
+		objectiveSpendingObj.setAircraftRegisterData(aircraftRegisterData);
+		objectiveSpendingObj.setAircraftSn(aircraftSn);
+		objectiveSpendingObj.setAircraftType(aircraftType);
+		objectiveSpendingObj.setAirportBase(airportBase);
+		objectiveSpendingObj.setFirstRegister1(firstRegister1);
+		objectiveSpendingObj.setFirstRegister2(firstRegister2);
+		objectiveSpendingObj.setFloor1(floor1);
+		objectiveSpendingObj.setFloor2(floor2);
+		objectiveSpendingObj.setFloor3(floor3);
+		objectiveSpendingObj.setHouseAddr1(houseAddr1);
+		objectiveSpendingObj.setHouseAddr2(houseAddr2);
+		objectiveSpendingObj.setHouseAddr3(houseAddr3);
+		objectiveSpendingObj.setOwnershipMonths1(ownershipMonths1);
+		objectiveSpendingObj.setOwnershipMonths2(ownershipMonths2);
+		objectiveSpendingObj
+				.setPercentPrincipalCoOwner1(percentPrincipalCoOwner1);
+		objectiveSpendingObj
+				.setPercentPrincipalCoOwner2(percentPrincipalCoOwner2);
+		objectiveSpendingObj.setPercentWifeCoOwner1(percentWifeCoOwner1);
+		objectiveSpendingObj.setPercentWifeCoOwner2(percentWifeCoOwner2);
+		objectiveSpendingObj
+				.setPoolPrincipalCoOwnerIndoor(poolPrincipalCoOwnerIndoor);
+		objectiveSpendingObj
+				.setPoolPrincipalCoOwnerOutdoor(poolPrincipalCoOwnerOutdoor);
+		objectiveSpendingObj.setPoolWifeCoOwnerIndoor(poolWifeCoOwnerIndoor);
+		objectiveSpendingObj.setPoolWifeCoOwnerOutdoor(poolWifeCoOwnerOutdoor);
+		objectiveSpendingObj.setSailShip1(BooleanToInt(sailShip1));
+		objectiveSpendingObj.setSailShip2(BooleanToInt(sailShip2));
+		objectiveSpendingObj.setShippingCountry1(shippingCountry1);
+		objectiveSpendingObj.setShippingCountry2(shippingCountry2);
+		objectiveSpendingObj.setShippingName1(shippingName1);
+		objectiveSpendingObj.setShippingName2(shippingName2);
+		objectiveSpendingObj.setShippingRegister1(shippingRegister1);
+		objectiveSpendingObj.setShippingRegister2(shippingRegister2);
+		// objectiveSpendingObj.setIdE1objectiveSpending(idE1objectiveSpending);
+
 		// table 6
 		E1incomesReduceTaxes incomesReduceTaxesObj = new E1incomesReduceTaxes(
 				_655, _656, _693, _694, _659, _660, _657, _658, _661, _662,
@@ -4952,11 +4976,10 @@ public class E1Bean {
 				fullName3, _837, relationshipWithPrincipal3,
 				relationShipWithWife3, fullName4, _838,
 				relationshipWithPrincipal4, relationShipWithWife4, null);
+
 		// table 10
 		E1dataFromTaxPayerFolder dataFromTaxPayerFolderObj = new E1dataFromTaxPayerFolder(
-				_901, _902, _903, _904, _341, _342, _745, _746, _995, _996,
-				_997, _998, _959, _960, _743, _744, _323, _324, _399, _400,
-				_907, _908, _985, _986, _987, _988, _989, _990, null);
+				_901, _902, _903, _904, _341, _995, _996, null);
 
 		// table 11
 		E1taxPayerBankAccount taxPayerBankAccountObj = new E1taxPayerBankAccount(
@@ -4965,6 +4988,10 @@ public class E1Bean {
 		E1 e1 = new E1();
 		e1.setId(key);
 		e1.setIsComplete(0);
+		// e1.setAtid(this.);
+		// e1.setDoy();
+		// e1.setMarriage(0);
+		// tax payer address
 		e1.setDateInserted(new java.util.Date());
 		e1.setE1dataFromTaxPayerFolder(dataFromTaxPayerFolderObj);
 		e1.setE1expensesRemovedFromTotalIncome(expensesRemovedFromTotalIncomeObj);

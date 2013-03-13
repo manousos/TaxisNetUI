@@ -3011,7 +3011,7 @@
 								</tr>
 								<tr>
 									<td align="center"><h:selectOneMenu tabindex="11000" name="TRAPEZALEKT" onchange="javascript:TrapezaCode ('parent',this,0)" class="s_l">
-											<f:selectItem selected="selected" value="0">
+											<f:selectItem selected="selected" itemValue="0">
 											</f:selectItem>
 											<f:selectItem itemValue="011">ΕΘΝΙΚΗ</f:selectItem>
 											<f:selectItem itemValue="012">ΕΜΠΟΡΙΚΗ</f:selectItem>
@@ -3044,16 +3044,89 @@
 			</tbody>
 		</table>
 
+		<!-- Πίνακας 12 -->
 
+		<table cellpadding="0" border="0" cellspacing="0" width="100%">
+			<tbody>
+				<tr>
+					<td width="20"></td>
+					<td width=""></td>
+					<td width="30"></td>
+					<td width="100"></td>
+					<td width="30"></td>
+					<td width="100"></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="colordark"><em id="TOC12"></em> <b> <font size="1">ΠΙΝΑΚΑΣ 12. </font> ΕΙΔΙΚΟ ΕΝΗΜΕΡΩΤΙΚΟ ΔΕΛΤΙΟ
+					</b></td>
+					<td class="colordark" colspan="2" align="center"><b>ΥΠΟΧΡΕΟΥ</b></td>
+					<td class="colordark" colspan="2" align="center"><b>ΤΗΣ ΣΥΖΥΓΟΥ</b></td>
+				</tr>
+				<tr>
+					<td align="right" valign="top"><b>A.</b></td>
+					<td><b>ΕΙΣΟΔΗΜΑΤΑ ΑΞ/ΚΩΝ ΚΑΙ ΗΜΕΔΑΠΟΥ ΚΑΤΩΤΕΡΟΥ ΠΛΗΡΩΜΑΤΟΣ ΕΜΠΟΡΙΚΟΥ ΝΑΥΤΙΚΟΥ</b></td>
+					<td colspan="4"></td>
+				</tr>
+				<tr>
+					<td align="right">1.</td>
+					<td class="line">Αθροισμα καθαρών αποδοχών που καταβλήθηκαν σε ευρώ καθώς και σε ξένο νόμισμα, μετά τη μετατροπή τους σε ευρώ</td>
+					<td class="line">255</td>
+					<td class="line"><h:inputText name="n255" size="14" class="s" value="#{e1Bean._255}" /></td>
+					<td class="line">256</td>
+					<td class="line"><h:inputText name="n256" size="14" class="s" value="#{e1Bean._256}" /></td>
+				</tr>
+				<tr>
+					<td align="right">2.</td>
+					<td class="line">Φόρος που αναλογεί με βάση τις βεβαιώσεις αποδοχών</td>
+					<td class="line">257</td>
+					<td class="line"><h:inputText name="n257" size="14" class="s" value="#{e1Bean._257}" /></td>
+					<td class="line">258</td>
+					<td class="line"><h:inputText name="n258" size="14" class="s" value="#{e1Bean._258}" /></td>
+				</tr>
+				<tr>
+					<td align="right">3.</td>
+					<td class="line">Καθαρό ποσό αποδοχών για τις οποίες ο φόρος καταβλήθηκε στο εξωτερικό (γράψτε το σε ευρώ)</td>
+					<td class="line">263</td>
+					<td class="line"><h:inputText name="n263" size="14" class="s" value="#{e1Bean._263}" /></td>
+					<td class="line">264</td>
+					<td class="line"><h:inputText name="n264" size="14" class="s" value="#{e1Bean._264}" /></td>
+				</tr>
+				<tr>
+					<td align="right">4.</td>
+					<td class="line">Φόρος που παρακρατήθηκε και καταβλήθηκε στην αλλοδαπή (γράψτε το σε ευρώ)</td>
+					<td class="line">265</td>
+					<td class="line"><h:inputText name="n265" size="14" class="s" value="#{e1Bean._265}" /></td>
+					<td class="line">266</td>
+					<td class="line"><h:inputText name="n266" size="14" class="s" value="#{e1Bean._266}" /></td>
+				</tr>
+				<tr>
+					<td align="right">5.</td>
+					<td class="line">Καθαρές αποδοχές ημεδαπού κατώτερου πληρώματος που την ίδια χρήση έχει και την ιδιότητα του αξιωματικού εμπορικού ναυτικού</td>
+					<td class="line">253</td>
+					<td class="line"><h:inputText name="n253" size="14" class="s" value="#{e1Bean._253}" /></td>
+					<td class="line">254</td>
+					<td class="line"><h:inputText name="n254" size="14" class="s" value="#{e1Bean._254}" /></td>
+				</tr>
+				<tr>
+					<td rowspan="5" align="right" valign="top">7.</td>
+					<td class="line">Κατηγορία Επαγγέλματος (Συμπληρώστε τον ανάλογο κωδικό)</td>
+					<td class="line" rowspan="5">201</td>
+					<td class="line" rowspan="5"><h:inputText name="n201" size="4" maxlength="1" class="s" value="#{e1Bean._201}" /></td>
+					<td class="line" rowspan="5">202</td>
+					<td class="line" rowspan="5"><h:inputText name="n202" size="4" maxlength="1" class="s" value="#{e1Bean._202}" /></td>
+				</tr>
+				<tr>
+					<td class="line">1: Αξιωματικός εμπορικού ναυτικού</td>
+				</tr>
+				<tr>
+					<td class="line">2: Ημεδαπό κατώτερο πλήρωμα εμπορικού ναυτικού</td>
+				</tr>
+				<tr>
+					<td class="line">3: Ημεδαπό κατώτερο πλήρωμα και αξιωματικός εμπορικού ναυτικού συγχρόνως την ίδια χρήση.</td>
+				</tr>
+			</tbody>
+		</table>
 
-		<!-- 		<script language="javascript"> -->
-// 			<!--
-// 			function spouseUnchangable(field) {
-// 				alert('Η τροποποίηση των στοιχείων της συζύγου γίνεται μόνο από τον πίνακα 1 του εντύπου Ε1');
-// 				field.blur();
-// 			}
-// 			// -->
-		<!-- 		</script> -->
 
 	</h:form>
 
