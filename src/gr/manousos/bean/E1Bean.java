@@ -21,9 +21,9 @@ import gr.manousos.model.E1;
 import gr.manousos.model.E1Id;
 import gr.manousos.model.E1dataFromTaxPayerFolder;
 import gr.manousos.model.E1expensesRemovedFromTotalIncome;
-import gr.manousos.model.E1incomeFromAgricularCompanyData;
 import gr.manousos.model.E1incomesReduceTaxes;
 import gr.manousos.model.E1infoData;
+import gr.manousos.model.E1nauticalincomes;
 import gr.manousos.model.E1objectiveSpending;
 import gr.manousos.model.E1personDataBorneTaxpayer;
 import gr.manousos.model.E1prepaidTaxes;
@@ -5053,10 +5053,7 @@ public class E1Bean {
 
 	// TODO: How to save Many to Many ?
 	// Table 1
-	E1relatePersons e1Wife = new E1relatePersons();
-	E1relatePersons e1Delegate = new E1relatePersons();
-
-	Set<E1relatePersons> rlPersonsList = new HashSet<E1relatePersons>();
+	Set<RelatePerson> relatePersons = new HashSet<RelatePerson>();
 
 	Contact wifeContact = new Contact(this.getWifePhone(),
 		this.getWifeCell(), "");
@@ -5080,10 +5077,12 @@ public class E1Bean {
 	delegate.setFatherName(getDelegateFaName());
 	delegate.setFname(getDelegateFName());
 	delegate.setLname(getDelegateLName());
+	delegate.setContact(delegateContact);
 	delegate.setType(2);
 
-	rlPersonsList.add(e1Wife);
-	rlPersonsList.add(e1Delegate);
+	relatePersons.add(wife);
+	relatePersons.add(delegate);
+
 	// Table 2
 	E1infoData infoDataObj = new E1infoData(BooleanToInt(get_327()),
 		BooleanToInt(get_328()), BooleanToInt(get_319()),
@@ -5134,85 +5133,85 @@ public class E1Bean {
 
 	// table 5
 	E1objectiveSpending objectiveSpendingObj = new E1objectiveSpending();
-	objectiveSpendingObj.set203(BooleanToInt(_203));
-	objectiveSpendingObj.set205(_205);
-	objectiveSpendingObj.set207(BooleanToInt(_207));
-	objectiveSpendingObj.set209(BooleanToInt(_209));
-	objectiveSpendingObj.set211(_211);
-	objectiveSpendingObj.set212(_212);
-	objectiveSpendingObj.set213(_213);
-	objectiveSpendingObj.set214(_214);
-	objectiveSpendingObj.set215(_215);
-	objectiveSpendingObj.set216(_216);
-	objectiveSpendingObj.set218(_218);
-	objectiveSpendingObj.set219(_219);
-	objectiveSpendingObj.set220(_220);
-	objectiveSpendingObj.set221(_221);
-	objectiveSpendingObj.set222(_222);
-	objectiveSpendingObj.set223(_223);
-	objectiveSpendingObj.set225(_225);
-	objectiveSpendingObj.set226(_226);
-	objectiveSpendingObj.set227(_227);
-	objectiveSpendingObj.set228(_228);
-	objectiveSpendingObj.set229(_229);
-	objectiveSpendingObj.set230(_230);
-	objectiveSpendingObj.set240(BooleanToInt(_240));
-	objectiveSpendingObj.set241(BooleanToInt(_241));
-	objectiveSpendingObj.set242(BooleanToInt(_242));
-	objectiveSpendingObj.set703(_703);
-	objectiveSpendingObj.set704(_704);
-	objectiveSpendingObj.set705(_705);
-	objectiveSpendingObj.set708(_708);
-	objectiveSpendingObj.set711(_711);
-	objectiveSpendingObj.set712(_712);
-	objectiveSpendingObj.set713(_713);
-	objectiveSpendingObj.set714(_714);
-	objectiveSpendingObj.set715(_715);
-	objectiveSpendingObj.set716(_716);
-	objectiveSpendingObj.set719(_719);
-	objectiveSpendingObj.set720(_720);
-	objectiveSpendingObj.set721(_721);
-	objectiveSpendingObj.set722(_722);
-	objectiveSpendingObj.set723(_723);
-	objectiveSpendingObj.set724(_724);
-	objectiveSpendingObj.set725(_725);
-	objectiveSpendingObj.set726(_726);
-	objectiveSpendingObj.set727(_727);
-	objectiveSpendingObj.set728(_728);
-	objectiveSpendingObj.set731(_731);
-	objectiveSpendingObj.set732(_732);
-	objectiveSpendingObj.set747(_747);
-	objectiveSpendingObj.set748(_748);
-	objectiveSpendingObj.set750(_750);
-	objectiveSpendingObj.set751(_751);
-	objectiveSpendingObj.set752(_752);
-	objectiveSpendingObj.set753(_753);
-	objectiveSpendingObj.set761(_761);
-	objectiveSpendingObj.set762(_762);
-	objectiveSpendingObj.set763(_763);
-	objectiveSpendingObj.set764(_764);
-	objectiveSpendingObj.set765(_765);
-	objectiveSpendingObj.set766(_766);
-	objectiveSpendingObj.set767(_767);
-	objectiveSpendingObj.set768(_768);
-	objectiveSpendingObj.set769(_769);
-	objectiveSpendingObj.set770(_770);
-	objectiveSpendingObj.set771(_771);
-	objectiveSpendingObj.set772(_772);
-	objectiveSpendingObj.set773(_773);
-	objectiveSpendingObj.set774(_774);
-	objectiveSpendingObj.set775(_775);
-	objectiveSpendingObj.set776(_776);
-	objectiveSpendingObj.set777(_777);
-	objectiveSpendingObj.set778(_778);
-	objectiveSpendingObj.set851(_851);
-	objectiveSpendingObj.set852(_852);
-	objectiveSpendingObj.set853(_853);
-	objectiveSpendingObj.set854(_854);
-	objectiveSpendingObj.set855(_855);
-	objectiveSpendingObj.set856(_856);
-	objectiveSpendingObj.set857(_857);
-	objectiveSpendingObj.set858(_858);
+	objectiveSpendingObj.set_203(BooleanToInt(_203));
+	objectiveSpendingObj.set_205(_205);
+	objectiveSpendingObj.set_207(BooleanToInt(_207));
+	objectiveSpendingObj.set_209(BooleanToInt(_209));
+	objectiveSpendingObj.set_211(_211);
+	objectiveSpendingObj.set_212(_212);
+	objectiveSpendingObj.set_213(_213);
+	objectiveSpendingObj.set_214(_214);
+	objectiveSpendingObj.set_215(_215);
+	objectiveSpendingObj.set_216(_216);
+	objectiveSpendingObj.set_218(_218);
+	objectiveSpendingObj.set_219(_219);
+	objectiveSpendingObj.set_220(_220);
+	objectiveSpendingObj.set_221(_221);
+	objectiveSpendingObj.set_222(_222);
+	objectiveSpendingObj.set_223(_223);
+	objectiveSpendingObj.set_225(_225);
+	objectiveSpendingObj.set_226(_226);
+	objectiveSpendingObj.set_227(_227);
+	objectiveSpendingObj.set_228(_228);
+	objectiveSpendingObj.set_229(_229);
+	objectiveSpendingObj.set_230(_230);
+	objectiveSpendingObj.set_240(BooleanToInt(_240));
+	objectiveSpendingObj.set_241(BooleanToInt(_241));
+	objectiveSpendingObj.set_242(BooleanToInt(_242));
+	objectiveSpendingObj.set_703(_703);
+	objectiveSpendingObj.set_704(_704);
+	objectiveSpendingObj.set_705(_705);
+	objectiveSpendingObj.set_708(_708);
+	objectiveSpendingObj.set_711(_711);
+	objectiveSpendingObj.set_712(_712);
+	objectiveSpendingObj.set_713(_713);
+	objectiveSpendingObj.set_714(_714);
+	objectiveSpendingObj.set_715(_715);
+	objectiveSpendingObj.set_716(_716);
+	objectiveSpendingObj.set_719(_719);
+	objectiveSpendingObj.set_720(_720);
+	objectiveSpendingObj.set_721(_721);
+	objectiveSpendingObj.set_722(_722);
+	objectiveSpendingObj.set_723(_723);
+	objectiveSpendingObj.set_724(_724);
+	objectiveSpendingObj.set_725(_725);
+	objectiveSpendingObj.set_726(_726);
+	objectiveSpendingObj.set_727(_727);
+	objectiveSpendingObj.set_728(_728);
+	objectiveSpendingObj.set_731(_731);
+	objectiveSpendingObj.set_732(_732);
+	objectiveSpendingObj.set_747(_747);
+	objectiveSpendingObj.set_748(_748);
+	objectiveSpendingObj.set_750(_750);
+	objectiveSpendingObj.set_751(_751);
+	objectiveSpendingObj.set_752(_752);
+	objectiveSpendingObj.set_753(_753);
+	objectiveSpendingObj.set_761(_761);
+	objectiveSpendingObj.set_762(_762);
+	objectiveSpendingObj.set_763(_763);
+	objectiveSpendingObj.set_764(_764);
+	objectiveSpendingObj.set_765(_765);
+	objectiveSpendingObj.set_766(_766);
+	objectiveSpendingObj.set_767(_767);
+	objectiveSpendingObj.set_768(_768);
+	objectiveSpendingObj.set_769(_769);
+	objectiveSpendingObj.set_770(_770);
+	objectiveSpendingObj.set_771(_771);
+	objectiveSpendingObj.set_772(_772);
+	objectiveSpendingObj.set_773(_773);
+	objectiveSpendingObj.set_774(_774);
+	objectiveSpendingObj.set_775(_775);
+	objectiveSpendingObj.set_776(_776);
+	objectiveSpendingObj.set_777(_777);
+	objectiveSpendingObj.set_778(_778);
+	objectiveSpendingObj.set_851(_851);
+	objectiveSpendingObj.set_852(_852);
+	objectiveSpendingObj.set_853(_853);
+	objectiveSpendingObj.set_854(_854);
+	objectiveSpendingObj.set_855(_855);
+	objectiveSpendingObj.set_856(_856);
+	objectiveSpendingObj.set_857(_857);
+	objectiveSpendingObj.set_858(_858);
 	objectiveSpendingObj
 		.setAccommodationSpace1(BooleanToInt(accommodationSpace1));
 	objectiveSpendingObj
@@ -5278,8 +5277,8 @@ public class E1Bean {
 		_099, _815, _816, rentalForStudyOwnerName1, _804, _817,
 		rentalForStudyOwnerName2, _805, _819, rentalForStudyOwnerName3,
 		_806, _821, rentalForStudyOwnerName4, _807, _823, _073, _074,
-		_089, _090, _087, _088, _079, _080, _084, _085, _077, _078,
-		_663, _664, _033, _034, _035, _036, null);
+		_089, _090, _087, _088, _079, _080, _081, _082, _083, _084,
+		_085, _077, _078, _663, _664, _033, _034, _035, _036, null);
 
 	// table 8
 	E1prepaidTaxes prepaidTaxesObj = new E1prepaidTaxes(_601, _602, _603,
@@ -5304,13 +5303,29 @@ public class E1Bean {
 	E1taxPayerBankAccount taxPayerBankAccountObj = new E1taxPayerBankAccount(
 		bic, iban, null);
 
+	// table 12
+	E1nauticalincomes nautical = new E1nauticalincomes(_255, _256, _257,
+		_258, _263, _264, _265, _266, _253, _254, _201, _202, null);
+	// nautical.set_201(_201);
+	// nautical.set_202(_202);
+	// nautical.set_253(_253);
+	// nautical.set_254(_254);
+	// nautical.set_255(_255);
+	// nautical.set_256(_256);
+	// nautical.set_257(_257);
+	// nautical.set_258(_258);
+	// nautical.set_263(_263);
+	// nautical.set_264(_264);
+	// nautical.set_265(_265);
+	// nautical.set_266(_266);
+
 	E1 e1 = new E1();
 	e1.setId(key);
 	e1.setIsComplete(0);
 	e1.setAtid(this.taxPayerAT);
-	e1.setDoy(Doy);
-	e1.setMarriage(BooleanToInt(marriage));
-	e1.setTaxpayerAddress(taxPayerAddress);
+	e1.setDoy(this.Doy);
+	e1.setMarriage(BooleanToInt(this.marriage));
+	e1.setTaxpayerAddress(this.taxPayerAddress);
 	e1.setDateInserted(new java.util.Date());
 	e1.setE1dataFromTaxPayerFolder(dataFromTaxPayerFolderObj);
 	e1.setE1expensesRemovedFromTotalIncome(expensesRemovedFromTotalIncomeObj);
@@ -5321,10 +5336,32 @@ public class E1Bean {
 	e1.setE1prepaidTaxes(prepaidTaxesObj);
 	e1.setE1personDataBorneTaxpayer(personDataBorneTaxpayerObj);
 	e1.setE1reduceTax(reduceTaxObj);
-	e1.setE1relatePersonses(rlPersonsList);
+	e1.setRelatePersons(relatePersons);
 	e1.setE1taxableIncomes(taxableIncomeObj);
 	e1.setE1taxPayerBankAccount(taxPayerBankAccountObj);
+	e1.setE1nauticalincomes(nautical);
+	// e1.setTaxpayer(taxpayer);
 
+	String result = "";
+
+	ClientConfig conf = new DefaultClientConfig();
+	Client client = Client.create(conf);
+
+	try {
+	    WebResource r = client
+		    .resource("http://localhost:8098/TaxisNet/rest/");
+
+	    result = r.path("DocumentService/submitE1")
+		    .accept("application/json").type("application/json")
+		    .post(String.class, e1);
+
+	    this.error = result;
+	    if (result == "E1 Saved !!")
+		return ("SuccessPage");
+	} catch (Exception ex) {
+	    this.error = ex.toString();
+	}
+	
 	return "";
     }
 
