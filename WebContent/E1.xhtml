@@ -87,7 +87,7 @@
 					<td colspan="2"><h:inputText name="SYZ_RG_TXP_POSTAL_ADDRESS" size="50" class="s_l" value="#{e1Bean.wifeAddress}" /></td>
 					<td><h:inputText name="SYZ_TEL" size="14" class="s_l" value="#{e1Bean.wifePhone}" /></td>
 					<td><h:inputText name="SYZ_KINHTO" size="14" class="s_l" value="#{e1Bean.wifeCell}" /></td>
-					<td><input name="EGGAMOS" disabled="disabled" type="checkbox" /></td>
+					<td><h:selectBooleanCheckbox name="EGGAMOS" value="#{e1Bean.marriage}" /></td>
 				</tr>
 				<tr>
 					<td rowspan="5" width="9">Ε<br />Κ<br />Π<br />Ρ
@@ -3010,32 +3010,31 @@
 									<td class="line" align="center">ΑΡΙΘΜΟΣ ΛΟΓΑΡΙΑΣΜΟΥ</td>
 								</tr>
 								<tr>
-									<td align="center"><h:selectOneMenu tabindex="11000" name="TRAPEZALEKT" onchange="javascript:TrapezaCode ('parent',this,0)" class="s_l">
-											<f:selectItem selected="selected" itemValue="0">
-											</f:selectItem>
-											<f:selectItem itemValue="011">ΕΘΝΙΚΗ</f:selectItem>
-											<f:selectItem itemValue="012">ΕΜΠΟΡΙΚΗ</f:selectItem>
-											<f:selectItem itemValue="014">ALPHA BANK</f:selectItem>
-											<f:selectItem itemValue="015">ΓΕΝΙΚΗ</f:selectItem>
-											<f:selectItem itemValue="016">ΑΤΤΙΚΗΣ</f:selectItem>
-											<f:selectItem itemValue="017">ΠΕΙΡΑΙΩΣ</f:selectItem>
-											<f:selectItem itemValue="026">E.F.G. EUROBANK ERGASIAS</f:selectItem>
-											<f:selectItem itemValue="028">MARFIN ΕΓΝΑΤΙΑ ΤΡΑΠΕΖΑ</f:selectItem>
-											<f:selectItem itemValue="032">ΕΛΛΗΝΙΚΗ ΤΡΑΠΕΖΑ</f:selectItem>
-											<f:selectItem itemValue="037">PROTON ΤΡΑΠΕΖΑ</f:selectItem>
-											<f:selectItem itemValue="038">MILLENIUM BANK</f:selectItem>
-											<f:selectItem itemValue="043">ΑΓΡΟΤΙΚΗ</f:selectItem>
-											<f:selectItem itemValue="047">T BANK ATE</f:selectItem>
-											<f:selectItem itemValue="049">ΠΑΝΕΛΛΗΝΙΑ ΤΡΑΠΕΖΑ</f:selectItem>
-											<f:selectItem itemValue="054">PROBANK</f:selectItem>
-											<f:selectItem itemValue="069">ΣΥΝΕΤ. ΤΡΑΠΕΖΑ ΧΑΝΙΩΝ</f:selectItem>
-											<f:selectItem itemValue="073">ΤΡΑΠΕΖΑ ΚΥΠΡΟΥ</f:selectItem>
-											<f:selectItem itemValue="087">ΠΑΓΚΡΗΤΙΑ ΣΥΝΕΤ. ΤΡΑΠΕΖΑ</f:selectItem>
-											<f:selectItem itemValue="096">HELLENIC POSTBANK - ΤΤ</f:selectItem>
+									<td align="center"><h:selectOneMenu tabindex="11000" name="TRAPEZALEKT" class="s_l">
+											<!-- onchange="javascript:TrapezaCode ('parent',this,0)" -->
+											<f:selectItem selected="selected" itemValue="0" itemLabel="" />
+											<f:selectItem itemLabel="ΕΘΝΙΚΗ" itemValue="011" />
+											<f:selectItem itemLabel="ΕΜΠΟΡΙΚΗ" itemValue="012" />
+											<f:selectItem itemLabel="ALPHA BANK" itemValue="014" />
+											<f:selectItem itemLabel="ΓΕΝΙΚΗ" itemValue="015" />
+											<f:selectItem itemLabel="ΑΤΤΙΚΗΣ" itemValue="016" />
+											<f:selectItem itemLabel="ΠΕΙΡΑΙΩΣ" itemValue="017" />
+											<f:selectItem itemLabel="E.F.G. EUROBANK ERGASIAS" itemValue="026" />
+											<f:selectItem itemLabel="MARFIN ΕΓΝΑΤΙΑ ΤΡΑΠΕΖΑ" itemValue="028" />
+											<f:selectItem itemLabel="ΕΛΛΗΝΙΚΗ ΤΡΑΠΕΖΑ" itemValue="032" />
+											<f:selectItem itemLabel="PROTON ΤΡΑΠΕΖΑ" itemValue="037" />
+											<f:selectItem itemLabel="MILLENIUM BANK" itemValue="038" />
+											<f:selectItem itemLabel="ΑΓΡΟΤΙΚΗ" itemValue="043" />
+											<f:selectItem itemLabel="T BANK ATE" itemValue="047" />
+											<f:selectItem itemLabel="ΠΑΝΕΛΛΗΝΙΑ ΤΡΑΠΕΖΑ" itemValue="049" />
+											<f:selectItem itemLabel="PROBANK" itemValue="054" />
+											<f:selectItem itemLabel="ΣΥΝΕΤ. ΤΡΑΠΕΖΑ ΧΑΝΙΩΝ" itemValue="069" />
+											<f:selectItem itemLabel="ΤΡΑΠΕΖΑ ΚΥΠΡΟΥ" itemValue="073" />
+											<f:selectItem itemLabel="ΠΑΓΚΡΗΤΙΑ ΣΥΝΕΤ. ΤΡΑΠΕΖΑ" itemValue="087" />
+											<f:selectItem itemLabel="HELLENIC POSTBANK - ΤΤ" itemValue="096" />
 										</h:selectOneMenu></td>
-									<td align="center"></td>
-									<td align="center"><h:inputText name="" size="2" class="s" readonly="true" value="GR" /> <h:inputText name="LOGARIASMOS" size="30"
-											class="s" value="#{e1Bean.iban}" /></td>
+									<td align="right"><h:inputText name="" size="2" class="s" readonly="true" value="GR" /></td>
+									<td align="center"><h:inputText name="LOGARIASMOS" size="30" class="s" value="#{e1Bean.iban}" /></td>
 								</tr>
 							</tbody>
 						</table>

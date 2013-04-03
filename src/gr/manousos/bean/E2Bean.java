@@ -13,6 +13,7 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashSet;
+import java.util.Properties;
 import java.util.Set;
 
 import javax.annotation.PostConstruct;
@@ -91,6 +92,12 @@ public class E2Bean implements Serializable {
 	this.login = login;
     }
 
+    Properties config = new Properties();
+
+    public E2Bean() {
+
+    }
+
     @PostConstruct
     public void init() throws IOException {
 
@@ -99,10 +106,12 @@ public class E2Bean implements Serializable {
 	Taxpayer taxpayer = null;
 	ClientConfig conf = new DefaultClientConfig();
 	try {
+	    config.load(getClass().getClassLoader().getResourceAsStream(
+		    "config.properties"));
 
 	    Client client = Client.create(conf);
-	    WebResource restSrv = client.resource(new URI(
-		    "http://localhost:8098/TaxisNet/rest/"));
+	    WebResource restSrv = client.resource(new URI("http://localhost:"
+		    + config.getProperty("web_port") + "/TaxisNet/rest/"));
 	    taxpayer = (Taxpayer) restSrv
 		    .path("UserService/getTaxPayerByUserName/")
 		    .path(login.getLoggedInUsername())
@@ -117,10 +126,6 @@ public class E2Bean implements Serializable {
 	    this.error = "Exeption: " + ex.toString() + "<br /> Stack Trace "
 		    + ex.getStackTrace() + "<br /> Caouse " + ex.getCause();
 	}
-    }
-
-    public E2Bean() {
-
     }
 
     public ArrayList<PartialEstates> getPartialEstateLst() {
@@ -465,9 +470,6 @@ public class E2Bean implements Serializable {
     public String saveE2() {
 	// TODO: Is Valid Form ?
 	// 1 estate with coOwn ->1,,* PartialEstates
-
-	// TODO: Get Taxpayer for session...
-
 	Set<E2estate> listOfE2estates = new HashSet<E2estate>();
 	Set<E2coOwner> listOfE2coOwner = new HashSet<E2coOwner>();
 	Set<E2otherEstate> listOfOtherEstates = new HashSet<E2otherEstate>();
@@ -559,8 +561,11 @@ public class E2Bean implements Serializable {
 	Client client = Client.create(conf);
 
 	try {
-	    WebResource r = client
-		    .resource("http://localhost:8098/TaxisNet/rest/");
+	    config.load(getClass().getClassLoader().getResourceAsStream(
+		    "config.properties"));
+
+	    WebResource r = client.resource("http://localhost:"
+		    + config.getProperty("web_port") + "/TaxisNet/rest/");
 
 	    result = r.path("DocumentService/submitE2")
 		    .accept("application/json").type("application/json")

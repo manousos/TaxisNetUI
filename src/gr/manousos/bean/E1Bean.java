@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.util.Calendar;
 import java.util.HashSet;
+import java.util.Properties;
 import java.util.Set;
 
 import javax.annotation.PostConstruct;
@@ -28,7 +29,6 @@ import gr.manousos.model.E1objectiveSpending;
 import gr.manousos.model.E1personDataBorneTaxpayer;
 import gr.manousos.model.E1prepaidTaxes;
 import gr.manousos.model.E1reduceTax;
-import gr.manousos.model.E1relatePersons;
 import gr.manousos.model.E1taxPayerBankAccount;
 import gr.manousos.model.E1taxableIncomes;
 import gr.manousos.model.RelatePerson;
@@ -648,16 +648,32 @@ public class E1Bean {
 	this.taxPayerFName = taxPayerFName;
     }
 
+    public String getTaxPayerFName() {
+	return taxPayerFName;
+    }
+
     public void setTaxPayerLName(String taxPayerLName) {
 	this.taxPayerLName = taxPayerLName;
+    }
+
+    public String getTaxPayerLName() {
+	return taxPayerLName;
     }
 
     public void setTaxPayerFaName(String taxPayerFaName) {
 	this.taxPayerFaName = taxPayerFaName;
     }
 
+    public String getTaxPayerFaName() {
+	return taxPayerFaName;
+    }
+
     public void setTaxPayerAFM(String taxPayerAFM) {
 	this.taxPayerAFM = taxPayerAFM;
+    }
+
+    public String getTaxPayerAFM() {
+	return taxPayerAFM;
     }
 
     public Integer getAircraftMonthOwnerShip() {
@@ -680,8 +696,16 @@ public class E1Bean {
 	this.taxPayerPhone = taxPayerPhone;
     }
 
+    public String getTaxPayerPhone() {
+	return taxPayerPhone;
+    }
+
     public void setTaxPayerCell(String taxPayerCell) {
 	this.taxPayerCell = taxPayerCell;
+    }
+
+    public String getTaxPayerCell() {
+	return taxPayerCell;
     }
 
     public Boolean getMarriage() {
@@ -5012,6 +5036,8 @@ public class E1Bean {
 	this._202 = _202;
     }
 
+    Properties config = new Properties();
+
     public E1Bean() {
 
     }
@@ -5019,15 +5045,17 @@ public class E1Bean {
     @PostConstruct
     public void init() throws IOException {
 
-	// this.error = "Welcome: " + login.getLoggedInUsername();
+	this.error = "Welcome: " + login.getLoggedInUsername();
 
 	Taxpayer taxpayer = null;
 	ClientConfig conf = new DefaultClientConfig();
 	try {
+	    config.load(getClass().getClassLoader().getResourceAsStream(
+		    "config.properties"));
 
 	    Client client = Client.create(conf);
-	    WebResource restSrv = client.resource(new URI(
-		    "http://localhost:8098/TaxisNet/rest/"));
+	    WebResource restSrv = client.resource(new URI("http://localhost:"
+		    + config.getProperty("web_port") + "/TaxisNet/rest/"));
 	    taxpayer = (Taxpayer) restSrv
 		    .path("UserService/getTaxPayerByUserName/")
 		    .path(login.getLoggedInUsername())
@@ -5051,7 +5079,6 @@ public class E1Bean {
 	E1Id key = new E1Id(getTaxPayerId(), Calendar.getInstance().get(
 		Calendar.YEAR));
 
-	// TODO: How to save Many to Many ?
 	// Table 1
 	Set<RelatePerson> relatePersons = new HashSet<RelatePerson>();
 
@@ -5348,8 +5375,11 @@ public class E1Bean {
 	Client client = Client.create(conf);
 
 	try {
-	    WebResource r = client
-		    .resource("http://localhost:8098/TaxisNet/rest/");
+	    config.load(getClass().getClassLoader().getResourceAsStream(
+		    "config.properties"));
+
+	    WebResource r = client.resource("http://localhost:"
+		    + config.getProperty("web_port") + "/TaxisNet/rest/");
 
 	    result = r.path("DocumentService/submitE1")
 		    .accept("application/json").type("application/json")
@@ -5361,7 +5391,7 @@ public class E1Bean {
 	} catch (Exception ex) {
 	    this.error = ex.toString();
 	}
-	
+
 	return "";
     }
 

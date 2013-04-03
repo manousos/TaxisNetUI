@@ -105,7 +105,7 @@ public class LoginBean implements Serializable {
 				if (response.getEntity(String.class).equals("1")) {
 					this.loggedIn = true;
 					this.loggedInUsername = this.userName;
-					return "E2";
+					return "Menu";
 				} else {
 					this.errorMsg = "Δεν υπάρχει ο χρήστης ή ο κωδικός είναι λανθασμένος !";
 				}
