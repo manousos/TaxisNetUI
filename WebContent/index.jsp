@@ -12,6 +12,7 @@
 	<ul>
 		<li><a href="Register.jsf">Register</a></li>
 		<li><a href="E2.jsf">E2</a>
+		<li><a href="E1.jsf">E1</a>
 	</ul>
 </body>
 </html>

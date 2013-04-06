@@ -436,7 +436,7 @@ public class E1Bean {
     private Float _793;
     private Float _794;
     private Float _615;
-    private String _616;
+    private Float _616;
     private String lassorNameForStudent;
     private String _417;
     private Float areaStudentHouse;
@@ -521,10 +521,10 @@ public class E1Bean {
     private Float _078;
     private Float _663;
     private Float _664;
-    private Integer _033;
-    private Integer _034;
-    private Integer _035;
-    private Integer _036;
+    private Boolean _033;
+    private Boolean _034;
+    private Boolean _035;
+    private Boolean _036;
     // table 8
     private Float _601;
     private Float _602;
@@ -547,7 +547,7 @@ public class E1Bean {
     private Float _297;
     private Float _298;
     private Float _127;
-    private String _128;
+    private Float _128;
     // table 9
     private String name1;
     private Integer birthYear1;
@@ -3732,11 +3732,11 @@ public class E1Bean {
 	this._615 = _615;
     }
 
-    public String get_616() {
+    public Float get_616() {
 	return _616;
     }
 
-    public void set_616(String _616) {
+    public void set_616(Float _616) {
 	this._616 = _616;
     }
 
@@ -4404,35 +4404,35 @@ public class E1Bean {
 	this._664 = _664;
     }
 
-    public Integer get_033() {
+    public Boolean get_033() {
 	return _033;
     }
 
-    public void set_033(Integer _033) {
+    public void set_033(Boolean _033) {
 	this._033 = _033;
     }
 
-    public Integer get_034() {
+    public Boolean get_034() {
 	return _034;
     }
 
-    public void set_034(Integer _034) {
+    public void set_034(Boolean _034) {
 	this._034 = _034;
     }
 
-    public Integer get_035() {
+    public Boolean get_035() {
 	return _035;
     }
 
-    public void set_035(Integer _035) {
+    public void set_035(Boolean _035) {
 	this._035 = _035;
     }
 
-    public Integer get_036() {
+    public Boolean get_036() {
 	return _036;
     }
 
-    public void set_036(Integer _036) {
+    public void set_036(Boolean _036) {
 	this._036 = _036;
     }
 
@@ -4604,11 +4604,11 @@ public class E1Bean {
 	this._127 = _127;
     }
 
-    public String get_128() {
+    public Float get_128() {
 	return _128;
     }
 
-    public void set_128(String _128) {
+    public void set_128(Float _128) {
 	this._128 = _128;
     }
 
@@ -5061,11 +5061,12 @@ public class E1Bean {
 		    .path(login.getLoggedInUsername())
 		    .accept(MediaType.APPLICATION_JSON).get(Taxpayer.class);
 
-	    // this.rentierAFM = taxpayer.getAfm();
-	    // this.setRentierFatherName(taxpayer.getFatherName());
-	    // this.setRentierFullName(taxpayer.getFname() + " "
-	    // + taxpayer.getLname());
-
+	    this.setTaxPayerAFM(taxpayer.getAfm());
+	    this.setTaxPayerCell(taxpayer.getContact().getCell());
+	    this.setTaxPayerFaName(taxpayer.getFatherName());
+	    this.setTaxPayerFName(taxpayer.getFname());
+	    this.setTaxPayerLName(taxpayer.getLname());
+	    this.setTaxPayerPhone(taxpayer.getContact().getPhone());
 	    this.setTaxPayerId(taxpayer.getId());
 	} catch (Exception ex) {
 	    this.error = "Exeption: " + ex.toString() + "<br /> Stack Trace "
@@ -5305,7 +5306,9 @@ public class E1Bean {
 		rentalForStudyOwnerName2, _805, _819, rentalForStudyOwnerName3,
 		_806, _821, rentalForStudyOwnerName4, _807, _823, _073, _074,
 		_089, _090, _087, _088, _079, _080, _081, _082, _083, _084,
-		_085, _077, _078, _663, _664, _033, _034, _035, _036, null);
+		_085, _077, _078, _663, _664, BooleanToInt(_033),
+		BooleanToInt(_034), BooleanToInt(_035), BooleanToInt(_036),
+		null);
 
 	// table 8
 	E1prepaidTaxes prepaidTaxesObj = new E1prepaidTaxes(_601, _602, _603,
@@ -5386,7 +5389,7 @@ public class E1Bean {
 		    .post(String.class, e1);
 
 	    this.error = result;
-	    if (result == "E1 Saved !!")
+	    if (result.equals("E1 Saved !!"))
 		return ("SuccessPage");
 	} catch (Exception ex) {
 	    this.error = ex.toString();

@@ -19,8 +19,8 @@
 					<td>&nbsp;&nbsp;&nbsp;&nbsp;<b>Προς τη Δ.Ο.Υ.</b> &nbsp;&nbsp;<h:inputText name="DOY_NAME" style="text-align: Left" class="s" size="30"
 							title=" Εαν πρέπει να υποβάλετε την Δήλωση σας σε άλλη Δ.Ο.Υ. από αυτή που εμφανίζεται, θα πρέπει πρώτα να δηλώσετε
 					στην Δ.Ο.Υ. σας την αλλαγή. Από την επόμενη μέρα θα έχετε την δυνατότητα να υποβάλετε την δήλωση ηλεκτρονικά."
-							type="text" /></td>
-					<td>ΑΡΙΘΜΟΣ ΚΑΤΑΧΩΡΗΣΗΣ: <h:inputText name="AR_KATAXWRHSHS" style="text-align: Left" size="10" class="s" /></td>
+							value="#{e1Bean.doy}" /></td>
+					<td>ΑΡΙΘΜΟΣ ΚΑΤΑΧΩΡΗΣΗΣ: <h:inputText name="AR_KATAXWRHSHS" disabled="true" style="text-align: Left" size="10" class="s" /></td>
 				</tr>
 			</tbody>
 		</table>
@@ -382,7 +382,7 @@
 					<td class="line">010</td>
 					<td class="line">&nbsp;</td>
 					<td class="line"><div id="div010">
-							<h:selectBooleanCheckbox name="n010" value="#{e1Bran._010}" />
+							<h:selectBooleanCheckbox name="n010" value="#{e1Bean._010}" />
 						</div></td>
 					<td class="line">&nbsp;</td>
 					<td class="line">&nbsp;</td>
@@ -684,8 +684,8 @@
 				</tr>
 				<tr>
 					<td align="right">β)</td>
-					<td class="line">Αξία καινούργιου πάγιου εξοπλισμού 326 <h:inputText name="n326" size="14" class="s" value="@=#{e1Bean._326}" /> &nbsp;x
-						25% ή 50%
+					<td class="line">Αξία καινούργιου πάγιου εξοπλισμού 326 <h:inputText name="n326" size="14" class="s" value="#{e1Bean._326}" /> &nbsp;x 25%
+						ή 50%
 					</td>
 					<td class="line">337</td>
 					<td class="line"><h:inputText name="n337" size="14" class="s" value="#{e1Bean._337}" /></td>
@@ -2721,7 +2721,7 @@
 					<td class="line">α <h:selectBooleanCheckbox name="n033" value="#{e1Bean._033}" /> 035 β <h:selectBooleanCheckbox name="n035"
 							value="#{e1Bean._035}" /></td>
 					<td class="line">034</td>
-					<td class="line">α <h:selectBooleanCheckbox name="n034" value=" #{e1Bean._033}" /> 036 β <h:selectBooleanCheckbox name="n036"
+					<td class="line">α <h:selectBooleanCheckbox name="n034" value="#{e1Bean._034}" /> 036 β <h:selectBooleanCheckbox name="n036"
 							value="#{e1Bean._036}" /></td>
 				</tr>
 			</tbody>
@@ -3010,7 +3010,7 @@
 									<td class="line" align="center">ΑΡΙΘΜΟΣ ΛΟΓΑΡΙΑΣΜΟΥ</td>
 								</tr>
 								<tr>
-									<td align="center"><h:selectOneMenu tabindex="11000" name="TRAPEZALEKT" class="s_l">
+									<td align="center"><h:selectOneMenu tabindex="11000" name="TRAPEZALEKT" class="s_l" value="#{e1Bean.bic}">
 											<!-- onchange="javascript:TrapezaCode ('parent',this,0)" -->
 											<f:selectItem selected="selected" itemValue="0" itemLabel="" />
 											<f:selectItem itemLabel="ΕΘΝΙΚΗ" itemValue="011" />
@@ -3126,7 +3126,12 @@
 			</tbody>
 		</table>
 
-
+		<table>
+			<tr>
+				<td><h:commandButton value="Αποθήκευση" action="#{e1Bean.submitE1}"></h:commandButton></td>
+				<td></td>
+			</tr>
+		</table>
 	</h:form>
 
 </h:body>

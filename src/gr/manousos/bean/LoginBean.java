@@ -72,7 +72,7 @@ public class LoginBean implements Serializable {
 	@LoggedIn
 	String getLoggedInUsername() {
 		// if (this.loggedIn)
-		System.err.println("Logariosmenos xristis " + this.loggedInUsername);
+		//System.err.println("Logariosmenos xristis " + this.loggedInUsername);
 		return loggedInUsername;
 
 		// return "";

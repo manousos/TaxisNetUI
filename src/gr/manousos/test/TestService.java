@@ -61,7 +61,8 @@ public class TestService {
 
 	// testReadProperties(conf);
 	// testSubmitE2(client);
-	testE1SubmitService(client);
+	// testE1SubmitService(client);
+	Taxpayer t = getTaxPayerFromUserName("manousos2");
     }
 
     private static void testE1SubmitService(Client client) {
@@ -94,8 +95,7 @@ public class TestService {
 	relatePersons.add(wife);
 	relatePersons.add(delegate);
 
-	E1Id key = new E1Id(9, Calendar.getInstance().get(
-		Calendar.YEAR));
+	E1Id key = new E1Id(9, Calendar.getInstance().get(Calendar.YEAR));
 
 	E1dataFromTaxPayerFolder dataFromTaxPayerFolderObj = new E1dataFromTaxPayerFolder();
 	dataFromTaxPayerFolderObj.set_341(341.40f);
@@ -171,6 +171,28 @@ public class TestService {
 	} catch (Exception ex) {
 	    System.out.println(ex.toString());
 	}
+    }
+
+    private static Taxpayer getTaxPayerFromUserName(String name) {
+	Taxpayer taxpayer = null;
+	ClientConfig conf = new DefaultClientConfig();
+	try {
+
+	    Client client = Client.create(conf);
+	    WebResource restSrv = client.resource(new URI(
+		    "http://localhost:8098/TaxisNet/rest/"));
+	    taxpayer = (Taxpayer) restSrv
+		    .path("UserService/getTaxPayerByUserName/").path(name)
+		    .accept(MediaType.APPLICATION_JSON).get(Taxpayer.class);
+
+	} catch (Exception ex) {
+	    System.out.println("Exeption: " + ex.toString()
+		    + "<br /> Stack Trace " + ex.getStackTrace()
+		    + "<br /> Caouse " + ex.getCause());
+
+	}
+
+	return taxpayer;
     }
 
     private static void testSubmitE2(Client client) {
