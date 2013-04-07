@@ -61,8 +61,8 @@ public class TestService {
 
 	// testReadProperties(conf);
 	// testSubmitE2(client);
-	// testE1SubmitService(client);
-	Taxpayer t = getTaxPayerFromUserName("manousos2");
+	testE1SubmitService(client);
+	// Taxpayer t = getTaxPayerFromUserName("manousos2");
     }
 
     private static void testE1SubmitService(Client client) {
