@@ -23,6 +23,7 @@ import gr.manousos.model.E2Id;
 import gr.manousos.model.E2coOwner;
 import gr.manousos.model.E2estate;
 import gr.manousos.model.E2otherEstate;
+import gr.manousos.model.IncomeTax;
 import gr.manousos.model.RelatePerson;
 import gr.manousos.model.Taxpayer;
 
@@ -61,8 +62,9 @@ public class TestService {
 
 	// testReadProperties(conf);
 	// testSubmitE2(client);
-	testE1SubmitService(client);
+	// testE1SubmitService(client);
 	// Taxpayer t = getTaxPayerFromUserName("manousos2");
+	testTaxCalck(client);
     }
 
     private static void testE1SubmitService(Client client) {
@@ -273,5 +275,28 @@ public class TestService {
 	    System.err.println(ex.getCause());
 	}
 	System.out.println(result);
+    }
+
+    private static void testTaxCalck(Client client) {
+	IncomeTax tax = null;
+
+	try {
+	    WebResource restSrv = client.resource(new URI(
+		    "http://localhost:8098" + "/TaxisNet/rest/"));
+	    tax = (IncomeTax) restSrv.path("TaxCalkService/tax")
+		    .queryParam("tId", "9").queryParam("year", "2013")
+		    .accept(MediaType.APPLICATION_JSON).get(IncomeTax.class);
+
+	    System.out.println("Tax for Principal: " + tax.getPrincipalTax());
+	    // this.setPrincipalTax(tax.getPrincipalTax());
+	    // this.setWifeTax(tax.getWifeTax());
+	    // this.setTotalTax(this.principalTax + this.wifeTax);
+
+	} catch (Exception ex) {
+	    System.err.println("Exeption: " + ex.toString()
+		    + "<br /> Stack Trace " + ex.getStackTrace()
+		    + "<br /> Caouse " + ex.getCause());
+
+	}
     }
 }

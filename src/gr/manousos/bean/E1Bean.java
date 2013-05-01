@@ -5390,7 +5390,7 @@ public class E1Bean {
 
 	    this.error = result;
 	    if (result.equals("E1 Saved !!"))
-		return ("SuccessPage");
+		return ("TaxPage");
 	} catch (Exception ex) {
 	    this.error = ex.toString();
 	}
