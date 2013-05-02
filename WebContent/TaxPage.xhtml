@@ -17,15 +17,15 @@
 			</tr>
 			<tr>
 				<td>Φόρος κύριου:</td>
-				<td></td>
+				<td><h:outputText value="#{taxBean.principalTax}" />&euro;</td>
 			</tr>
 			<tr>
 				<td>Φόρος συζήγου:</td>
-				<td></td>
+				<td><h:outputText value="#{taxBean.wifeTax}" />&euro;</td>
 			</tr>
 			<tr>
 				<td>Σύνολο:</td>
-				<td></td>
+				<td><h:outputText value="#{taxBean.totalTax}" />&euro;</td>
 			</tr>
 		</table>
 	</h:form>
