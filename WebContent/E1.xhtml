@@ -3,10 +3,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
 	<title>E1</title>
+	<link href="./css/styles.css" rel="stylesheet" type="text/css" />
 </h:head>
 <h:body>
 
 	<h:form>
+		<div id="error">
+			<h:outputText value="#{e1Bean.error}"></h:outputText>
+		</div>
 		<table cellpadding="0" border="0" cellspacing="0" width="100%">
 			<tbody>
 				<tr>

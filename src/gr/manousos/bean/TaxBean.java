@@ -62,6 +62,14 @@ public class TaxBean {
 	this.totalTax = totalTax;
     }
 
+    public LoginBean getLogin() {
+	return login;
+    }
+
+    public void setLogin(LoginBean login) {
+	this.login = login;
+    }
+
     public TaxBean() {
 
     }
@@ -91,7 +99,7 @@ public class TaxBean {
 	    WebResource restSrv2 = client.resource(new URI("http://localhost:"
 		    + config.getProperty("web_port") + "/TaxisNet/rest/"));
 	    tax = (IncomeTax) restSrv2
-		    .path("TaxCalkService/tax")
+		    .path("TaxCalcService/tax/")
 		    .queryParam("tId", taxpayer.getId().toString())
 		    .queryParam(
 			    "year",
