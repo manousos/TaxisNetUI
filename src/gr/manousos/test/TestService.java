@@ -1,9 +1,5 @@
 package gr.manousos.test;
 
-import gr.manousos.bean.E2Bean;
-import gr.manousos.bean.E2Bean.LeasesProperties;
-import gr.manousos.bean.E2Bean.OtherEstates;
-import gr.manousos.bean.E2Bean.PartialEstates;
 import gr.manousos.model.Contact;
 import gr.manousos.model.E1;
 import gr.manousos.model.E1Id;
@@ -27,14 +23,12 @@ import gr.manousos.model.IncomeTax;
 import gr.manousos.model.RelatePerson;
 import gr.manousos.model.Taxpayer;
 
-import java.io.FileInputStream;
 import java.net.URI;
 import java.util.Calendar;
 import java.util.HashSet;
 import java.util.Properties;
 import java.util.Set;
 
-import javax.ws.rs.Consumes;
 import javax.ws.rs.core.MediaType;
 
 import com.sun.jersey.api.client.Client;
@@ -64,6 +58,7 @@ public class TestService {
 	// testSubmitE2(client);
 	// testE1SubmitService(client);
 	// Taxpayer t = getTaxPayerFromUserName("manousos2");
+	testE1SubmitService(client);
 	testTaxCalck(client);
     }
 
@@ -282,7 +277,7 @@ public class TestService {
 
 	try {
 	    WebResource restSrv = client.resource(new URI(
-		    "http://localhost:8098" + "/TaxisNet/rest/"));
+		    "http://localhost:8098/TaxisNet/rest/"));
 	    tax = (IncomeTax) restSrv.path("TaxCalkService/tax")
 		    .queryParam("tId", "9").queryParam("year", "2013")
 		    .accept(MediaType.APPLICATION_JSON).get(IncomeTax.class);
