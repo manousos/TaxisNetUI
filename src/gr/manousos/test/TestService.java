@@ -4,16 +4,27 @@ import gr.manousos.model.Contact;
 import gr.manousos.model.E1;
 import gr.manousos.model.E1Id;
 import gr.manousos.model.E1dataFromTaxPayerFolder;
+import gr.manousos.model.E1dataFromTaxPayerFolderId;
 import gr.manousos.model.E1expensesRemovedFromTotalIncome;
+import gr.manousos.model.E1expensesRemovedFromTotalIncomeId;
 import gr.manousos.model.E1incomesReduceTaxes;
+import gr.manousos.model.E1incomesReduceTaxesId;
 import gr.manousos.model.E1infoData;
+import gr.manousos.model.E1infoDataId;
 import gr.manousos.model.E1nauticalincomes;
+import gr.manousos.model.E1nauticalincomesId;
 import gr.manousos.model.E1objectiveSpending;
+import gr.manousos.model.E1objectiveSpendingId;
 import gr.manousos.model.E1personDataBorneTaxpayer;
+import gr.manousos.model.E1personDataBorneTaxpayerId;
 import gr.manousos.model.E1prepaidTaxes;
+import gr.manousos.model.E1prepaidTaxesId;
 import gr.manousos.model.E1reduceTax;
+import gr.manousos.model.E1reduceTaxId;
 import gr.manousos.model.E1taxPayerBankAccount;
+import gr.manousos.model.E1taxPayerBankAccountId;
 import gr.manousos.model.E1taxableIncomes;
+import gr.manousos.model.E1taxableIncomesId;
 import gr.manousos.model.E2;
 import gr.manousos.model.E2Id;
 import gr.manousos.model.E2coOwner;
@@ -54,15 +65,22 @@ public class TestService {
 	ClientConfig conf = new DefaultClientConfig();
 	Client client = Client.create(conf);
 
+	// Taxpayer t = getTaxPayerFromUserName("manousos2");
 	// testReadProperties(conf);
 	// testSubmitE2(client);
 	// testE1SubmitService(client);
-	// Taxpayer t = getTaxPayerFromUserName("manousos2");
-	testE1SubmitService(client);
-	testTaxCalck(client);
+
+	testE1SubmitService(client, null);
+	// testTaxCalck(client);
     }
 
-    private static void testE1SubmitService(Client client) {
+    private static Taxpayer getTaxpayerById(int id, Client client) {
+	Taxpayer t = null;
+
+	return t;
+    }
+
+    private static void testE1SubmitService(Client client, Taxpayer taxpayer) {
 	Set<RelatePerson> relatePersons = new HashSet<RelatePerson>();
 
 	Contact wifeContact = new Contact("2111231233", "6956565656", "");
@@ -96,29 +114,66 @@ public class TestService {
 
 	E1dataFromTaxPayerFolder dataFromTaxPayerFolderObj = new E1dataFromTaxPayerFolder();
 	dataFromTaxPayerFolderObj.set_341(341.40f);
+	dataFromTaxPayerFolderObj.setId(key);
+	// dataFromTaxPayerFolderObj.setId(new E1dataFromTaxPayerFolderId(key
+	// .getTaxpayerId(), key.getYear()));
 	E1expensesRemovedFromTotalIncome expensesRemovedFromTotalIncomeObj = new E1expensesRemovedFromTotalIncome();
 	expensesRemovedFromTotalIncomeObj.set_033(1);
+	expensesRemovedFromTotalIncomeObj.setId(key);
+	// expensesRemovedFromTotalIncomeObj
+	// .setId(new E1expensesRemovedFromTotalIncomeId(key
+	// .getTaxpayerId(), key.getYear()));
 	E1incomesReduceTaxes incomesReduceTaxesObj = new E1incomesReduceTaxes();
 	incomesReduceTaxesObj.set_417("0123456780");
+	incomesReduceTaxesObj.setId(key);
+	// incomesReduceTaxesObj.setId(new E1incomesReduceTaxesId(key
+	// .getTaxpayerId(), key.getYear()));
+
 	E1infoData infoDataObj = new E1infoData();
 	infoDataObj.set_007(1);
+	infoDataObj.setId(key);
+	// infoDataObj.setId(new E1infoDataId(key.getTaxpayerId(),
+	// key.getYear()));
 	E1objectiveSpending objectiveSpendingObj = new E1objectiveSpending();
 	objectiveSpendingObj.set_211(211.11f);
+	objectiveSpendingObj.setId(key);
+	// objectiveSpendingObj.setId(new E1objectiveSpendingId(key
+	// .getTaxpayerId(), key.getYear()));
 	E1personDataBorneTaxpayer personDataBorneTaxpayerObj = new E1personDataBorneTaxpayer();
 	personDataBorneTaxpayerObj.set_831("0123456789");
+	personDataBorneTaxpayerObj.setId(key);
+	// personDataBorneTaxpayerObj.setId(new E1personDataBorneTaxpayerId(key
+	// .getTaxpayerId(), key.getYear()));
 	E1prepaidTaxes prepaidTaxesObj = new E1prepaidTaxes();
 	prepaidTaxesObj.set_127(127.27f);
+	prepaidTaxesObj.setId(key);
+	// prepaidTaxesObj.setId(new E1prepaidTaxesId(key.getTaxpayerId(), key
+	// .getYear()));
 	E1reduceTax reduceTaxObj = new E1reduceTax();
 	reduceTaxObj.set001(1);
+	reduceTaxObj.setId(key);
+	// reduceTaxObj
+	// .setId(new E1reduceTaxId(key.getTaxpayerId(), key.getYear()));
 	E1taxableIncomes taxableIncomeObj = new E1taxableIncomes();
 	taxableIncomeObj.set_101(101.01f);
+	taxableIncomeObj.setId(key);
+	// taxableIncomeObj.setId(new E1taxableIncomesId(key.getTaxpayerId(),
+	// key
+	// .getYear()));
 	E1taxPayerBankAccount taxPayerBankAccountObj = new E1taxPayerBankAccount();
 	taxPayerBankAccountObj.setBic("Alpha");
+	taxPayerBankAccountObj.setId(key);
+	// taxPayerBankAccountObj.setId(new E1taxPayerBankAccountId(key
+	// .getTaxpayerId(), key.getYear()));
 	taxPayerBankAccountObj.setIban("salkjfhas654654654654");
 	E1nauticalincomes nautical = new E1nauticalincomes();
 	nautical.set_201(201.01f);
+	nautical.setId(key);
+	// nautical.setId(new E1nauticalincomesId(key.getTaxpayerId(), key
+	// .getYear()));
 
 	E1 e1 = new E1();
+
 	e1.setId(key);
 	e1.setIsComplete(0);
 	e1.setAtid("X900157");
@@ -139,6 +194,9 @@ public class TestService {
 	e1.setE1taxPayerBankAccount(taxPayerBankAccountObj);
 	e1.setE1nauticalincomes(nautical);
 	e1.setRelatePersons(relatePersons); // Many to Many
+	e1.setTaxpayer(taxpayer);
+	// incomesReduceTaxesObj.setE1(e1);
+	// objectiveSpendingObj.setE1(e1);
 
 	String result = "";
 	try {
@@ -149,8 +207,7 @@ public class TestService {
 	    result = r.path("DocumentService/submitE1")
 		    .accept("application/json").type("application/json")
 		    .post(String.class, e1);
-	    // if (newUser.getId() > 0)
-	    // return ("SuccessPage");
+	    System.out.println("Finish with:" + result);
 	} catch (Exception ex) {
 	    System.err.println(ex);
 	    System.err.println(ex.getCause());
