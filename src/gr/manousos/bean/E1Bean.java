@@ -5129,10 +5129,14 @@ public class E1Bean {
 		BooleanToInt(get_030()), BooleanToInt(get_905()),
 		BooleanToInt(get_906()), BooleanToInt(get_911()),
 		BooleanToInt(get_912()), BooleanToInt(get_010()));
+	infoDataObj.setId(key);
+
 	// table 3
 	E1reduceTax reduceTaxObj = new E1reduceTax(null,
 		BooleanToInt(get_001()), BooleanToInt(get_002()), _003, _004,
 		_005, _006);
+	reduceTaxObj.setId(key);
+
 	// table 4
 	E1taxableIncomes taxableIncomeObj = new E1taxableIncomes(null, _301,
 		_302, _303, _304, _321, _322, _317, _318, _461, _462, _921,
@@ -5159,6 +5163,7 @@ public class E1Bean {
 		agrTotalWifeNetincome3, agrLocation4, agrProdKind4,
 		agrPopulation4, agrLocationType4, BooleanToInt(agrHasWater4),
 		agrNetIncome4, agrTotalNetincome4, agrTotalWifeNetincome4);
+	taxableIncomeObj.setId(key);
 
 	// table 5
 	E1objectiveSpending objectiveSpendingObj = new E1objectiveSpending();
@@ -5286,7 +5291,7 @@ public class E1Bean {
 	objectiveSpendingObj.setShippingName2(shippingName2);
 	objectiveSpendingObj.setShippingRegister1(shippingRegister1);
 	objectiveSpendingObj.setShippingRegister2(shippingRegister2);
-	// objectiveSpendingObj.setIdE1objectiveSpending(idE1objectiveSpending);
+	objectiveSpendingObj.setId(key);
 
 	// table 6
 	E1incomesReduceTaxes incomesReduceTaxesObj = new E1incomesReduceTaxes(
@@ -5295,6 +5300,8 @@ public class E1Bean {
 		lessorName1, _790, _795, lassorName2, _791, _796, _793, _794,
 		_615, _616, lassorNameForStudent, _417, areaStudentHouse, _419,
 		_420, _735, _736, _781, _782, _783, _784, _787, _788);
+	incomesReduceTaxesObj.setId(key);
+
 	// table 7
 	E1expensesRemovedFromTotalIncome expensesRemovedFromTotalIncomeObj = new E1expensesRemovedFromTotalIncome(
 		null, _049, _051, _052, _053, _054, _057, _058, _031, _032,
@@ -5309,11 +5316,14 @@ public class E1Bean {
 		_089, _090, _087, _088, _079, _080, _081, _082, _083, _084,
 		_085, _077, _078, _663, _664, BooleanToInt(_033),
 		BooleanToInt(_034), BooleanToInt(_035), BooleanToInt(_036));
+	expensesRemovedFromTotalIncomeObj.setId(key);
 
 	// table 8
 	E1prepaidTaxes prepaidTaxesObj = new E1prepaidTaxes(null, _601, _602,
 		_603, _604, _605, _606, _607, _608, _609, _610, _651, _652,
 		_293, _294, _313, _314, _315, _316, _297, _298, _127, _128);
+	prepaidTaxesObj.setId(key);
+
 	// table 9
 	E1personDataBorneTaxpayer personDataBorneTaxpayerObj = new E1personDataBorneTaxpayer(
 		null, lessorName1, birthYear1, schoolName1, _831, lassorName2,
@@ -5324,31 +5334,23 @@ public class E1Bean {
 		fullName3, _837, relationshipWithPrincipal3,
 		relationShipWithWife3, fullName4, _838,
 		relationshipWithPrincipal4, relationShipWithWife4);
+	personDataBorneTaxpayerObj.setId(key);
 
 	// table 10
 	E1dataFromTaxPayerFolder dataFromTaxPayerFolderObj = new E1dataFromTaxPayerFolder(
 		null, _901, _902, _903, _904, _341, _995, _996);
+	dataFromTaxPayerFolderObj.setId(key);
 
 	// table 11
 	E1taxPayerBankAccount taxPayerBankAccountObj = new E1taxPayerBankAccount(
 		null, bic, iban);
+	taxPayerBankAccountObj.setId(key);
 
 	// table 12
 	E1nauticalincomes nautical = new E1nauticalincomes(null, _255, _256,
 		_257, _258, _263, _264, _265, _266, _253, _254, _201, _202);
-	// nautical.set_201(_201);
-	// nautical.set_202(_202);
-	// nautical.set_253(_253);
-	// nautical.set_254(_254);
-	// nautical.set_255(_255);
-	// nautical.set_256(_256);
-	// nautical.set_257(_257);
-	// nautical.set_258(_258);
-	// nautical.set_263(_263);
-	// nautical.set_264(_264);
-	// nautical.set_265(_265);
-	// nautical.set_266(_266);
-
+	nautical.setId(key);
+	
 	E1 e1 = new E1();
 	e1.setId(key);
 	e1.setIsComplete(0);
@@ -5371,7 +5373,7 @@ public class E1Bean {
 	e1.setE1taxPayerBankAccount(taxPayerBankAccountObj);
 	e1.setE1nauticalincomes(nautical);
 	// e1.setTaxpayer(taxpayer);
-	
+
 	String result = "";
 
 	ClientConfig conf = new DefaultClientConfig();

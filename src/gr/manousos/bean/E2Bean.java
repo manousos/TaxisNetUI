@@ -493,7 +493,7 @@ public class E2Bean implements Serializable {
 	    estate.setLocation(item.getLocation());
 	    estate.setMonthlyRental(item.getRent());
 	    estate.setPosition(item.getPoint());
-	    estate.setRersentCoOwner(item.getRnPesr());
+	    estate.setPersentCoOwner(item.getRnPesr());
 	    estate.setRevenueFreeHome(item.getRevFreeBuilding());
 	    estate.setRevenueFreeOffice(item.getRevFreeOffice());
 	    estate.setRevenuePrivateHotel(item.getRevPropHotel());
@@ -503,10 +503,11 @@ public class E2Bean implements Serializable {
 	    estate.setUsage(item.getUsage());
 	    estate.setFrom(item.getFromMonth());
 	    estate.setTo(item.getToMonth());
+	    estate.setRevenueFreeField(item.getRevFreeLand());
 	    // TODO: care it...maybe it is a bug !!
 	    E2coOwner coOwner = null;
 
-	    if (estate.getRersentCoOwner() != 100) {
+	    if (estate.getPersentCoOwner() != 100) {
 		for (PartialEstates pEstate : E2Bean.partialEstateLst) {
 		    coOwner = new E2coOwner();
 		    if (pEstate.location.trim().equals(
